@@ -1,0 +1,14 @@
+# Target labels
+ stb_image_download-populate
+# Source files and their labels
+C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/stb_image_download-subbuild/CMakeFiles/stb_image_download-populate
+C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/stb_image_download-subbuild/CMakeFiles/stb_image_download-populate.rule
+C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/stb_image_download-subbuild/CMakeFiles/stb_image_download-populate-complete.rule
+C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/stb_image_download-subbuild/stb_image_download-populate-prefix/src/stb_image_download-populate-stamp/stb_image_download-populate-install.rule
+C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/stb_image_download-subbuild/stb_image_download-populate-prefix/src/stb_image_download-populate-stamp/stb_image_download-populate-mkdir.rule
+C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/stb_image_download-subbuild/stb_image_download-populate-prefix/src/stb_image_download-populate-stamp/stb_image_download-populate-download.rule
+C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/stb_image_download-subbuild/stb_image_download-populate-prefix/src/stb_image_download-populate-stamp/stb_image_download-populate-update.rule
+C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/stb_image_download-subbuild/stb_image_download-populate-prefix/src/stb_image_download-populate-stamp/stb_image_download-populate-patch.rule
+C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/stb_image_download-subbuild/stb_image_download-populate-prefix/src/stb_image_download-populate-stamp/stb_image_download-populate-configure.rule
+C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/stb_image_download-subbuild/stb_image_download-populate-prefix/src/stb_image_download-populate-stamp/stb_image_download-populate-build.rule
+C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/stb_image_download-subbuild/stb_image_download-populate-prefix/src/stb_image_download-populate-stamp/stb_image_download-populate-test.rule

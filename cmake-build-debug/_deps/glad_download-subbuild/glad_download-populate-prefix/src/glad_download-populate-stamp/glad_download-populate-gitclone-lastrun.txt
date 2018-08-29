@@ -1,0 +1,3 @@
+repository='https://github.com/TRON-N/gladForNibbler.git'
+module=''
+tag=''

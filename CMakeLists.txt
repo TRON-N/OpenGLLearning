@@ -1,0 +1,35 @@
+cmake_minimum_required(VERSION 3.11)
+project(learningOpenGL)
+
+set(CMAKE_CXX_STANDARD 17)
+
+include(FetchContent)
+
+FetchContent_Declare(
+        glad_download
+        GIT_REPOSITORY https://github.com/TRON-N/gladForNibbler.git
+)
+
+FetchContent_GetProperties(glad_download)
+
+if(NOT glad_download_POPULATED)
+    FetchContent_Populate(glad_download)
+    include_directories(${glad_download_SOURCE_DIR}/include)
+    set(glad_SOURCE_FILE "${glad_download_SOURCE_DIR}/src/glad.c")
+endif()
+
+FetchContent_Declare(
+        sdl2_download
+        URL https://www.libsdl.org/release/SDL2-2.0.8.zip
+)
+
+FetchContent_GetProperties(sdl2_download)
+
+if(NOT sdl2_download_POPULATED)
+    FetchContent_Populate(sdl2_download)
+    add_subdirectory(${sdl2_download_SOURCE_DIR} ${sdl2_download_BINARY_DIR})
+    include_directories("${sdl2_download_SOURCE_DIR}/include")
+endif()
+
+add_executable(learningOpenGL main.cpp ${glad_SOURCE_FILE} stb_image.h OpenGLClasses/VertexBuffer.cpp OpenGLClasses/VertexBuffer.hpp OpenGLClasses/VertexArray.cpp OpenGLClasses/VertexArray.cpp OpenGLClasses/VertexArray.hpp OpenGLClasses/ElementBuffer.cpp OpenGLClasses/ElementBuffer.hpp  OpenGLClasses/Shader.cpp OpenGLClasses/Shader.hpp OpenGLClasses/openGLFunctionCallErrorManagementWrapper.hpp OpenGLClasses/openGLErrorManagementFunctions.cpp stb_file.cpp)
+target_link_libraries(learningOpenGL SDL2main SDL2-static)

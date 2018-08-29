@@ -1,0 +1,14 @@
+//
+// Created by Leonard on 2018/08/29.
+//
+
+#ifndef LEARNINGOPENGL_VERTEXARRAY_HPP
+#define LEARNINGOPENGL_VERTEXARRAY_HPP
+
+
+class VertexArray {
+
+};
+
+
+#endif //LEARNINGOPENGL_VERTEXARRAY_HPP

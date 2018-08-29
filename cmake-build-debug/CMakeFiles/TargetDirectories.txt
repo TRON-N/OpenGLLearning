@@ -1,0 +1,15 @@
+C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/CMakeFiles/learningOpenGL.dir
+C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/CMakeFiles/install/local.dir
+C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/CMakeFiles/install.dir
+C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/CMakeFiles/list_install_components.dir
+C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/sdl2_download-build/CMakeFiles/rebuild_cache.dir
+C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/sdl2_download-build/CMakeFiles/SDL2-static.dir
+C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/sdl2_download-build/CMakeFiles/SDL2main.dir
+C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/sdl2_download-build/CMakeFiles/install.dir
+C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/sdl2_download-build/CMakeFiles/install/local.dir
+C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/sdl2_download-build/CMakeFiles/edit_cache.dir
+C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/sdl2_download-build/CMakeFiles/SDL2.dir
+C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/sdl2_download-build/CMakeFiles/uninstall.dir
+C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/sdl2_download-build/CMakeFiles/list_install_components.dir

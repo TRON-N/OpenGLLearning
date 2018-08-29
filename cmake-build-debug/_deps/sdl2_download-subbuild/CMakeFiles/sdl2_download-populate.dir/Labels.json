@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/sdl2_download-subbuild/CMakeFiles/sdl2_download-populate"
+		},
+		{
+			"file" : "C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/sdl2_download-subbuild/CMakeFiles/sdl2_download-populate.rule"
+		},
+		{
+			"file" : "C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/sdl2_download-subbuild/CMakeFiles/sdl2_download-populate-complete.rule"
+		},
+		{
+			"file" : "C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/sdl2_download-subbuild/sdl2_download-populate-prefix/src/sdl2_download-populate-stamp/sdl2_download-populate-install.rule"
+		},
+		{
+			"file" : "C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/sdl2_download-subbuild/sdl2_download-populate-prefix/src/sdl2_download-populate-stamp/sdl2_download-populate-mkdir.rule"
+		},
+		{
+			"file" : "C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/sdl2_download-subbuild/sdl2_download-populate-prefix/src/sdl2_download-populate-stamp/sdl2_download-populate-download.rule"
+		},
+		{
+			"file" : "C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/sdl2_download-subbuild/sdl2_download-populate-prefix/src/sdl2_download-populate-stamp/sdl2_download-populate-update.rule"
+		},
+		{
+			"file" : "C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/sdl2_download-subbuild/sdl2_download-populate-prefix/src/sdl2_download-populate-stamp/sdl2_download-populate-patch.rule"
+		},
+		{
+			"file" : "C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/sdl2_download-subbuild/sdl2_download-populate-prefix/src/sdl2_download-populate-stamp/sdl2_download-populate-configure.rule"
+		},
+		{
+			"file" : "C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/sdl2_download-subbuild/sdl2_download-populate-prefix/src/sdl2_download-populate-stamp/sdl2_download-populate-build.rule"
+		},
+		{
+			"file" : "C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/sdl2_download-subbuild/sdl2_download-populate-prefix/src/sdl2_download-populate-stamp/sdl2_download-populate-test.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"sdl2_download-populate"
+		],
+		"name" : "sdl2_download-populate"
+	}
+}

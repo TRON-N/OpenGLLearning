@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/glad_download-subbuild/CMakeFiles/glad_download-populate"
+		},
+		{
+			"file" : "C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/glad_download-subbuild/CMakeFiles/glad_download-populate.rule"
+		},
+		{
+			"file" : "C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/glad_download-subbuild/CMakeFiles/glad_download-populate-complete.rule"
+		},
+		{
+			"file" : "C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/glad_download-subbuild/glad_download-populate-prefix/src/glad_download-populate-stamp/glad_download-populate-install.rule"
+		},
+		{
+			"file" : "C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/glad_download-subbuild/glad_download-populate-prefix/src/glad_download-populate-stamp/glad_download-populate-mkdir.rule"
+		},
+		{
+			"file" : "C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/glad_download-subbuild/glad_download-populate-prefix/src/glad_download-populate-stamp/glad_download-populate-download.rule"
+		},
+		{
+			"file" : "C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/glad_download-subbuild/glad_download-populate-prefix/src/glad_download-populate-stamp/glad_download-populate-update.rule"
+		},
+		{
+			"file" : "C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/glad_download-subbuild/glad_download-populate-prefix/src/glad_download-populate-stamp/glad_download-populate-patch.rule"
+		},
+		{
+			"file" : "C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/glad_download-subbuild/glad_download-populate-prefix/src/glad_download-populate-stamp/glad_download-populate-configure.rule"
+		},
+		{
+			"file" : "C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/glad_download-subbuild/glad_download-populate-prefix/src/glad_download-populate-stamp/glad_download-populate-build.rule"
+		},
+		{
+			"file" : "C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/glad_download-subbuild/glad_download-populate-prefix/src/glad_download-populate-stamp/glad_download-populate-test.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"glad_download-populate"
+		],
+		"name" : "glad_download-populate"
+	}
+}
