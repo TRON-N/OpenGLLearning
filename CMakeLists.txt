@@ -31,8 +31,7 @@ if(NOT sdl2_download_POPULATED)
     include_directories("${sdl2_download_SOURCE_DIR}/include")
 endif()
 
-
-add_subdirectory(extern/glm-stable)
+include_directories(extern/glm-stable/)
 
 
 add_executable(learningOpenGL main.cpp ${glad_SOURCE_FILE} extern/stb_image.h OpenGLClasses/VertexBuffer.cpp OpenGLClasses/VertexBuffer.hpp OpenGLClasses/VertexArray.cpp OpenGLClasses/VertexArray.cpp OpenGLClasses/VertexArray.hpp OpenGLClasses/ElementBuffer.cpp OpenGLClasses/ElementBuffer.hpp  OpenGLClasses/Shader.cpp OpenGLClasses/Shader.hpp OpenGLClasses/openGLFunctionCallErrorManagementWrapper.hpp OpenGLClasses/openGLErrorManagementFunctions.cpp extern/stb_file.cpp OpenGLClasses/BufferLayout/VertexBufferLayout.cpp OpenGLClasses/BufferLayout/VertexBufferLayout.hpp)

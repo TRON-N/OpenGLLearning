@@ -22,6 +22,7 @@ public:
 
 private:
 	unsigned int m_vertexArrayId;
+	unsigned int m_attribPointerId;
 };
 
 

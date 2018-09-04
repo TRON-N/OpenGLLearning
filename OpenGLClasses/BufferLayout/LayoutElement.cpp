@@ -6,10 +6,10 @@
 #include <cassert>
 #include "LayoutElement.hpp"
 
-LayoutElement::LayoutElement(unsigned int type, unsigned int ammount, bool shouldNormalize) {
-	this->m_ammount = ammount;
+LayoutElement::LayoutElement(unsigned int type, unsigned int amount, bool shouldNormalize) {
+	this->m_amount = amount;
 	this->m_type = type;
-	this->m_shouldNormalize = shouldNormalize ? 0 : 1;
+	this->m_shouldNormalize = shouldNormalize;
 }
 
 LayoutElement::~LayoutElement() {

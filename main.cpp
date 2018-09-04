@@ -9,6 +9,9 @@
 #include <glad/glad.h>
 #include <SDL_opengl.h>
 #include <iostream>
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 
 // settings
 const unsigned int SCR_WIDTH = 800;
@@ -44,7 +47,7 @@ const char *fragmentShaderSource = 	"#version 330 core\n"
 									"\n"
 									"void main()\n"
 									"{\n"
-									"	FragColor = texture(texture1, TexCoord);\n"
+									"	FragColor = texture(texture1, TexCoord) * vec4(ourColor, 1.0);\n"
 									"}\0";
 SDL_Window* GLOBAL_SDL_WINDOW;
 
@@ -89,6 +92,7 @@ int main(int argc, char *argv[])
 
 	};
 
+
 	unsigned int indicies[] = {	0, 1, 3,
 								0, 2, 3};
 
@@ -102,11 +106,12 @@ int main(int argc, char *argv[])
 	VertexBuffer vertexBuffer(sizeof(vertices), vertices);
 
 	VertexArray vertexArray;
-	vertexArray.setVertexBuffer(vertexBuffer, bufferLayout);
 	vertexArray.setElementBuffer(elementBuffer);
+	vertexArray.setVertexBuffer(vertexBuffer, bufferLayout);
 
+//	vertexArray.setVertexBuffer(texturePosBuffer, bufferLayout2);
+//	vertexArray.setElementBuffer(elementBuffer);
 
-	glm::rotate()
 
 
 	// load and create a texture
@@ -139,6 +144,19 @@ int main(int argc, char *argv[])
 	Shader shaderProgram(vertexShaderSource, fragmentShaderSource);
 	shaderProgram.bind();
 	vertexArray.bind();
+
+	glm::mat4 view(1.0f);
+	view = glm::translate(view, glm::vec3(0.0f, 0.1f, -0.6f));
+
+	glm::mat4 projection(1.0f);
+	projection = glm::perspective(glm::radians(45.0f), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
+
+	glm::mat4 model(1.0f);
+	model = glm::rotate(model, glm::radians(-70.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+
+	shaderProgram.setUniformMatrix4fv("view", glm::value_ptr(view), GL_FALSE);
+	shaderProgram.setUniformMatrix4fv("projection", glm::value_ptr(projection), GL_FALSE);
+	shaderProgram.setUniformMatrix4fv("model", glm::value_ptr(model), GL_FALSE);
 
 	// render loop
 	// -----------

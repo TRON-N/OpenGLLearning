@@ -10,6 +10,7 @@
 
 VertexArray::VertexArray() {
 	GL_ERROR_WRAPPER(glGenVertexArrays(1, &(this->m_vertexArrayId)));
+	this->m_attribPointerId = 0;
 }
 
 VertexArray::~VertexArray() {
@@ -22,15 +23,17 @@ void VertexArray::setVertexBuffer(VertexBuffer &vbo, VertexBufferLayout &bufferL
 
 	auto layoutElements = bufferLayout.getLayoutElements();
 	unsigned int offset = 0;
-	for (unsigned int elementNum = 0; elementNum < layoutElements.size(); elementNum++) {
-		LayoutElement currentElement = layoutElements[elementNum];
+	for (LayoutElement &currentElement: layoutElements) {
+		GL_ERROR_WRAPPER(glVertexAttribPointer(this->m_attribPointerId,
+											   currentElement.m_amount,
+											   currentElement.m_type,
+											   GL_FALSE,
+											   bufferLayout.getStrideLength(),
+											   (void*)offset));
+		GL_ERROR_WRAPPER(glEnableVertexAttribArray(this->m_attribPointerId));
 
-		GL_ERROR_WRAPPER(glVertexAttribPointer(elementNum, currentElement.m_ammount, currentElement.m_type,
-											   currentElement.m_shouldNormalize,
-											   bufferLayout.getStrideLength(), (void*)offset));
-		GL_ERROR_WRAPPER(glEnableVertexAttribArray(elementNum));
-
-		offset += currentElement.m_ammount * LayoutElement::getSizeOfType(currentElement.m_type);
+		this->m_attribPointerId++;
+		offset += currentElement.m_amount * LayoutElement::getSizeOfType(currentElement.m_type);
 	}
 
 	vbo.unbind();
