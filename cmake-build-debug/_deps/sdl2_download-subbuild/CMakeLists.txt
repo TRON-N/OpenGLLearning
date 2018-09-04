@@ -12,8 +12,8 @@ project(sdl2_download-populate NONE)
 include(ExternalProject)
 ExternalProject_Add(sdl2_download-populate
                      "UPDATE_DISCONNECTED" "False" "URL" "https://www.libsdl.org/release/SDL2-2.0.8.zip"
-                    SOURCE_DIR          "C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/sdl2_download-src"
-                    BINARY_DIR          "C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/sdl2_download-build"
+                    SOURCE_DIR          "/goinfre/lvan-gen/Documents/OpenGLLearning/cmake-build-debug/_deps/sdl2_download-src"
+                    BINARY_DIR          "/goinfre/lvan-gen/Documents/OpenGLLearning/cmake-build-debug/_deps/sdl2_download-build"
                     CONFIGURE_COMMAND   ""
                     BUILD_COMMAND       ""
                     INSTALL_COMMAND     ""

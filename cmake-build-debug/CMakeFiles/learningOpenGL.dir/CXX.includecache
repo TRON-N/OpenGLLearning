@@ -6,69 +6,105 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/User/Documents/WTC/openGL/learningOpenGL/OpenGLClasses/ElementBuffer.cpp
+/goinfre/lvan-gen/Documents/OpenGLLearning/OpenGLClasses/BufferLayout/LayoutElement.cpp
+glad/glad.h
+-
+cassert
+-
+LayoutElement.hpp
+/goinfre/lvan-gen/Documents/OpenGLLearning/OpenGLClasses/BufferLayout/LayoutElement.hpp
+
+/goinfre/lvan-gen/Documents/OpenGLLearning/OpenGLClasses/BufferLayout/LayoutElement.hpp
+
+/goinfre/lvan-gen/Documents/OpenGLLearning/OpenGLClasses/BufferLayout/VertexBufferLayout.cpp
+VertexBufferLayout.hpp
+/goinfre/lvan-gen/Documents/OpenGLLearning/OpenGLClasses/BufferLayout/VertexBufferLayout.hpp
+
+/goinfre/lvan-gen/Documents/OpenGLLearning/OpenGLClasses/BufferLayout/VertexBufferLayout.hpp
+vector
+-
+LayoutElement.hpp
+/goinfre/lvan-gen/Documents/OpenGLLearning/OpenGLClasses/BufferLayout/LayoutElement.hpp
+
+/goinfre/lvan-gen/Documents/OpenGLLearning/OpenGLClasses/ElementBuffer.cpp
 glad/glad.h
 -
 ElementBuffer.hpp
-C:/Users/User/Documents/WTC/openGL/learningOpenGL/OpenGLClasses/ElementBuffer.hpp
+/goinfre/lvan-gen/Documents/OpenGLLearning/OpenGLClasses/ElementBuffer.hpp
 openGLFunctionCallErrorManagementWrapper.hpp
-C:/Users/User/Documents/WTC/openGL/learningOpenGL/OpenGLClasses/openGLFunctionCallErrorManagementWrapper.hpp
+/goinfre/lvan-gen/Documents/OpenGLLearning/OpenGLClasses/openGLFunctionCallErrorManagementWrapper.hpp
 
-C:/Users/User/Documents/WTC/openGL/learningOpenGL/OpenGLClasses/ElementBuffer.hpp
+/goinfre/lvan-gen/Documents/OpenGLLearning/OpenGLClasses/ElementBuffer.hpp
 
-C:/Users/User/Documents/WTC/openGL/learningOpenGL/OpenGLClasses/Shader.cpp
+/goinfre/lvan-gen/Documents/OpenGLLearning/OpenGLClasses/Shader.cpp
 glad/glad.h
 -
 iostream
 -
 Shader.hpp
-C:/Users/User/Documents/WTC/openGL/learningOpenGL/OpenGLClasses/Shader.hpp
+/goinfre/lvan-gen/Documents/OpenGLLearning/OpenGLClasses/Shader.hpp
 openGLFunctionCallErrorManagementWrapper.hpp
-C:/Users/User/Documents/WTC/openGL/learningOpenGL/OpenGLClasses/openGLFunctionCallErrorManagementWrapper.hpp
+/goinfre/lvan-gen/Documents/OpenGLLearning/OpenGLClasses/openGLFunctionCallErrorManagementWrapper.hpp
 
-C:/Users/User/Documents/WTC/openGL/learningOpenGL/OpenGLClasses/Shader.hpp
+/goinfre/lvan-gen/Documents/OpenGLLearning/OpenGLClasses/Shader.hpp
 string
 -
 unordered_map
 -
 
-C:/Users/User/Documents/WTC/openGL/learningOpenGL/OpenGLClasses/VertexArray.cpp
+/goinfre/lvan-gen/Documents/OpenGLLearning/OpenGLClasses/VertexArray.cpp
+glad/glad.h
+-
 VertexArray.hpp
-C:/Users/User/Documents/WTC/openGL/learningOpenGL/OpenGLClasses/VertexArray.hpp
+/goinfre/lvan-gen/Documents/OpenGLLearning/OpenGLClasses/VertexArray.hpp
+openGLFunctionCallErrorManagementWrapper.hpp
+/goinfre/lvan-gen/Documents/OpenGLLearning/OpenGLClasses/openGLFunctionCallErrorManagementWrapper.hpp
+BufferLayout/VertexBufferLayout.hpp
+/goinfre/lvan-gen/Documents/OpenGLLearning/OpenGLClasses/BufferLayout/VertexBufferLayout.hpp
+BufferLayout/LayoutElement.hpp
+/goinfre/lvan-gen/Documents/OpenGLLearning/OpenGLClasses/BufferLayout/LayoutElement.hpp
 
-C:/Users/User/Documents/WTC/openGL/learningOpenGL/OpenGLClasses/VertexArray.hpp
+/goinfre/lvan-gen/Documents/OpenGLLearning/OpenGLClasses/VertexArray.hpp
+VertexBuffer.hpp
+/goinfre/lvan-gen/Documents/OpenGLLearning/OpenGLClasses/VertexBuffer.hpp
+ElementBuffer.hpp
+/goinfre/lvan-gen/Documents/OpenGLLearning/OpenGLClasses/ElementBuffer.hpp
+BufferLayout/VertexBufferLayout.hpp
+/goinfre/lvan-gen/Documents/OpenGLLearning/OpenGLClasses/BufferLayout/VertexBufferLayout.hpp
 
-C:/Users/User/Documents/WTC/openGL/learningOpenGL/OpenGLClasses/VertexBuffer.cpp
+/goinfre/lvan-gen/Documents/OpenGLLearning/OpenGLClasses/VertexBuffer.cpp
 glad/glad.h
 -
 VertexBuffer.hpp
-C:/Users/User/Documents/WTC/openGL/learningOpenGL/OpenGLClasses/VertexBuffer.hpp
+/goinfre/lvan-gen/Documents/OpenGLLearning/OpenGLClasses/VertexBuffer.hpp
 openGLFunctionCallErrorManagementWrapper.hpp
-C:/Users/User/Documents/WTC/openGL/learningOpenGL/OpenGLClasses/openGLFunctionCallErrorManagementWrapper.hpp
+/goinfre/lvan-gen/Documents/OpenGLLearning/OpenGLClasses/openGLFunctionCallErrorManagementWrapper.hpp
 
-C:/Users/User/Documents/WTC/openGL/learningOpenGL/OpenGLClasses/VertexBuffer.hpp
+/goinfre/lvan-gen/Documents/OpenGLLearning/OpenGLClasses/VertexBuffer.hpp
 
-C:/Users/User/Documents/WTC/openGL/learningOpenGL/OpenGLClasses/openGLErrorManagementFunctions.cpp
+/goinfre/lvan-gen/Documents/OpenGLLearning/OpenGLClasses/openGLErrorManagementFunctions.cpp
 glad/glad.h
 -
 iostream
 -
 
-C:/Users/User/Documents/WTC/openGL/learningOpenGL/OpenGLClasses/openGLFunctionCallErrorManagementWrapper.hpp
+/goinfre/lvan-gen/Documents/OpenGLLearning/OpenGLClasses/openGLFunctionCallErrorManagementWrapper.hpp
 cassert
 -
 
-C:/Users/User/Documents/WTC/openGL/learningOpenGL/main.cpp
+/goinfre/lvan-gen/Documents/OpenGLLearning/main.cpp
 OpenGLClasses/openGLFunctionCallErrorManagementWrapper.hpp
-C:/Users/User/Documents/WTC/openGL/learningOpenGL/OpenGLClasses/openGLFunctionCallErrorManagementWrapper.hpp
+/goinfre/lvan-gen/Documents/OpenGLLearning/OpenGLClasses/openGLFunctionCallErrorManagementWrapper.hpp
 OpenGLClasses/VertexBuffer.hpp
-C:/Users/User/Documents/WTC/openGL/learningOpenGL/OpenGLClasses/VertexBuffer.hpp
+/goinfre/lvan-gen/Documents/OpenGLLearning/OpenGLClasses/VertexBuffer.hpp
 OpenGLClasses/Shader.hpp
-C:/Users/User/Documents/WTC/openGL/learningOpenGL/OpenGLClasses/Shader.hpp
+/goinfre/lvan-gen/Documents/OpenGLLearning/OpenGLClasses/Shader.hpp
 OpenGLClasses/ElementBuffer.hpp
-C:/Users/User/Documents/WTC/openGL/learningOpenGL/OpenGLClasses/ElementBuffer.hpp
+/goinfre/lvan-gen/Documents/OpenGLLearning/OpenGLClasses/ElementBuffer.hpp
 stb_image.h
-C:/Users/User/Documents/WTC/openGL/learningOpenGL/stb_image.h
+/goinfre/lvan-gen/Documents/OpenGLLearning/stb_image.h
+OpenGLClasses/VertexArray.hpp
+/goinfre/lvan-gen/Documents/OpenGLLearning/OpenGLClasses/VertexArray.hpp
 iostream
 -
 SDL.h
@@ -80,13 +116,13 @@ SDL_opengl.h
 iostream
 -
 
-C:/Users/User/Documents/WTC/openGL/learningOpenGL/stb_file.cpp
+/goinfre/lvan-gen/Documents/OpenGLLearning/stb_file.cpp
 stb_image.h
-C:/Users/User/Documents/WTC/openGL/learningOpenGL/stb_image.h
+/goinfre/lvan-gen/Documents/OpenGLLearning/stb_image.h
 
-C:/Users/User/Documents/WTC/openGL/learningOpenGL/stb_image.h
+/goinfre/lvan-gen/Documents/OpenGLLearning/stb_image.h
 stb_image.h
-C:/Users/User/Documents/WTC/openGL/learningOpenGL/stb_image.h
+/goinfre/lvan-gen/Documents/OpenGLLearning/stb_image.h
 stdio.h
 -
 stdarg.h

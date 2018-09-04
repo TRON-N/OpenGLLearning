@@ -1,3 +1,0 @@
-repository='external project URL'
-module='https://github.com/nothings/stb/raw/master/stb_image.h'
-tag=''

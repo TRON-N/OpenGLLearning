@@ -15,6 +15,8 @@ public:
 	void unbind();
 
 	void setUniform4f(const std::string &name, float f0, float f1, float f2, float f3);
+	void setUniformMatrix4fv(const std::string &name, bool shouldTranspose = false, void *data);
+
 	~Shader();
 
 private:

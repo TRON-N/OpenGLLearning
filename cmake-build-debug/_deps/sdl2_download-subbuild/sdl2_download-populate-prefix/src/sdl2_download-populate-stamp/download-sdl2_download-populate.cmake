@@ -22,14 +22,14 @@ function(check_file_hash has_hash hash_is_good)
   set("${has_hash}" TRUE PARENT_SCOPE)
 
   message(STATUS "verifying file...
-       file='C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/sdl2_download-subbuild/sdl2_download-populate-prefix/src/SDL2-2.0.8.zip'")
+       file='/goinfre/lvan-gen/Documents/OpenGLLearning/cmake-build-debug/_deps/sdl2_download-subbuild/sdl2_download-populate-prefix/src/SDL2-2.0.8.zip'")
 
-  file("" "C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/sdl2_download-subbuild/sdl2_download-populate-prefix/src/SDL2-2.0.8.zip" actual_value)
+  file("" "/goinfre/lvan-gen/Documents/OpenGLLearning/cmake-build-debug/_deps/sdl2_download-subbuild/sdl2_download-populate-prefix/src/SDL2-2.0.8.zip" actual_value)
 
   if(NOT "${actual_value}" STREQUAL "")
     set("${hash_is_good}" FALSE PARENT_SCOPE)
     message(STATUS " hash of
-    C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/sdl2_download-subbuild/sdl2_download-populate-prefix/src/SDL2-2.0.8.zip
+    /goinfre/lvan-gen/Documents/OpenGLLearning/cmake-build-debug/_deps/sdl2_download-subbuild/sdl2_download-populate-prefix/src/SDL2-2.0.8.zip
   does not match expected value
     expected: ''
       actual: '${actual_value}'")
@@ -71,7 +71,7 @@ function(sleep_before_download attempt)
   execute_process(COMMAND "${CMAKE_COMMAND}" -E sleep "${sleep_seconds}")
 endfunction()
 
-if("C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/sdl2_download-subbuild/sdl2_download-populate-prefix/src/SDL2-2.0.8.zip" STREQUAL "")
+if("/goinfre/lvan-gen/Documents/OpenGLLearning/cmake-build-debug/_deps/sdl2_download-subbuild/sdl2_download-populate-prefix/src/SDL2-2.0.8.zip" STREQUAL "")
   message(FATAL_ERROR "LOCAL can't be empty")
 endif()
 
@@ -79,32 +79,32 @@ if("https://www.libsdl.org/release/SDL2-2.0.8.zip" STREQUAL "")
   message(FATAL_ERROR "REMOTE can't be empty")
 endif()
 
-if(EXISTS "C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/sdl2_download-subbuild/sdl2_download-populate-prefix/src/SDL2-2.0.8.zip")
+if(EXISTS "/goinfre/lvan-gen/Documents/OpenGLLearning/cmake-build-debug/_deps/sdl2_download-subbuild/sdl2_download-populate-prefix/src/SDL2-2.0.8.zip")
   check_file_hash(has_hash hash_is_good)
   if(has_hash)
     if(hash_is_good)
       message(STATUS "File already exists and hash match (skip download):
-  file='C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/sdl2_download-subbuild/sdl2_download-populate-prefix/src/SDL2-2.0.8.zip'
+  file='/goinfre/lvan-gen/Documents/OpenGLLearning/cmake-build-debug/_deps/sdl2_download-subbuild/sdl2_download-populate-prefix/src/SDL2-2.0.8.zip'
   =''"
       )
       return()
     else()
       message(STATUS "File already exists but hash mismatch. Removing...")
-      file(REMOVE "C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/sdl2_download-subbuild/sdl2_download-populate-prefix/src/SDL2-2.0.8.zip")
+      file(REMOVE "/goinfre/lvan-gen/Documents/OpenGLLearning/cmake-build-debug/_deps/sdl2_download-subbuild/sdl2_download-populate-prefix/src/SDL2-2.0.8.zip")
     endif()
   else()
     message(STATUS "File already exists but no hash specified (use URL_HASH):
-  file='C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/sdl2_download-subbuild/sdl2_download-populate-prefix/src/SDL2-2.0.8.zip'
+  file='/goinfre/lvan-gen/Documents/OpenGLLearning/cmake-build-debug/_deps/sdl2_download-subbuild/sdl2_download-populate-prefix/src/SDL2-2.0.8.zip'
 Old file will be removed and new file downloaded from URL."
     )
-    file(REMOVE "C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/sdl2_download-subbuild/sdl2_download-populate-prefix/src/SDL2-2.0.8.zip")
+    file(REMOVE "/goinfre/lvan-gen/Documents/OpenGLLearning/cmake-build-debug/_deps/sdl2_download-subbuild/sdl2_download-populate-prefix/src/SDL2-2.0.8.zip")
   endif()
 endif()
 
 set(retry_number 5)
 
 message(STATUS "Downloading...
-   dst='C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/sdl2_download-subbuild/sdl2_download-populate-prefix/src/SDL2-2.0.8.zip'
+   dst='/goinfre/lvan-gen/Documents/OpenGLLearning/cmake-build-debug/_deps/sdl2_download-subbuild/sdl2_download-populate-prefix/src/SDL2-2.0.8.zip'
    timeout='none'"
 )
 
@@ -121,7 +121,7 @@ foreach(i RANGE ${retry_number})
 
     file(
         DOWNLOAD
-        "${url}" "C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/sdl2_download-subbuild/sdl2_download-populate-prefix/src/SDL2-2.0.8.zip"
+        "${url}" "/goinfre/lvan-gen/Documents/OpenGLLearning/cmake-build-debug/_deps/sdl2_download-subbuild/sdl2_download-populate-prefix/src/SDL2-2.0.8.zip"
         SHOW_PROGRESS
         # no TIMEOUT
         STATUS status
@@ -137,7 +137,7 @@ foreach(i RANGE ${retry_number})
       check_file_hash(has_hash hash_is_good)
       if(has_hash AND NOT hash_is_good)
         message(STATUS "Hash mismatch, removing...")
-        file(REMOVE "C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/sdl2_download-subbuild/sdl2_download-populate-prefix/src/SDL2-2.0.8.zip")
+        file(REMOVE "/goinfre/lvan-gen/Documents/OpenGLLearning/cmake-build-debug/_deps/sdl2_download-subbuild/sdl2_download-populate-prefix/src/SDL2-2.0.8.zip")
       else()
         message(STATUS "Downloading... done")
         return()

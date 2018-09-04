@@ -4,21 +4,21 @@ endif()
 
 set(run 0)
 
-if("C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/glad_download-subbuild/glad_download-populate-prefix/src/glad_download-populate-stamp/glad_download-populate-gitinfo.txt" IS_NEWER_THAN "C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/glad_download-subbuild/glad_download-populate-prefix/src/glad_download-populate-stamp/glad_download-populate-gitclone-lastrun.txt")
+if("/goinfre/lvan-gen/Documents/OpenGLLearning/cmake-build-debug/_deps/glad_download-subbuild/glad_download-populate-prefix/src/glad_download-populate-stamp/glad_download-populate-gitinfo.txt" IS_NEWER_THAN "/goinfre/lvan-gen/Documents/OpenGLLearning/cmake-build-debug/_deps/glad_download-subbuild/glad_download-populate-prefix/src/glad_download-populate-stamp/glad_download-populate-gitclone-lastrun.txt")
   set(run 1)
 endif()
 
 if(NOT run)
-  message(STATUS "Avoiding repeated git clone, stamp file is up to date: 'C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/glad_download-subbuild/glad_download-populate-prefix/src/glad_download-populate-stamp/glad_download-populate-gitclone-lastrun.txt'")
+  message(STATUS "Avoiding repeated git clone, stamp file is up to date: '/goinfre/lvan-gen/Documents/OpenGLLearning/cmake-build-debug/_deps/glad_download-subbuild/glad_download-populate-prefix/src/glad_download-populate-stamp/glad_download-populate-gitclone-lastrun.txt'")
   return()
 endif()
 
 execute_process(
-  COMMAND ${CMAKE_COMMAND} -E remove_directory "C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/glad_download-src"
+  COMMAND ${CMAKE_COMMAND} -E remove_directory "/goinfre/lvan-gen/Documents/OpenGLLearning/cmake-build-debug/_deps/glad_download-src"
   RESULT_VARIABLE error_code
   )
 if(error_code)
-  message(FATAL_ERROR "Failed to remove directory: 'C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/glad_download-src'")
+  message(FATAL_ERROR "Failed to remove directory: '/goinfre/lvan-gen/Documents/OpenGLLearning/cmake-build-debug/_deps/glad_download-src'")
 endif()
 
 set(git_options)
@@ -52,8 +52,8 @@ set(error_code 1)
 set(number_of_tries 0)
 while(error_code AND number_of_tries LESS 3)
   execute_process(
-    COMMAND "C:/Users/User/AppData/Local/Programs/Git/cmd/git.exe" ${git_options} clone ${git_clone_options} --origin "origin" "https://github.com/TRON-N/gladForNibbler.git" "glad_download-src"
-    WORKING_DIRECTORY "C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps"
+    COMMAND "/usr/bin/git" ${git_options} clone ${git_clone_options} --origin "origin" "https://github.com/TRON-N/gladForNibbler.git" "glad_download-src"
+    WORKING_DIRECTORY "/goinfre/lvan-gen/Documents/OpenGLLearning/cmake-build-debug/_deps"
     RESULT_VARIABLE error_code
     )
   math(EXPR number_of_tries "${number_of_tries} + 1")
@@ -67,8 +67,8 @@ if(error_code)
 endif()
 
 execute_process(
-  COMMAND "C:/Users/User/AppData/Local/Programs/Git/cmd/git.exe" ${git_options} checkout master --
-  WORKING_DIRECTORY "C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/glad_download-src"
+  COMMAND "/usr/bin/git" ${git_options} checkout master --
+  WORKING_DIRECTORY "/goinfre/lvan-gen/Documents/OpenGLLearning/cmake-build-debug/_deps/glad_download-src"
   RESULT_VARIABLE error_code
   )
 if(error_code)
@@ -76,33 +76,33 @@ if(error_code)
 endif()
 
 execute_process(
-  COMMAND "C:/Users/User/AppData/Local/Programs/Git/cmd/git.exe" ${git_options} submodule init 
-  WORKING_DIRECTORY "C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/glad_download-src"
+  COMMAND "/usr/bin/git" ${git_options} submodule init 
+  WORKING_DIRECTORY "/goinfre/lvan-gen/Documents/OpenGLLearning/cmake-build-debug/_deps/glad_download-src"
   RESULT_VARIABLE error_code
   )
 if(error_code)
-  message(FATAL_ERROR "Failed to init submodules in: 'C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/glad_download-src'")
+  message(FATAL_ERROR "Failed to init submodules in: '/goinfre/lvan-gen/Documents/OpenGLLearning/cmake-build-debug/_deps/glad_download-src'")
 endif()
 
 execute_process(
-  COMMAND "C:/Users/User/AppData/Local/Programs/Git/cmd/git.exe" ${git_options} submodule update --recursive --init 
-  WORKING_DIRECTORY "C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/glad_download-src"
+  COMMAND "/usr/bin/git" ${git_options} submodule update --recursive --init 
+  WORKING_DIRECTORY "/goinfre/lvan-gen/Documents/OpenGLLearning/cmake-build-debug/_deps/glad_download-src"
   RESULT_VARIABLE error_code
   )
 if(error_code)
-  message(FATAL_ERROR "Failed to update submodules in: 'C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/glad_download-src'")
+  message(FATAL_ERROR "Failed to update submodules in: '/goinfre/lvan-gen/Documents/OpenGLLearning/cmake-build-debug/_deps/glad_download-src'")
 endif()
 
 # Complete success, update the script-last-run stamp file:
 #
 execute_process(
   COMMAND ${CMAKE_COMMAND} -E copy
-    "C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/glad_download-subbuild/glad_download-populate-prefix/src/glad_download-populate-stamp/glad_download-populate-gitinfo.txt"
-    "C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/glad_download-subbuild/glad_download-populate-prefix/src/glad_download-populate-stamp/glad_download-populate-gitclone-lastrun.txt"
-  WORKING_DIRECTORY "C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/glad_download-src"
+    "/goinfre/lvan-gen/Documents/OpenGLLearning/cmake-build-debug/_deps/glad_download-subbuild/glad_download-populate-prefix/src/glad_download-populate-stamp/glad_download-populate-gitinfo.txt"
+    "/goinfre/lvan-gen/Documents/OpenGLLearning/cmake-build-debug/_deps/glad_download-subbuild/glad_download-populate-prefix/src/glad_download-populate-stamp/glad_download-populate-gitclone-lastrun.txt"
+  WORKING_DIRECTORY "/goinfre/lvan-gen/Documents/OpenGLLearning/cmake-build-debug/_deps/glad_download-src"
   RESULT_VARIABLE error_code
   )
 if(error_code)
-  message(FATAL_ERROR "Failed to copy script-last-run stamp file: 'C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/glad_download-subbuild/glad_download-populate-prefix/src/glad_download-populate-stamp/glad_download-populate-gitclone-lastrun.txt'")
+  message(FATAL_ERROR "Failed to copy script-last-run stamp file: '/goinfre/lvan-gen/Documents/OpenGLLearning/cmake-build-debug/_deps/glad_download-subbuild/glad_download-populate-prefix/src/glad_download-populate-stamp/glad_download-populate-gitclone-lastrun.txt'")
 endif()
 

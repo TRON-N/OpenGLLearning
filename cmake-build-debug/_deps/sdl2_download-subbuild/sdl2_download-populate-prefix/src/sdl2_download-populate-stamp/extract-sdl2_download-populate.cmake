@@ -1,7 +1,7 @@
 # Make file names absolute:
 #
-get_filename_component(filename "C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/sdl2_download-subbuild/sdl2_download-populate-prefix/src/SDL2-2.0.8.zip" ABSOLUTE)
-get_filename_component(directory "C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/sdl2_download-src" ABSOLUTE)
+get_filename_component(filename "/goinfre/lvan-gen/Documents/OpenGLLearning/cmake-build-debug/_deps/sdl2_download-subbuild/sdl2_download-populate-prefix/src/SDL2-2.0.8.zip" ABSOLUTE)
+get_filename_component(directory "/goinfre/lvan-gen/Documents/OpenGLLearning/cmake-build-debug/_deps/sdl2_download-src" ABSOLUTE)
 
 message(STATUS "extracting...
      src='${filename}'

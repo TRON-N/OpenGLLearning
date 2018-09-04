@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/sdl2_download-src/src/main/windows/SDL_windows_main.c" "C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/sdl2_download-build/CMakeFiles/SDL2main.dir/src/main/windows/SDL_windows_main.c.obj"
+  "/goinfre/lvan-gen/Documents/OpenGLLearning/cmake-build-debug/_deps/sdl2_download-src/src/main/dummy/SDL_dummy_main.c" "/goinfre/lvan-gen/Documents/OpenGLLearning/cmake-build-debug/_deps/sdl2_download-build/CMakeFiles/SDL2main.dir/src/main/dummy/SDL_dummy_main.c.o"
   )
-set(CMAKE_C_COMPILER_ID "MSVC")
+set(CMAKE_C_COMPILER_ID "Clang")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_C
@@ -18,7 +18,6 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "_deps/glad_download-src/include"
   "_deps/sdl2_download-build/include"
   "_deps/sdl2_download-src/include"
-  "_deps/sdl2_download-src/src/video/khronos"
   )
 
 # Targets to which this target links.

@@ -11,9 +11,9 @@ public:
 	VertexBuffer(unsigned int size, void *data);
 	~VertexBuffer();
 	void bind();
-	void unbind();
+	static void unbind();
 private:
-	unsigned int m_bufferId;
+	unsigned int m_vertexBufferId;
 
 };
 

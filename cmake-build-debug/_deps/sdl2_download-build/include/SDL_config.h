@@ -44,144 +44,144 @@
 #define SIZEOF_VOIDP 4
 #endif
 
-/* #undef HAVE_GCC_ATOMICS */
+#define HAVE_GCC_ATOMICS 1
 /* #undef HAVE_GCC_SYNC_LOCK_TEST_AND_SET */
 
 /* Comment this if you want to build without any C library requirements */
-/* #undef HAVE_LIBC */
+#define HAVE_LIBC 1
 #if HAVE_LIBC
 
 /* Useful headers */
-/* #undef STDC_HEADERS */
-/* #undef HAVE_ALLOCA_H */
-/* #undef HAVE_CTYPE_H */
+#define STDC_HEADERS 1
+#define HAVE_ALLOCA_H 1
+#define HAVE_CTYPE_H 1
 /* #undef HAVE_FLOAT_H */
-/* #undef HAVE_ICONV_H */
-/* #undef HAVE_INTTYPES_H */
-/* #undef HAVE_LIMITS_H */
+#define HAVE_ICONV_H 1
+#define HAVE_INTTYPES_H 1
+#define HAVE_LIMITS_H 1
 /* #undef HAVE_MALLOC_H */
-/* #undef HAVE_MATH_H */
-/* #undef HAVE_MEMORY_H */
-/* #undef HAVE_SIGNAL_H */
+#define HAVE_MATH_H 1
+#define HAVE_MEMORY_H 1
+#define HAVE_SIGNAL_H 1
 #define HAVE_STDARG_H 1
-/* #undef HAVE_STDINT_H */
-/* #undef HAVE_STDIO_H */
-/* #undef HAVE_STDLIB_H */
-/* #undef HAVE_STRINGS_H */
-/* #undef HAVE_STRING_H */
-/* #undef HAVE_SYS_TYPES_H */
-/* #undef HAVE_WCHAR_H */
+#define HAVE_STDINT_H 1
+#define HAVE_STDIO_H 1
+#define HAVE_STDLIB_H 1
+#define HAVE_STRINGS_H 1
+#define HAVE_STRING_H 1
+#define HAVE_SYS_TYPES_H 1
+#define HAVE_WCHAR_H 1
 /* #undef HAVE_PTHREAD_NP_H */
-/* #undef HAVE_LIBUNWIND_H */
+#define HAVE_LIBUNWIND_H 1
 
 /* C library functions */
-/* #undef HAVE_MALLOC */
-/* #undef HAVE_CALLOC */
-/* #undef HAVE_REALLOC */
-/* #undef HAVE_FREE */
-/* #undef HAVE_ALLOCA */
+#define HAVE_MALLOC 1
+#define HAVE_CALLOC 1
+#define HAVE_REALLOC 1
+#define HAVE_FREE 1
+#define HAVE_ALLOCA 1
 #ifndef __WIN32__ /* Don't use C runtime versions of these on Windows */
-/* #undef HAVE_GETENV */
-/* #undef HAVE_SETENV */
-/* #undef HAVE_PUTENV */
-/* #undef HAVE_UNSETENV */
+#define HAVE_GETENV 1
+#define HAVE_SETENV 1
+#define HAVE_PUTENV 1
+#define HAVE_UNSETENV 1
 #endif
-/* #undef HAVE_QSORT */
-/* #undef HAVE_ABS */
-/* #undef HAVE_BCOPY */
-/* #undef HAVE_MEMSET */
-/* #undef HAVE_MEMCPY */
-/* #undef HAVE_MEMMOVE */
-/* #undef HAVE_MEMCMP */
+#define HAVE_QSORT 1
+#define HAVE_ABS 1
+#define HAVE_BCOPY 1
+#define HAVE_MEMSET 1
+#define HAVE_MEMCPY 1
+#define HAVE_MEMMOVE 1
+#define HAVE_MEMCMP 1
 /* #undef HAVE_WCSLEN */
 /* #undef HAVE_WCSLCPY */
 /* #undef HAVE_WCSLCAT */
 /* #undef HAVE_WCSCMP */
-/* #undef HAVE_STRLEN */
-/* #undef HAVE_STRLCPY */
-/* #undef HAVE_STRLCAT */
+#define HAVE_STRLEN 1
+#define HAVE_STRLCPY 1
+#define HAVE_STRLCAT 1
 /* #undef HAVE__STRREV */
 /* #undef HAVE__STRUPR */
 /* #undef HAVE__STRLWR */
 /* #undef HAVE_INDEX */
 /* #undef HAVE_RINDEX */
-/* #undef HAVE_STRCHR */
-/* #undef HAVE_STRRCHR */
-/* #undef HAVE_STRSTR */
+#define HAVE_STRCHR 1
+#define HAVE_STRRCHR 1
+#define HAVE_STRSTR 1
 /* #undef HAVE_ITOA */
 /* #undef HAVE__LTOA */
 /* #undef HAVE__UITOA */
 /* #undef HAVE__ULTOA */
-/* #undef HAVE_STRTOL */
-/* #undef HAVE_STRTOUL */
+#define HAVE_STRTOL 1
+#define HAVE_STRTOUL 1
 /* #undef HAVE__I64TOA */
 /* #undef HAVE__UI64TOA */
-/* #undef HAVE_STRTOLL */
-/* #undef HAVE_STRTOULL */
-/* #undef HAVE_STRTOD */
-/* #undef HAVE_ATOI */
-/* #undef HAVE_ATOF */
-/* #undef HAVE_STRCMP */
-/* #undef HAVE_STRNCMP */
+#define HAVE_STRTOLL 1
+#define HAVE_STRTOULL 1
+#define HAVE_STRTOD 1
+#define HAVE_ATOI 1
+#define HAVE_ATOF 1
+#define HAVE_STRCMP 1
+#define HAVE_STRNCMP 1
 /* #undef HAVE__STRICMP */
-/* #undef HAVE_STRCASECMP */
+#define HAVE_STRCASECMP 1
 /* #undef HAVE__STRNICMP */
-/* #undef HAVE_STRNCASECMP */
-/* #undef HAVE_VSSCANF */
-/* #undef HAVE_VSNPRINTF */
-/* #undef HAVE_M_PI */
-/* #undef HAVE_ACOS */
+#define HAVE_STRNCASECMP 1
+#define HAVE_VSSCANF 1
+#define HAVE_VSNPRINTF 1
+#define HAVE_M_PI 1
+#define HAVE_ACOS 1
 /* #undef HAVE_ACOSF */
-/* #undef HAVE_ASIN */
+#define HAVE_ASIN 1
 /* #undef HAVE_ASINF */
-/* #undef HAVE_ATAN */
+#define HAVE_ATAN 1
 /* #undef HAVE_ATANF */
-/* #undef HAVE_ATAN2 */
+#define HAVE_ATAN2 1
 /* #undef HAVE_ATAN2F */
-/* #undef HAVE_CEIL */
+#define HAVE_CEIL 1
 /* #undef HAVE_CEILF */
-/* #undef HAVE_COPYSIGN */
+#define HAVE_COPYSIGN 1
 /* #undef HAVE_COPYSIGNF */
-/* #undef HAVE_COS */
-/* #undef HAVE_COSF */
-/* #undef HAVE_FABS */
+#define HAVE_COS 1
+#define HAVE_COSF 1
+#define HAVE_FABS 1
 /* #undef HAVE_FABSF */
-/* #undef HAVE_FLOOR */
+#define HAVE_FLOOR 1
 /* #undef HAVE_FLOORF */
 /* #undef HAVE_FMOD */
 /* #undef HAVE_FMODF */
-/* #undef HAVE_LOG */
+#define HAVE_LOG 1
 /* #undef HAVE_LOGF */
 /* #undef HAVE_LOG10 */
 /* #undef HAVE_LOG10F */
-/* #undef HAVE_POW */
+#define HAVE_POW 1
 /* #undef HAVE_POWF */
-/* #undef HAVE_SCALBN */
+#define HAVE_SCALBN 1
 /* #undef HAVE_SCALBNF */
-/* #undef HAVE_SIN */
-/* #undef HAVE_SINF */
-/* #undef HAVE_SQRT */
-/* #undef HAVE_SQRTF */
-/* #undef HAVE_TAN */
-/* #undef HAVE_TANF */
+#define HAVE_SIN 1
+#define HAVE_SINF 1
+#define HAVE_SQRT 1
+#define HAVE_SQRTF 1
+#define HAVE_TAN 1
+#define HAVE_TANF 1
 /* #undef HAVE_FOPEN64 */
-/* #undef HAVE_FSEEKO */
+#define HAVE_FSEEKO 1
 /* #undef HAVE_FSEEKO64 */
-/* #undef HAVE_SIGACTION */
-/* #undef HAVE_SA_SIGACTION */
-/* #undef HAVE_SETJMP */
-/* #undef HAVE_NANOSLEEP */
-/* #undef HAVE_SYSCONF */
-/* #undef HAVE_SYSCTLBYNAME */
+#define HAVE_SIGACTION 1
+#define HAVE_SA_SIGACTION 1
+#define HAVE_SETJMP 1
+#define HAVE_NANOSLEEP 1
+#define HAVE_SYSCONF 1
+#define HAVE_SYSCTLBYNAME 1
 /* #undef HAVE_CLOCK_GETTIME */
 /* #undef HAVE_GETPAGESIZE */
-/* #undef HAVE_MPROTECT */
-/* #undef HAVE_ICONV */
-/* #undef HAVE_PTHREAD_SETNAME_NP */
+#define HAVE_MPROTECT 1
+#define HAVE_ICONV 1
+#define HAVE_PTHREAD_SETNAME_NP 1
 /* #undef HAVE_PTHREAD_SET_NAME_NP */
 /* #undef HAVE_SEM_TIMEDWAIT */
 /* #undef HAVE_GETAUXVAL */
-/* #undef HAVE_POLL */
+#define HAVE_POLL 1
 
 #elif __WIN32__
 #define HAVE_STDARG_H 1
@@ -196,17 +196,17 @@
 /* #undef HAVE_DBUS_DBUS_H */
 /* #undef HAVE_FCITX_FRONTEND_H */
 /* #undef HAVE_IBUS_IBUS_H */
-/* #undef HAVE_IMMINTRIN_H */
+#define HAVE_IMMINTRIN_H 1
 /* #undef HAVE_LIBSAMPLERATE_H */
 /* #undef HAVE_LIBUDEV_H */
 
-#define HAVE_D3D_H 1
-#define HAVE_D3D11_H 1
-#define HAVE_DDRAW_H 1
-#define HAVE_DSOUND_H 1
-#define HAVE_DINPUT_H 1
-#define HAVE_XINPUT_H 1
-#define HAVE_DXGI_H 1
+/* #undef HAVE_D3D_H */
+/* #undef HAVE_D3D11_H */
+/* #undef HAVE_DDRAW_H */
+/* #undef HAVE_DSOUND_H */
+/* #undef HAVE_DINPUT_H */
+/* #undef HAVE_XINPUT_H */
+/* #undef HAVE_DXGI_H */
 /* #undef HAVE_XINPUT_GAMEPAD_EX */
 /* #undef HAVE_XINPUT_STATE_EX */
 
@@ -235,9 +235,9 @@
 /* #undef SDL_AUDIO_DRIVER_ANDROID */
 /* #undef SDL_AUDIO_DRIVER_ARTS */
 /* #undef SDL_AUDIO_DRIVER_ARTS_DYNAMIC */
-/* #undef SDL_AUDIO_DRIVER_COREAUDIO */
+#define SDL_AUDIO_DRIVER_COREAUDIO 1
 #define SDL_AUDIO_DRIVER_DISK 1
-#define SDL_AUDIO_DRIVER_DSOUND 1
+/* #undef SDL_AUDIO_DRIVER_DSOUND */
 #define SDL_AUDIO_DRIVER_DUMMY 1
 /* #undef SDL_AUDIO_DRIVER_EMSCRIPTEN */
 /* #undef SDL_AUDIO_DRIVER_ESD */
@@ -259,8 +259,8 @@
 /* #undef SDL_AUDIO_DRIVER_SNDIO */
 /* #undef SDL_AUDIO_DRIVER_SNDIO_DYNAMIC */
 /* #undef SDL_AUDIO_DRIVER_SUNAUDIO */
-#define SDL_AUDIO_DRIVER_WASAPI 1
-#define SDL_AUDIO_DRIVER_WINMM 1
+/* #undef SDL_AUDIO_DRIVER_WASAPI */
+/* #undef SDL_AUDIO_DRIVER_WINMM */
 
 /* Enable various input drivers */
 /* #undef SDL_INPUT_LINUXEV */
@@ -268,10 +268,10 @@
 /* #undef SDL_INPUT_TSLIB */
 /* #undef SDL_JOYSTICK_ANDROID */
 /* #undef SDL_JOYSTICK_HAIKU */
-#define SDL_JOYSTICK_DINPUT 1
-#define SDL_JOYSTICK_XINPUT 1
+/* #undef SDL_JOYSTICK_DINPUT */
+/* #undef SDL_JOYSTICK_XINPUT */
 /* #undef SDL_JOYSTICK_DUMMY */
-/* #undef SDL_JOYSTICK_IOKIT */
+#define SDL_JOYSTICK_IOKIT 1
 /* #undef SDL_JOYSTICK_MFI */
 /* #undef SDL_JOYSTICK_LINUX */
 /* #undef SDL_JOYSTICK_WINMM */
@@ -280,38 +280,38 @@
 /* #undef SDL_JOYSTICK_EMSCRIPTEN */
 /* #undef SDL_HAPTIC_DUMMY */
 /* #undef SDL_HAPTIC_LINUX */
-/* #undef SDL_HAPTIC_IOKIT */
-#define SDL_HAPTIC_DINPUT 1
-#define SDL_HAPTIC_XINPUT 1
+#define SDL_HAPTIC_IOKIT 1
+/* #undef SDL_HAPTIC_DINPUT */
+/* #undef SDL_HAPTIC_XINPUT */
 /* #undef SDL_HAPTIC_ANDROID */
 
 /* Enable various shared object loading systems */
-/* #undef SDL_LOADSO_DLOPEN */
+#define SDL_LOADSO_DLOPEN 1
 /* #undef SDL_LOADSO_DUMMY */
 /* #undef SDL_LOADSO_LDG */
-#define SDL_LOADSO_WINDOWS 1
+/* #undef SDL_LOADSO_WINDOWS */
 
 /* Enable various threading systems */
-/* #undef SDL_THREAD_PTHREAD */
-/* #undef SDL_THREAD_PTHREAD_RECURSIVE_MUTEX */
+#define SDL_THREAD_PTHREAD 1
+#define SDL_THREAD_PTHREAD_RECURSIVE_MUTEX 1
 /* #undef SDL_THREAD_PTHREAD_RECURSIVE_MUTEX_NP */
-#define SDL_THREAD_WINDOWS 1
+/* #undef SDL_THREAD_WINDOWS */
 
 /* Enable various timer systems */
 /* #undef SDL_TIMER_HAIKU */
 /* #undef SDL_TIMER_DUMMY */
-/* #undef SDL_TIMER_UNIX */
-#define SDL_TIMER_WINDOWS 1
+#define SDL_TIMER_UNIX 1
+/* #undef SDL_TIMER_WINDOWS */
 /* #undef SDL_TIMER_WINCE */
 
 /* Enable various video drivers */
 /* #undef SDL_VIDEO_DRIVER_ANDROID */
 /* #undef SDL_VIDEO_DRIVER_HAIKU */
-/* #undef SDL_VIDEO_DRIVER_COCOA */
+#define SDL_VIDEO_DRIVER_COCOA 1
 /* #undef SDL_VIDEO_DRIVER_DIRECTFB */
 /* #undef SDL_VIDEO_DRIVER_DIRECTFB_DYNAMIC */
 #define SDL_VIDEO_DRIVER_DUMMY 1
-#define SDL_VIDEO_DRIVER_WINDOWS 1
+/* #undef SDL_VIDEO_DRIVER_WINDOWS */
 /* #undef SDL_VIDEO_DRIVER_WAYLAND */
 /* #undef SDL_VIDEO_DRIVER_RPI */
 /* #undef SDL_VIDEO_DRIVER_VIVANTE */
@@ -353,8 +353,8 @@
 /* #undef SDL_VIDEO_DRIVER_X11_CONST_PARAM_XEXTADDDISPLAY */
 /* #undef SDL_VIDEO_DRIVER_X11_HAS_XKBKEYCODETOKEYSYM */
 
-#define SDL_VIDEO_RENDER_D3D 1
-#define SDL_VIDEO_RENDER_D3D11 1
+/* #undef SDL_VIDEO_RENDER_D3D */
+/* #undef SDL_VIDEO_RENDER_D3D11 */
 #define SDL_VIDEO_RENDER_OGL 1
 /* #undef SDL_VIDEO_RENDER_OGL_ES */
 #define SDL_VIDEO_RENDER_OGL_ES2 1
@@ -366,9 +366,9 @@
 /* #undef SDL_VIDEO_OPENGL_ES */
 #define SDL_VIDEO_OPENGL_ES2 1
 /* #undef SDL_VIDEO_OPENGL_BGL */
-/* #undef SDL_VIDEO_OPENGL_CGL */
+#define SDL_VIDEO_OPENGL_CGL 1
 /* #undef SDL_VIDEO_OPENGL_GLX */
-#define SDL_VIDEO_OPENGL_WGL 1
+/* #undef SDL_VIDEO_OPENGL_WGL */
 #define SDL_VIDEO_OPENGL_EGL 1
 /* #undef SDL_VIDEO_OPENGL_OSMESA */
 /* #undef SDL_VIDEO_OPENGL_OSMESA_DYNAMIC */
@@ -379,8 +379,8 @@
 /* Enable system power support */
 /* #undef SDL_POWER_ANDROID */
 /* #undef SDL_POWER_LINUX */
-#define SDL_POWER_WINDOWS 1
-/* #undef SDL_POWER_MACOSX */
+/* #undef SDL_POWER_WINDOWS */
+#define SDL_POWER_MACOSX 1
 /* #undef SDL_POWER_HAIKU */
 /* #undef SDL_POWER_EMSCRIPTEN */
 /* #undef SDL_POWER_HARDWIRED */
@@ -388,10 +388,10 @@
 /* Enable system filesystem support */
 /* #undef SDL_FILESYSTEM_ANDROID */
 /* #undef SDL_FILESYSTEM_HAIKU */
-/* #undef SDL_FILESYSTEM_COCOA */
+#define SDL_FILESYSTEM_COCOA 1
 /* #undef SDL_FILESYSTEM_DUMMY */
 /* #undef SDL_FILESYSTEM_UNIX */
-#define SDL_FILESYSTEM_WINDOWS 1
+/* #undef SDL_FILESYSTEM_WINDOWS */
 /* #undef SDL_FILESYSTEM_EMSCRIPTEN */
 
 /* Enable assembly routines */

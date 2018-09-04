@@ -12,8 +12,8 @@ project(glad_download-populate NONE)
 include(ExternalProject)
 ExternalProject_Add(glad_download-populate
                      "UPDATE_DISCONNECTED" "False" "GIT_REPOSITORY" "https://github.com/TRON-N/gladForNibbler.git"
-                    SOURCE_DIR          "C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/glad_download-src"
-                    BINARY_DIR          "C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug/_deps/glad_download-build"
+                    SOURCE_DIR          "/goinfre/lvan-gen/Documents/OpenGLLearning/cmake-build-debug/_deps/glad_download-src"
+                    BINARY_DIR          "/goinfre/lvan-gen/Documents/OpenGLLearning/cmake-build-debug/_deps/glad_download-build"
                     CONFIGURE_COMMAND   ""
                     BUILD_COMMAND       ""
                     INSTALL_COMMAND     ""

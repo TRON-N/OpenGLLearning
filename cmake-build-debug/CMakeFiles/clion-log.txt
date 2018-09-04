@@ -1,12 +1,12 @@
-C:\Users\User\Downloads\cmake-3.11.4-win64-x64\cmake-3.11.4-win64-x64\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - NMake Makefiles" C:\Users\User\Documents\WTC\openGL\learningOpenGL
+/goinfre/lvan-gen/.brew/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -DCMAKE_CXX_COMPILER=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -G "CodeBlocks - Unix Makefiles" /goinfre/lvan-gen/Documents/OpenGLLearning
 -- Could NOT find PkgConfig (missing: PKG_CONFIG_EXECUTABLE) 
 -- 0.8.0 :: 8 :: 0 :: 8 :: 2.0
 -- 
 -- SDL2 was configured with the following options:
 -- 
--- Platform: Windows-10.0.17134
--- 64-bit:   FALSE
--- Compiler: C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Tools/MSVC/14.14.26428/bin/Hostx86/x86/cl.exe
+-- Platform: Darwin-17.7.0
+-- 64-bit:   TRUE
+-- Compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang
 -- 
 -- Subsystems:
 --   Atomic:	ON
@@ -32,23 +32,23 @@ C:\Users\User\Downloads\cmake-3.11.4-win64-x64\cmake-3.11.4-win64-x64\bin\cmake.
 --   ALTIVEC                (Wanted: ON): OFF
 --   ARTS                   (Wanted: OFF): OFF
 --   ARTS_SHARED            (Wanted: OFF): OFF
---   ASSEMBLY               (Wanted: ON): OFF
+--   ASSEMBLY               (Wanted: ON): ON
 --   ASSERTIONS             (Wanted: auto): auto
 --   CLOCK_GETTIME          (Wanted: OFF): OFF
 --   DIRECTFB_SHARED        (Wanted: OFF): OFF
---   DIRECTX                (Wanted: ON): ON
+--   DIRECTX                (Wanted: OFF): OFF
 --   DISKAUDIO              (Wanted: ON): ON
 --   DUMMYAUDIO             (Wanted: ON): ON
 --   ESD                    (Wanted: OFF): OFF
 --   ESD_SHARED             (Wanted: OFF): OFF
 --   FUSIONSOUND            (Wanted: OFF): OFF
 --   FUSIONSOUND_SHARED     (Wanted: OFF): OFF
---   GCC_ATOMICS            (Wanted: OFF): OFF
+--   GCC_ATOMICS            (Wanted: ON): ON
 --   INPUT_TSLIB            (Wanted: OFF): OFF
 --   JACK                   (Wanted: OFF): OFF
 --   JACK_SHARED            (Wanted: OFF): OFF
 --   KMSDRM_SHARED          (Wanted: OFF): OFF
---   LIBC                   (Wanted: OFF): OFF
+--   LIBC                   (Wanted: ON): ON
 --   LIBSAMPLERATE          (Wanted: OFF): OFF
 --   LIBSAMPLERATE_SHARED   (Wanted: OFF): OFF
 --   MIR_SHARED             (Wanted: OFF): OFF
@@ -56,21 +56,21 @@ C:\Users\User\Downloads\cmake-3.11.4-win64-x64\cmake-3.11.4-win64-x64\bin\cmake.
 --   NAS                    (Wanted: OFF): OFF
 --   NAS_SHARED             (Wanted: OFF): OFF
 --   OSS                    (Wanted: OFF): OFF
---   PTHREADS               (Wanted: OFF): OFF
---   PTHREADS_SEM           (Wanted: OFF): OFF
+--   PTHREADS               (Wanted: ON): ON
+--   PTHREADS_SEM           (Wanted: ON): ON
 --   PULSEAUDIO             (Wanted: OFF): OFF
 --   PULSEAUDIO_SHARED      (Wanted: OFF): OFF
---   RENDER_D3D             (Wanted: ON): ON
+--   RENDER_D3D             (Wanted: OFF): OFF
 --   RPATH                  (Wanted: OFF): OFF
---   SDL_DLOPEN             (Wanted: ON): OFF
+--   SDL_DLOPEN             (Wanted: ON): ON
 --   SDL_STATIC_PIC         (Wanted: OFF): OFF
 --   SDL_TEST               (Wanted: OFF): OFF
 --   SNDIO                  (Wanted: OFF): OFF
 --   SSE                    (Wanted: ON): ON
---   SSE2                   (Wanted: OFF): ON
---   SSE3                   (Wanted: OFF): ON
---   SSEMATH                (Wanted: OFF): OFF
---   VIDEO_COCOA            (Wanted: OFF): OFF
+--   SSE2                   (Wanted: ON): ON
+--   SSE3                   (Wanted: ON): ON
+--   SSEMATH                (Wanted: ON): OFF
+--   VIDEO_COCOA            (Wanted: ON): ON
 --   VIDEO_DIRECTFB         (Wanted: OFF): OFF
 --   VIDEO_DUMMY            (Wanted: ON): ON
 --   VIDEO_KMSDRM           (Wanted: OFF): OFF
@@ -93,15 +93,20 @@ C:\Users\User\Downloads\cmake-3.11.4-win64-x64\cmake-3.11.4-win64-x64\bin\cmake.
 --   WAYLAND_SHARED         (Wanted: OFF): OFF
 --   X11_SHARED             (Wanted: OFF): OFF
 -- 
---  CFLAGS:        /DWIN32 /D_WINDOWS /W3
---  EXTRA_CFLAGS:  
---  EXTRA_LDFLAGS: 
---  EXTRA_LIBS:    user32;gdi32;winmm;imm32;ole32;oleaut32;version;uuid;dinput8
+--  CFLAGS:         -idirafter /goinfre/lvan-gen/Documents/OpenGLLearning/cmake-build-debug/_deps/sdl2_download-src/src/video/khronos
+--  EXTRA_CFLAGS:  -D_THREAD_SAFE -msse3 -msse2 -msse -m3dnow -mmmx -Wshadow -fvisibility=hidden -Wdeclaration-after-statement -Werror=declaration-after-statement -Wall 
+--  EXTRA_LDFLAGS: -Wl,-undefined,error
+--  EXTRA_LIBS:    m;iconv;/System/Library/Frameworks/CoreVideo.framework;/System/Library/Frameworks/Cocoa.framework;/System/Library/Frameworks/IOKit.framework;/System/Library/Frameworks/ForceFeedback.framework;/System/Library/Frameworks/Carbon.framework;/System/Library/Frameworks/CoreAudio.framework;/System/Library/Frameworks/AudioToolbox.framework
 -- 
 --  Build Shared Library: ON
 --  Build Static Library: ON
 --  Build Static Library with Position Independent Code: OFF
 -- 
+-- If something was not detected, although the libraries
+-- were installed, then make sure you have set the
+-- CFLAGS and LDFLAGS environment variables correctly.
+-- 
+GLM: Clang - AppleClang compiler
 -- Configuring done
 -- Generating done
--- Build files have been written to: C:/Users/User/Documents/WTC/openGL/learningOpenGL/cmake-build-debug
+-- Build files have been written to: /goinfre/lvan-gen/Documents/OpenGLLearning/cmake-build-debug

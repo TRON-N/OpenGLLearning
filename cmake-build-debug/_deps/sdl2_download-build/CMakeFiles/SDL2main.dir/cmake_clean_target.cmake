@@ -1,3 +1,3 @@
 file(REMOVE_RECURSE
-  "SDL2maind.lib"
+  "libSDL2maind.a"
 )

@@ -6,8 +6,22 @@
 #define LEARNINGOPENGL_VERTEXARRAY_HPP
 
 
-class VertexArray {
+#include "VertexBuffer.hpp"
+#include "ElementBuffer.hpp"
+#include "BufferLayout/VertexBufferLayout.hpp"
 
+class VertexArray {
+public:
+	VertexArray();
+	~VertexArray();
+	void setVertexBuffer(VertexBuffer &vbo, VertexBufferLayout &bufferLayout);
+	void setElementBuffer(ElementBuffer &ebo);
+	void unsetElementBuffer();
+	void bind();
+	static void unbind();
+
+private:
+	unsigned int m_vertexArrayId;
 };
 
 
