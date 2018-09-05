@@ -88,4 +88,8 @@ void Shader::setUniformMatrix4fv(const std::string &name, const float *data, boo
 	glUniformMatrix4fv(this->getUniformLocation(name), 1, shouldTranspose ? GL_TRUE : GL_FALSE, (const GLfloat*)data);
 }
 
+void Shader::setUniformInt(const std::string &name, int value) {
+	glUniform1i(this->getUniformLocation(name), value);
+}
+
 

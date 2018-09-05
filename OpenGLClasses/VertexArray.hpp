@@ -13,7 +13,10 @@
 class VertexArray {
 public:
 	VertexArray();
+	VertexArray(VertexArray &obj);
+	VertexArray &operator = (const VertexArray& obj);
 	~VertexArray();
+
 	void setVertexBuffer(VertexBuffer &vbo, VertexBufferLayout &bufferLayout);
 	void setElementBuffer(ElementBuffer &ebo);
 	void unsetElementBuffer();

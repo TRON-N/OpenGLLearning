@@ -9,7 +9,9 @@
 class VertexBuffer {
 public:
 	VertexBuffer(unsigned int size, void *data);
+	VertexBuffer();
 	~VertexBuffer();
+
 	void bind();
 	static void unbind();
 private:

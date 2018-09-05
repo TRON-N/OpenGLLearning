@@ -24,3 +24,7 @@ void VertexBuffer::bind() {
 void VertexBuffer::unbind() {
 	GL_ERROR_WRAPPER(glBindBuffer(GL_ARRAY_BUFFER, 0));
 }
+
+VertexBuffer::VertexBuffer() {
+
+}

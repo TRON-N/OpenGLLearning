@@ -42,9 +42,8 @@ void VertexArray::setVertexBuffer(VertexBuffer &vbo, VertexBufferLayout &bufferL
 
 void VertexArray::setElementBuffer(ElementBuffer &ebo) {
 	this->bind();
-	ebo.bind();
+	ebo.setUpForVertexArray();
 	this->unbind();
-	ebo.unbind();
 }
 
 void VertexArray::unsetElementBuffer() {
@@ -59,4 +58,16 @@ void VertexArray::bind() {
 
 void VertexArray::unbind() {
 	GL_ERROR_WRAPPER(glBindVertexArray(0));
+}
+
+VertexArray::VertexArray(VertexArray &obj) {
+	*this = obj;
+}
+
+VertexArray &VertexArray::operator=(const VertexArray &obj){
+	if (&obj != this) {
+		this->m_attribPointerId = obj.m_attribPointerId;
+		this->m_vertexArrayId = obj.m_vertexArrayId;
+	}
+	return *this;
 }

@@ -15,7 +15,7 @@ FetchContent_GetProperties(glad_download)
 if(NOT glad_download_POPULATED)
     FetchContent_Populate(glad_download)
     include_directories(${glad_download_SOURCE_DIR}/include)
-    set(glad_SOURCE_FILE "${glad_download_SOURCE_DIR}/src/glad.c" OpenGLClasses/BufferLayout/LayoutElement.cpp OpenGLClasses/BufferLayout/LayoutElement.hpp)
+    set(glad_SOURCE_FILE "${glad_download_SOURCE_DIR}/src/glad.c" OpenGLClasses/BufferLayout/LayoutElement.cpp OpenGLClasses/BufferLayout/LayoutElement.hpp OpenGLClasses/Models/Model.cpp OpenGLClasses/Models/Model.hpp)
 endif()
 
 FetchContent_Declare(
