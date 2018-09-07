@@ -74,7 +74,7 @@ int main(int argc, char *argv[])
 		return -1;
 	}
 
-	AssimpInterperater interperater("../cubeWithTexture.dae");
+	AssimpInterperater interperater("../BomberBoi.obj");
 	std::vector<ModelMesh *> modelMeshList = interperater.getModelMeshList();
 
 	unsigned int texture1, texture2;

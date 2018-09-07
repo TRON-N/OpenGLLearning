@@ -48,9 +48,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0426633c-ebfc-4ce9-8efb-baa9f9034645" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/OpenGLClasses/Texture.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OpenGLClasses/Texture.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenGLClasses/ModelManagement/AssimpInterperater/AssimpInterperater.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/OpenGLClasses/ModelManagement/AssimpInterperater/AssimpInterperater.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -66,11 +67,25 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="197" column="60" selection-start-line="197" selection-start-column="60" selection-end-line="197" selection-end-column="60" />
+            <state relative-caret-position="-40">
+              <caret line="74" column="5" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Texture.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/OpenGLClasses/Texture.cpp">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="Texture.hpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/OpenGLClasses/Texture.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -91,11 +106,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AssimpInterperater.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AssimpInterperater.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/OpenGLClasses/ModelManagement/AssimpInterperater/AssimpInterperater.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="453">
-              <caret line="66" column="38" selection-start-line="66" selection-start-column="38" selection-end-line="66" selection-end-column="38" />
+            <state relative-caret-position="408">
+              <caret line="61" column="38" selection-start-line="61" selection-start-column="38" selection-end-line="61" selection-end-column="38" />
               <folding>
                 <element signature="e#54#85#0" expanded="true" />
               </folding>
@@ -113,11 +128,6 @@
               </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ballo.obj" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ballo.obj">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file leaf-file-name="BomberBoi.obj" pinned="false" current-in-tab="false">
@@ -192,8 +202,9 @@
         <option value="$PROJECT_DIR$/OpenGLClasses/ModelManagement/Models/Model.cpp" />
         <option value="$PROJECT_DIR$/OpenGLClasses/ModelManagement/Models/ModelMesh.hpp" />
         <option value="$PROJECT_DIR$/OpenGLClasses/ModelManagement/AssimpInterperater/AssimpInterperater.hpp" />
-        <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/OpenGLClasses/ModelManagement/AssimpInterperater/AssimpInterperater.cpp" />
+        <option value="$PROJECT_DIR$/main.cpp" />
+        <option value="$PROJECT_DIR$/OpenGLClasses/Texture.hpp" />
       </list>
     </option>
   </component>
@@ -230,26 +241,6 @@
               <item name="learningOpenGL" type="b2602c69:ProjectViewProjectNode" />
               <item name="OpenGLLearning" type="462c0819:PsiDirectoryNode" />
               <item name="OpenGLClasses" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="learningOpenGL" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OpenGLLearning" type="462c0819:PsiDirectoryNode" />
-              <item name="OpenGLClasses" type="462c0819:PsiDirectoryNode" />
-              <item name="ModelManagement" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="learningOpenGL" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OpenGLLearning" type="462c0819:PsiDirectoryNode" />
-              <item name="OpenGLClasses" type="462c0819:PsiDirectoryNode" />
-              <item name="ModelManagement" type="462c0819:PsiDirectoryNode" />
-              <item name="AssimpInterperater" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="learningOpenGL" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OpenGLLearning" type="462c0819:PsiDirectoryNode" />
-              <item name="OpenGLClasses" type="462c0819:PsiDirectoryNode" />
-              <item name="ModelManagement" type="462c0819:PsiDirectoryNode" />
-              <item name="Models" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -686,7 +677,7 @@
       <workItem from="1536129777812" duration="16768000" />
       <workItem from="1536212078526" duration="8881000" />
       <workItem from="1536304694391" duration="9088000" />
-      <workItem from="1536323679513" duration="4135000" />
+      <workItem from="1536323679513" duration="4822000" />
     </task>
     <task id="LOCAL-00001" summary="added git ignore, and deleted cmake-build-debug">
       <created>1536129912036</created>
@@ -709,11 +700,25 @@
       <option name="project" value="LOCAL" />
       <updated>1536327652843</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Made a small change, so the system now supports loading .dae files.">
+      <created>1536329125895</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1536329125895</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Deleted some extra unused stuff from the main, and add two object files">
+      <created>1536329369353</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1536329369353</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78006000" />
+    <option name="totallyTimeSpent" value="78693000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
@@ -722,11 +727,11 @@
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22011586" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.32935324" />
-      <window_info anchor="bottom" id="CMake" order="11" weight="0.3283582" />
+      <window_info active="true" anchor="bottom" id="CMake" order="11" visible="true" weight="0.3283582" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32935324" />
       <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2756219" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2756219" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -769,14 +774,16 @@
     <MESSAGE value="added git ignore, and deleted cmake-build-debug" />
     <MESSAGE value="Finished the basic model class, and set the program so it render's cubes" />
     <MESSAGE value="I refactored the Model class, into the ModelMesh class. Soon I will&#10;write a new Model class, but it will be made up of multiple ModelMeshes." />
-    <option name="LAST_COMMIT_MESSAGE" value="I refactored the Model class, into the ModelMesh class. Soon I will&#10;write a new Model class, but it will be made up of multiple ModelMeshes." />
+    <MESSAGE value="Made a small change, so the system now supports loading .dae files." />
+    <MESSAGE value="Deleted some extra unused stuff from the main, and add two object files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Deleted some extra unused stuff from the main, and add two object files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>338</line>
+          <line>203</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
@@ -800,20 +807,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="287" selection-start-line="33" selection-start-column="287" selection-end-line="33" selection-end-column="287" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OpenGLClasses/VertexBuffer.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="615">
@@ -1105,23 +1098,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/OpenGLClasses/ModelManagement/AssimpInterperater/AssimpInterperater.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="61" column="38" selection-start-line="61" selection-start-column="38" selection-end-line="61" selection-end-column="38" />
+          <folding>
+            <element signature="e#54#85#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="197" column="60" selection-start-line="197" selection-start-column="60" selection-end-line="197" selection-end-column="60" />
+        <state relative-caret-position="-40">
+          <caret line="74" column="5" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OpenGLClasses/ModelManagement/AssimpInterperater/AssimpInterperater.cpp">
+    <entry file="file://$PROJECT_DIR$/OpenGLClasses/Texture.cpp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OpenGLClasses/Texture.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="66" column="38" selection-start-line="66" selection-start-column="38" selection-end-line="66" selection-end-column="38" />
-          <folding>
-            <element signature="e#54#85#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="225">
+          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
         </state>
       </provider>
     </entry>
