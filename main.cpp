@@ -195,7 +195,7 @@ int main(int argc, char *argv[])
 	unsigned int indicies[] = {	0, 1, 3,
 								0, 2, 3};
 
-	AssimpInterperater interperater("../BomberBoi.obj");
+	AssimpInterperater interperater("../cubeWithTexture.dae");
 	std::vector<ModelMesh *> modelMeshList = interperater.getModelMeshList();
 
 	unsigned int texture1, texture2;

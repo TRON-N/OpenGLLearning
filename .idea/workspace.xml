@@ -47,14 +47,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0426633c-ebfc-4ce9-8efb-baa9f9034645" name="Default" comment="Finished the basic model class, and set the program so it render's cubes">
-      <change afterPath="$PROJECT_DIR$/OpenGLClasses/ModelManagement/s_VertexData.hpp" afterDir="false" />
+    <list default="true" id="0426633c-ebfc-4ce9-8efb-baa9f9034645" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenGLClasses/AssimpInterperater/AssimpInterperater.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/OpenGLClasses/ModelManagement/AssimpInterperater/AssimpInterperater.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenGLClasses/AssimpInterperater/AssimpInterperater.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/OpenGLClasses/ModelManagement/AssimpInterperater/AssimpInterperater.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenGLClasses/Models/Model.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/OpenGLClasses/ModelManagement/Models/ModelMesh.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenGLClasses/Models/Model.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/OpenGLClasses/ModelManagement/Models/ModelMesh.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenGLClasses/ModelManagement/AssimpInterperater/AssimpInterperater.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/OpenGLClasses/ModelManagement/AssimpInterperater/AssimpInterperater.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/" />
@@ -71,35 +66,36 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="198" column="25" selection-start-line="198" selection-start-column="25" selection-end-line="198" selection-end-column="25" />
+            <state relative-caret-position="363">
+              <caret line="197" column="60" selection-start-line="197" selection-start-column="60" selection-end-line="197" selection-end-column="60" />
+              <folding>
+                <element signature="e#0#16#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ModelMesh.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ModelMesh.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/OpenGLClasses/ModelManagement/Models/ModelMesh.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1194">
-              <caret line="89" column="46" selection-start-line="89" selection-start-column="46" selection-end-line="89" selection-end-column="46" />
+            <state relative-caret-position="315">
+              <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <file leaf-file-name="cubeWithTexture.dae" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cubeWithTexture.dae">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="41" column="34" selection-start-line="41" selection-start-column="34" selection-end-line="41" selection-end-column="34" />
-            </state>
+            <state relative-caret-position="-1039" />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AssimpInterperater.cpp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AssimpInterperater.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/OpenGLClasses/ModelManagement/AssimpInterperater/AssimpInterperater.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="35" selection-start-line="35" selection-end-line="35" />
+            <state relative-caret-position="453">
+              <caret line="66" column="38" selection-start-line="66" selection-start-column="38" selection-end-line="66" selection-end-column="38" />
               <folding>
                 <element signature="e#54#85#0" expanded="true" />
               </folding>
@@ -141,7 +137,7 @@
       <file leaf-file-name="AssimpInterperater.hpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/OpenGLClasses/ModelManagement/AssimpInterperater/AssimpInterperater.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
+            <state relative-caret-position="210">
               <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
             </state>
           </provider>
@@ -690,7 +686,7 @@
       <workItem from="1536129777812" duration="16768000" />
       <workItem from="1536212078526" duration="8881000" />
       <workItem from="1536304694391" duration="9088000" />
-      <workItem from="1536323679513" duration="3282000" />
+      <workItem from="1536323679513" duration="4135000" />
     </task>
     <task id="LOCAL-00001" summary="added git ignore, and deleted cmake-build-debug">
       <created>1536129912036</created>
@@ -706,11 +702,18 @@
       <option name="project" value="LOCAL" />
       <updated>1536154065388</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="I refactored the Model class, into the ModelMesh class. Soon I will&#10;write a new Model class, but it will be made up of multiple ModelMeshes.">
+      <created>1536327652843</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1536327652843</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77153000" />
+    <option name="totallyTimeSpent" value="78006000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
@@ -765,7 +768,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added git ignore, and deleted cmake-build-debug" />
     <MESSAGE value="Finished the basic model class, and set the program so it render's cubes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished the basic model class, and set the program so it render's cubes" />
+    <MESSAGE value="I refactored the Model class, into the ModelMesh class. Soon I will&#10;write a new Model class, but it will be made up of multiple ModelMeshes." />
+    <option name="LAST_COMMIT_MESSAGE" value="I refactored the Model class, into the ModelMesh class. Soon I will&#10;write a new Model class, but it will be made up of multiple ModelMeshes." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -796,19 +800,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/OpenGLClasses/VertexArray.cpp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OpenGLClasses/VertexArray.hpp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/extern/stb_file.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
@@ -1079,30 +1070,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="198" column="25" selection-start-line="198" selection-start-column="25" selection-end-line="198" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OpenGLClasses/ModelManagement/AssimpInterperater/AssimpInterperater.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OpenGLClasses/ModelManagement/AssimpInterperater/AssimpInterperater.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
-          <folding>
-            <element signature="e#54#85#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/OpenGLClasses/ModelManagement/Models/ModelMesh.hpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -1113,10 +1080,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/cubeWithTexture.mtl">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cubeWithTexture.obj">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/OpenGLClasses/ModelManagement/Models/ModelMesh.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1194">
-          <caret line="89" column="46" selection-start-line="89" selection-start-column="46" selection-end-line="89" selection-end-column="46" />
+        <state relative-caret-position="315">
+          <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cubeWithTexture.dae">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1039" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OpenGLClasses/ModelManagement/AssimpInterperater/AssimpInterperater.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="197" column="60" selection-start-line="197" selection-start-column="60" selection-end-line="197" selection-end-column="60" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OpenGLClasses/ModelManagement/AssimpInterperater/AssimpInterperater.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="66" column="38" selection-start-line="66" selection-start-column="38" selection-end-line="66" selection-end-column="38" />
+          <folding>
+            <element signature="e#54#85#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

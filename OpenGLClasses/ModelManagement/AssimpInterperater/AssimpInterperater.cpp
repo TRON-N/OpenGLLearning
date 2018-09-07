@@ -22,7 +22,8 @@ void AssimpInterperater::processAssimpNode(aiNode *node) {
 	assert(node != nullptr);
 	std::cout << "Meshes In Node: " << node->mNumMeshes << std::endl;
 	std::cout << "Children In Node: " << node->mNumChildren << std::endl;
-	assert(node->mNumChildren == 0);
+	for (unsigned int i = 0; i < node->mNumChildren; i++)
+		this->processAssimpNode(node->mChildren[i]);
 
 	for (unsigned int i = 0; i < node->mNumMeshes; i++)
 		processAssimpMesh(node->mMeshes[i]);
@@ -59,11 +60,9 @@ std::vector<ModelMesh *> AssimpInterperater::getModelMeshList() {
 	assert(this->m_scene != nullptr);
 	aiNode *assimpRootNode = this->m_scene->mRootNode;
 	assert(assimpRootNode != nullptr);
+	assert(assimpRootNode->mNumChildren >= 1);
 
-	std::cout << "Children In Node: " << assimpRootNode->mNumChildren << std::endl;
-	assert(assimpRootNode->mNumChildren == 1);
-
-	this->processAssimpNode(assimpRootNode->mChildren[0]);
+	processAssimpNode(assimpRootNode);
 	return this->m_modelMeshList;
 }
 
