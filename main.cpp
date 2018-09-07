@@ -1,19 +1,12 @@
-#include "OpenGLClasses/openGLFunctionCallErrorManagementWrapper.hpp"
-#include "OpenGLClasses/VertexBuffer.hpp"
-#include "OpenGLClasses/Shader.hpp"
-#include "OpenGLClasses/ElementBuffer.hpp"
-#include "extern/stb_image.h"
-#include "OpenGLClasses/VertexArray.hpp"
-#include "OpenGLClasses/Models/Model.hpp"
-#include "OpenGLClasses/AssimpInterperater/AssimpInterperater.hpp"
-#include <iostream>
 #include <SDL.h>
-#include <glad/glad.h>
-#include <SDL_opengl.h>
 #include <iostream>
-#include <glm/glm.hpp>
+#include <glad/glad.h>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
+#include "OpenGLClasses/ModelManagement/AssimpInterperater/AssimpInterperater.hpp"
+#include "extern/stb_image.h"
+#include "OpenGLClasses/Shader.hpp"
+#include "OpenGLClasses/openGLFunctionCallErrorManagementWrapper.hpp"
 
 // settings
 const unsigned int SCR_WIDTH = 800;
@@ -203,13 +196,7 @@ int main(int argc, char *argv[])
 								0, 2, 3};
 
 	AssimpInterperater interperater("../BomberBoi.obj");
-
-	Model boxModel;
-
-	boxModel.addVertexData(&interperater.getVertexPositions()[0], GL_FLOAT, interperater.getVertexPositions().size() * sizeof(float), 3);
-//	boxModel.addVertexData(vertexColors, GL_FLOAT, sizeof(vertexColors), 3);
-//	boxModel.addVertexData(vertexTextureCoords, GL_FLOAT, sizeof(vertexTextureCoords), 2);
-	boxModel.setElementBuffer(&interperater.getVertexIndices()[0], interperater.getVertexIndices().size() * sizeof(int), GL_STATIC_DRAW);
+	std::vector<ModelMesh *> modelMeshList = interperater.getModelMeshList();
 
 	unsigned int texture1, texture2;
 	// texture 1
@@ -273,9 +260,6 @@ int main(int argc, char *argv[])
 	shaderProgram.setUniformInt("texture1", 0);
 	shaderProgram.setUniformInt("texture2", 1);
 
-	VertexArray &boxVAO = boxModel.getVertexArray();
-	boxVAO.bind();
-
 	glm::mat4 view(1.0f);
 	view = glm::translate(view, glm::vec3(0.0f, 0.0f, -5.5f));
 
@@ -286,8 +270,10 @@ int main(int argc, char *argv[])
 //	model = glm::rotate(model, glm::radians(-70.0f), glm::vec3(1.0f, 0.0f, 0.0f));
 //	boxModel.rotate(-70.0f, 0, 0);
 //	boxModel.rotate(45.0f, 0.0f, 45.0f);
-	boxModel.scale(1.7f, 1.7f, 1.7f);
-	boxModel.translate(0.0f, -1.0f, 0.0f);
+		for (auto model: modelMeshList) {
+			model->scale(1.7f, 1.7f, 1.7f);
+			model->translate(0.0f, -1.0f, 0.0f);
+		}
 
 	shaderProgram.setUniformMatrix4fv("view", glm::value_ptr(view), GL_FALSE);
 	shaderProgram.setUniformMatrix4fv("projection", glm::value_ptr(projection), GL_FALSE);
@@ -326,20 +312,21 @@ int main(int argc, char *argv[])
 
 		// render
 		// ------
-		shaderProgram.setUniformMatrix4fv("model", glm::value_ptr(boxModel.getModelToWorldMatrix()), GL_FALSE);
+	//	shaderProgram.setUniformMatrix4fv("model", glm::value_ptr(boxModel.getModelToWorldMatrix()), GL_FALSE);
 	//	boxModel.rotate(SDL_GetTicks() / 10, SDL_GetTicks() / 20, 0);
 
 		GL_ERROR_WRAPPER(glClearColor(0.2f, 0.3f, 0.3f, 1.0f));
 		GL_ERROR_WRAPPER(glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT ));
 
 		// render the triangle
-		for(unsigned int i = 0; i < 1; i++)
+		for(auto model: modelMeshList)
 		{
 //			boxModel.translate(cubePositions[i].x, cubePositions[i].y, cubePositions[i].z);
+			model->getVertexArray().bind();
 			float angle = 20.0f * 2;
-			boxModel.rotate(0, SDL_GetTicks() / angle * 5, 0);
-			shaderProgram.setUniformMatrix4fv("model", glm::value_ptr(boxModel.getModelToWorldMatrix()), GL_FALSE);
-			glDrawElements(GL_TRIANGLES, interperater.getVertexIndices().size(), GL_UNSIGNED_INT, 0);;
+			model->rotate(0, SDL_GetTicks() / angle * 5, 0);
+			shaderProgram.setUniformMatrix4fv("model", glm::value_ptr(model->getModelToWorldMatrix()), GL_FALSE);
+			glDrawElements(GL_TRIANGLES, model->getVertexAmount(), GL_UNSIGNED_INT, 0);;
 		}
 	//	GL_ERROR_WRAPPER(glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0));
 

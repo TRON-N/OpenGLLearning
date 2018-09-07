@@ -7,12 +7,13 @@
 
 
 #include <glm/mat4x4.hpp>
-#include "../VertexArray.hpp"
+#include "../../VertexArray.hpp"
+#include "../s_VertexData.hpp"
 
-class Model {
+class ModelMesh {
 public:
-	Model();
-	~Model();
+	ModelMesh(std::vector<s_VertexData> vertexData, std::vector<unsigned int> vertexDrawingIndices);
+	~ModelMesh();
 
 	void rotate(float xRotation, float yRotation, float zRotation);
 	void scale(float scaleFactor, float yScaleFactor, float zScaleFactor);
@@ -21,14 +22,19 @@ public:
 	glm::mat4 getModelToWorldMatrix();
 	VertexArray & getVertexArray();
 
-	void addVertexData(float *data, unsigned int dataType, unsigned int dataSize, unsigned int unitsPerVertex,
-						   bool shouldNormalize = false);
-	void setElementBuffer(unsigned int *data, unsigned int dataSize, int drawOption);
+	unsigned int getVertexAmount();
+
+
 
 private:
-	VertexArray					m_vertexArray;
+	void setUpVertexArray();
+	void setElementBuffer();
+	VertexArray					*m_vertexArray;
+	VertexBuffer				*m_vertexBuffer;
 	ElementBuffer				*m_elementBuffer;
-	std::vector<VertexBuffer *>	m_vertexDataBuffers;
+	
+	std::vector<s_VertexData>	m_vertexData;
+	std::vector<unsigned int>	m_vertexDrawingIndices;
 
 	glm::mat4					m_rotationMatrix;
 	glm::mat4					m_translationMatrix;
