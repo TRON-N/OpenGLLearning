@@ -74,127 +74,6 @@ int main(int argc, char *argv[])
 		return -1;
 	}
 
-	float vertexCoords[] {
-			-0.5f, -0.5f, -0.5f,
-			0.5f, -0.5f, -0.5f,
-			0.5f,  0.5f, -0.5f,
-			0.5f,  0.5f, -0.5f,
-			-0.5f,  0.5f, -0.5f,
-			-0.5f, -0.5f, -0.5f,
-			-0.5f, -0.5f,  0.5f,
-			0.5f, -0.5f,  0.5f,
-			0.5f,  0.5f,  0.5f,
-			0.5f,  0.5f,  0.5f,
-			-0.5f,  0.5f,  0.5f,
-			-0.5f, -0.5f,  0.5f,
-			-0.5f,  0.5f,  0.5f,
-			-0.5f,  0.5f, -0.5f,
-			-0.5f, -0.5f, -0.5f,
-			-0.5f, -0.5f, -0.5f,
-			-0.5f, -0.5f,  0.5f,
-			-0.5f,  0.5f,  0.5f,
-			0.5f,  0.5f,  0.5f,
-			0.5f,  0.5f, -0.5f,
-			0.5f, -0.5f, -0.5f,
-			0.5f, -0.5f, -0.5f,
-			0.5f, -0.5f,  0.5f,
-			0.5f,  0.5f,  0.5f,
-			-0.5f, -0.5f, -0.5f,
-			0.5f, -0.5f, -0.5f,
-			0.5f, -0.5f,  0.5f,
-			0.5f, -0.5f,  0.5f,
-			-0.5f, -0.5f,  0.5f,
-			-0.5f, -0.5f, -0.5f,
-			-0.5f,  0.5f, -0.5f,
-			0.5f,  0.5f, -0.5f,
-			0.5f,  0.5f,  0.5f,
-			0.5f,  0.5f,  0.5f,
-			-0.5f,  0.5f,  0.5f,
-			-0.5f,  0.5f, -0.5f
-	};
-
-	float vertexColors[] {
-			0.0f, 0.0f, 0.5f,
-			1.0f, 0.0f, 0.5f,
-			1.0f, 1.0f, 0.5f,
-			1.0f, 1.0f, 0.5f,
-			0.0f, 1.0f, 0.5f,
-			0.0f, 0.0f, 0.5f,
-			0.0f, 0.0f, 0.5f,
-			1.0f, 0.0f, 0.5f,
-			1.0f, 1.0f, 0.5f,
-			1.0f, 1.0f, 0.5f,
-			0.0f, 1.0f, 0.5f,
-			0.0f, 0.0f, 0.5f,
-			1.0f, 0.0f, 0.5f,
-			1.0f, 1.0f, 0.5f,
-			0.0f, 1.0f, 0.5f,
-			0.0f, 1.0f, 0.5f,
-			0.0f, 0.0f, 0.5f,
-			1.0f, 0.0f, 0.5f,
-			1.0f, 0.0f, 0.5f,
-			1.0f, 1.0f, 0.5f,
-			0.0f, 1.0f, 0.5f,
-			0.0f, 1.0f, 0.5f,
-			0.0f, 0.0f, 0.5f,
-			1.0f, 0.0f, 0.5f,
-			0.0f, 1.0f, 0.5f,
-			1.0f, 1.0f, 0.5f,
-			1.0f, 0.0f, 0.5f,
-			1.0f, 0.0f, 0.5f,
-			0.0f, 0.0f, 0.5f,
-			0.0f, 1.0f, 0.5f,
-			0.0f, 1.0f, 0.5f,
-			1.0f, 1.0f, 0.5f,
-			1.0f, 0.0f, 0.5f,
-			1.0f, 0.0f, 0.5f,
-			0.0f, 0.0f, 0.5f,
-			0.0f, 1.0f, 1.0f
-	};
-
-	float vertexTextureCoords[] {
-			0.0f, 0.0f,
-			1.0f, 0.0f,
-			1.0f, 1.0f,
-			1.0f, 1.0f,
-			0.0f, 1.0f,
-			0.0f, 0.0f,
-			0.0f, 0.0f,
-			1.0f, 0.0f,
-			1.0f, 1.0f,
-			1.0f, 1.0f,
-			0.0f, 1.0f,
-			0.0f, 0.0f,
-			1.0f, 0.0f,
-			1.0f, 1.0f,
-			0.0f, 1.0f,
-			0.0f, 1.0f,
-			0.0f, 0.0f,
-			1.0f, 0.0f,
-			1.0f, 0.0f,
-			1.0f, 1.0f,
-			0.0f, 1.0f,
-			0.0f, 1.0f,
-			0.0f, 0.0f,
-			1.0f, 0.0f,
-			0.0f, 1.0f,
-			1.0f, 1.0f,
-			1.0f, 0.0f,
-			1.0f, 0.0f,
-			0.0f, 0.0f,
-			0.0f, 1.0f,
-			0.0f, 1.0f,
-			1.0f, 1.0f,
-			1.0f, 0.0f,
-			1.0f, 0.0f,
-			0.0f, 0.0f,
-			0.0f, 1.0f
-	};
-
-
-	unsigned int indicies[] = {	0, 1, 3,
-								0, 2, 3};
-
 	AssimpInterperater interperater("../cubeWithTexture.dae");
 	std::vector<ModelMesh *> modelMeshList = interperater.getModelMeshList();
 
@@ -266,10 +145,6 @@ int main(int argc, char *argv[])
 	glm::mat4 projection(1.0f);
 	projection = glm::perspective(glm::radians(55.0f), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
 
-//	glm::mat4 model(1.0f);
-//	model = glm::rotate(model, glm::radians(-70.0f), glm::vec3(1.0f, 0.0f, 0.0f));
-//	boxModel.rotate(-70.0f, 0, 0);
-//	boxModel.rotate(45.0f, 0.0f, 45.0f);
 		for (auto model: modelMeshList) {
 			model->scale(1.7f, 1.7f, 1.7f);
 			model->translate(0.0f, -1.0f, 0.0f);
@@ -299,8 +174,6 @@ int main(int argc, char *argv[])
 	bool loop = true;
 	while (loop)
 	{
-		// input
-		// -----
 
 		SDL_Event event;
 		while (SDL_PollEvent(&event)) {
@@ -310,26 +183,18 @@ int main(int argc, char *argv[])
 			}
 		}
 
-		// render
-		// ------
-	//	shaderProgram.setUniformMatrix4fv("model", glm::value_ptr(boxModel.getModelToWorldMatrix()), GL_FALSE);
-	//	boxModel.rotate(SDL_GetTicks() / 10, SDL_GetTicks() / 20, 0);
 
 		GL_ERROR_WRAPPER(glClearColor(0.2f, 0.3f, 0.3f, 1.0f));
 		GL_ERROR_WRAPPER(glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT ));
 
-		// render the triangle
 		for(auto model: modelMeshList)
 		{
-//			boxModel.translate(cubePositions[i].x, cubePositions[i].y, cubePositions[i].z);
 			model->getVertexArray().bind();
 			float angle = 20.0f * 2;
 			model->rotate(0, SDL_GetTicks() / angle * 5, 0);
 			shaderProgram.setUniformMatrix4fv("model", glm::value_ptr(model->getModelToWorldMatrix()), GL_FALSE);
 			glDrawElements(GL_TRIANGLES, model->getVertexAmount(), GL_UNSIGNED_INT, 0);;
 		}
-	//	GL_ERROR_WRAPPER(glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0));
-
 		SDL_GL_SwapWindow(GLOBAL_SDL_WINDOW);
 	}
 	SDL_GL_DeleteContext(gl_context);
