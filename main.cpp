@@ -93,19 +93,6 @@ int main(int argc, char *argv[])
 	shaderProgram.setUniformMatrix4fv("view", glm::value_ptr(view), GL_FALSE);
 	shaderProgram.setUniformMatrix4fv("projection", glm::value_ptr(projection), GL_FALSE);
 
-	glm::vec3 cubePositions[] = {
-			glm::vec3( 1.0f,  -0.5f,  0.0f),
-			glm::vec3( 2.0f,  5.0f, -15.0f),
-			glm::vec3(-1.5f, -2.2f, -2.5f),
-			glm::vec3(-3.8f, -3.0f, -12.3f),
-			glm::vec3( 2.4f, -0.4f, -3.5f),
-			glm::vec3(-1.7f,  3.0f, -7.5f),
-			glm::vec3( 5.3f, -1.0f, -2.5f),
-			glm::vec3(-2.5f,  2.0f, -2.5f),
-			glm::vec3(-4.5f,  0.2f, -1.5f),
-			glm::vec3(-1.3f,  1.0f, -1.5f)
-	};
-
 	glEnable(GL_DEPTH_TEST);
 	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
@@ -122,7 +109,6 @@ int main(int argc, char *argv[])
 				break;
 			}
 		}
-
 
 		GL_ERROR_WRAPPER(glClearColor(0.2f, 0.3f, 0.3f, 1.0f));
 		GL_ERROR_WRAPPER(glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT ));
