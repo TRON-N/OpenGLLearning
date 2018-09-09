@@ -114,7 +114,7 @@ int main(int argc, char *argv[])
 		GL_ERROR_WRAPPER(glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT ));
 
 		float angle = 20.0f * 2;
-		testModel.rotate(0, SDL_GetTicks() / angle * 5, 0);
+		testModel.rotate(0, SDL_GetTicks() / angle, 0);
 		testModel.draw(shaderProgram);
 
 		SDL_GL_SwapWindow(GLOBAL_SDL_WINDOW);
