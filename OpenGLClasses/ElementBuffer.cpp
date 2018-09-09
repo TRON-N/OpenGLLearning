@@ -3,6 +3,7 @@
 //
 
 #include <glad/glad.h>
+#include <iostream>
 #include "ElementBuffer.hpp"
 #include "openGLFunctionCallErrorManagementWrapper.hpp"
 
@@ -15,6 +16,7 @@ ElementBuffer::ElementBuffer(unsigned int size, void *data, int drawOption) {
 
 ElementBuffer::~ElementBuffer() {
 	GL_ERROR_WRAPPER(glDeleteBuffers(1, &(this->m_elementBufferId)));
+	std::cout << "EBO destructor called" << std::endl;
 }
 
 void ElementBuffer::setUpForVertexArray() {

@@ -7,6 +7,7 @@
 #include "extern/stb_image.h"
 #include "OpenGLClasses/Shader.hpp"
 #include "OpenGLClasses/openGLFunctionCallErrorManagementWrapper.hpp"
+#include "OpenGLClasses/ModelManagement/Models/Model.hpp"
 
 // settings
 const unsigned int SCR_WIDTH = 800;
@@ -76,68 +77,7 @@ int main(int argc, char *argv[])
 
 	AssimpInterperater interperater("../BomberBoi.obj");
 	std::vector<ModelMesh *> modelMeshList = interperater.getModelMeshList();
-
-	unsigned int texture1, texture2;
-	// texture 1
-	// ---------
-	glGenTextures(1, &texture1);
-	glBindTexture(GL_TEXTURE_2D, texture1);
-	// set the texture wrapping parameters
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-	// set texture filtering parameters
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-	// load image, create texture and generate mipmaps
-	int width, height, nrChannels;
-	stbi_set_flip_vertically_on_load(true); // tell stb_image.h to flip loaded texture's on the y-axis.
-	unsigned char *data = stbi_load("../container.jpg", &width, &height, &nrChannels, 0);
-	if (data)
-	{
-		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
-		glGenerateMipmap(GL_TEXTURE_2D);
-	}
-	else
-	{
-		std::cout << "Failed to load texture" << std::endl;
-	}
-	stbi_image_free(data);
-	// texture 2
-	// ---------
-	glGenTextures(1, &texture2);
-	glBindTexture(GL_TEXTURE_2D, texture2);
-	// set the texture wrapping parameters
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-	// set texture filtering parameters
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-	// load image, create texture and generate mipmaps
-	data = stbi_load("../awesomeface.png", &width, &height, &nrChannels, 0);
-	if (data)
-	{
-		// note that the awesomeface.png has transparency and thus an alpha channel, so make sure to tell OpenGL the data type is of GL_RGBA
-		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
-		glGenerateMipmap(GL_TEXTURE_2D);
-	}
-	else
-	{
-		std::cout << "Failed to load texture" << std::endl;
-	}
-	stbi_image_free(data);
-
-	// tell opengl for each sampler to which texture unit it belongs to (only has to be done once)
-	// -------------------------------------------------------------------------------------------
-
-	glActiveTexture(GL_TEXTURE0);
-	glBindTexture(GL_TEXTURE_2D, texture1);
-	glActiveTexture(GL_TEXTURE1);
-	glBindTexture(GL_TEXTURE_2D, texture2);
-
-	Shader shaderProgram(vertexShaderSource, fragmentShaderSource);
-	shaderProgram.bind();
-	shaderProgram.setUniformInt("texture1", 0);
-	shaderProgram.setUniformInt("texture2", 1);
+	Model testModel(modelMeshList);
 
 	glm::mat4 view(1.0f);
 	view = glm::translate(view, glm::vec3(0.0f, 0.0f, -5.5f));
@@ -145,11 +85,11 @@ int main(int argc, char *argv[])
 	glm::mat4 projection(1.0f);
 	projection = glm::perspective(glm::radians(55.0f), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
 
-		for (auto model: modelMeshList) {
-			model->scale(1.7f, 1.7f, 1.7f);
-			model->translate(0.0f, -1.0f, 0.0f);
-		}
+	testModel.scale(1.7f, 1.7f, 1.7f);
+	testModel.translate(0.0f, -1.0f, 0.0f);
 
+	Shader shaderProgram(vertexShaderSource, fragmentShaderSource);
+	shaderProgram.bind();
 	shaderProgram.setUniformMatrix4fv("view", glm::value_ptr(view), GL_FALSE);
 	shaderProgram.setUniformMatrix4fv("projection", glm::value_ptr(projection), GL_FALSE);
 
@@ -187,18 +127,15 @@ int main(int argc, char *argv[])
 		GL_ERROR_WRAPPER(glClearColor(0.2f, 0.3f, 0.3f, 1.0f));
 		GL_ERROR_WRAPPER(glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT ));
 
-		for(auto model: modelMeshList)
-		{
-			model->getVertexArray().bind();
-			float angle = 20.0f * 2;
-			model->rotate(0, SDL_GetTicks() / angle * 5, 0);
-			shaderProgram.setUniformMatrix4fv("model", glm::value_ptr(model->getModelToWorldMatrix()), GL_FALSE);
-			glDrawElements(GL_TRIANGLES, model->getVertexAmount(), GL_UNSIGNED_INT, 0);;
-		}
+		float angle = 20.0f * 2;
+		testModel.rotate(0, SDL_GetTicks() / angle * 5, 0);
+		testModel.draw(shaderProgram);
+
 		SDL_GL_SwapWindow(GLOBAL_SDL_WINDOW);
 	}
 	SDL_GL_DeleteContext(gl_context);
 	SDL_DestroyWindow(GLOBAL_SDL_WINDOW);
 	SDL_Quit();
+	std::cout << "Program Ended" << std::endl;
 	return 0;
 }

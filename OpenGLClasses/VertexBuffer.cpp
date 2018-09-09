@@ -3,6 +3,7 @@
 //
 
 #include <glad/glad.h>
+#include <iostream>
 #include "VertexBuffer.hpp"
 #include "openGLFunctionCallErrorManagementWrapper.hpp"
 
@@ -15,6 +16,7 @@ VertexBuffer::VertexBuffer(unsigned int size, void *data) {
 
 VertexBuffer::~VertexBuffer() {
 	GL_ERROR_WRAPPER(glDeleteBuffers(1, &(this->m_vertexBufferId)));
+	std::cout << "VBO destructor called" << std::endl;
 }
 
 void VertexBuffer::bind() {

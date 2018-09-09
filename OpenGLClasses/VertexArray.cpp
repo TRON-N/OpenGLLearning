@@ -3,6 +3,7 @@
 //
 
 #include <glad/glad.h>
+#include <iostream>
 #include "VertexArray.hpp"
 #include "openGLFunctionCallErrorManagementWrapper.hpp"
 #include "BufferLayout/VertexBufferLayout.hpp"
@@ -15,6 +16,7 @@ VertexArray::VertexArray() {
 
 VertexArray::~VertexArray() {
 	GL_ERROR_WRAPPER(glDeleteVertexArrays(1, &(this->m_vertexArrayId)));
+	std::cout << "VAO destructor called" << std::endl;
 }
 
 void VertexArray::setVertexBuffer(VertexBuffer &vbo, VertexBufferLayout &bufferLayout) {

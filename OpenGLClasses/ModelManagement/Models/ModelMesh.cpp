@@ -27,8 +27,8 @@ ModelMesh::ModelMesh(std::vector<s_VertexData> vertexData, std::vector<unsigned 
 
 ModelMesh::~ModelMesh() {
 	delete this->m_vertexBuffer;
-	delete this->m_vertexArray;
 	delete this->m_elementBuffer;
+	delete this->m_vertexArray;
 }
 
 void ModelMesh::rotate(float xRotation, float yRotation, float zRotation) {

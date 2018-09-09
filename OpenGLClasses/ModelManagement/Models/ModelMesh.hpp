@@ -2,8 +2,8 @@
 // Created by Leonard VAN GEND on 2018/09/05.
 //
 
-#ifndef LEARNINGOPENGL_MODEL_HPP
-#define LEARNINGOPENGL_MODEL_HPP
+#ifndef LEARNINGOPENGL_MODELMESH_HPP
+#define LEARNINGOPENGL_MODELMESH_HPP
 
 
 #include <glm/mat4x4.hpp>
@@ -44,4 +44,4 @@ private:
 };
 
 
-#endif //LEARNINGOPENGL_MODEL_HPP
+#endif //LEARNINGOPENGL_MODELMESH_HPP
