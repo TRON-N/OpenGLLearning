@@ -8,7 +8,7 @@
 #include "Model.hpp"
 #include "../../Shader.hpp"
 
-Model::Model(std::vector<ModelMesh *> meshList) : m_meshList(meshList){
+Model::Model(std::vector<ModelMesh *> meshList) : m_meshList(meshList), m_activeAnimation(nullptr){
 }
 
 Model::~Model() {
@@ -35,9 +35,39 @@ void Model::scale(glm::vec3 scalingOnEachAxis) {
 }
 
 void Model::draw(Shader &shaderProgram) {
+	glm::mat4 animationMatrix(1.0f);
+	if (this->m_activeAnimation != nullptr) {
+		animationMatrix = this->m_activeAnimation->getCurrentTransformation().getTransformationMatrix();
+	}
+
 	for (ModelMesh *mesh: this->m_meshList) {
+
 		mesh->getVertexArray().bind();
-		shaderProgram.setUniformMatrix4fv("model", glm::value_ptr(mesh->getModelToWorldMatrix()), GL_FALSE);
+		glm::mat4 modelToWorldMatrix = mesh->getModelToWorldMatrix();
+		modelToWorldMatrix *= animationMatrix;
+
+		shaderProgram.setUniformMatrix4fv("model", glm::value_ptr(modelToWorldMatrix), GL_FALSE);
 		glDrawElements(GL_TRIANGLES, mesh->getVertexAmount(), GL_UNSIGNED_INT, 0);;
 	}
+}
+
+const Transformation &Model::getModelTransformation() {
+	return this->m_modelTransformation;
+}
+
+void Model::addAnimation(Animation &animation, const std::string &name) {
+		this->m_animationList[name] = animation;
+}
+
+void Model::startAnimation(const std::string &name) {
+	if (this->m_animationList.find(name) != this->m_animationList.end()) {
+		this->m_animationList[name].start();
+		this->m_activeAnimation = &(this->m_animationList[name]);
+		return;
+	}
+	std::cout << "That animation is not stored in this model" << std::endl;
+}
+
+void Model::stopAnimation() {
+	this->m_activeAnimation->stop();
 }

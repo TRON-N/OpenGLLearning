@@ -79,6 +79,31 @@ int main(int argc, char *argv[])
 	std::vector<ModelMesh *> modelMeshList = interperater.getModelMeshList();
 	Model testModel(modelMeshList);
 
+	Animation testAnimation;
+
+	Transformation keyFrame1Transformation;
+	KeyFrame keyFrame1(0.0f, keyFrame1Transformation);
+
+	Transformation keyFrame2Transformation;
+	keyFrame2Transformation.m_translation = glm::vec3(1, 0, 0);
+	KeyFrame keyFrame2(5.0f, keyFrame2Transformation);
+
+	Transformation keyFrame3Transformation;
+	keyFrame3Transformation.m_translation = glm::vec3(-1, 0, 0);
+	KeyFrame keyFrame3(5.5f, keyFrame3Transformation);
+
+	Transformation keyFrame4Transformation;
+	keyFrame4Transformation.m_translation = glm::vec3(0, 0, 0);
+	KeyFrame keyFrame4(10.0f, keyFrame4Transformation);
+
+	testAnimation.addKeyFrame(keyFrame1);
+	testAnimation.addKeyFrame(keyFrame2);
+	testAnimation.addKeyFrame(keyFrame3);
+	testAnimation.addKeyFrame(keyFrame4);
+
+	std::string animationName = "testAnime";
+	testModel.addAnimation(testAnimation, "testAnime");
+
 	glm::mat4 view(1.0f);
 	view = glm::translate(view, glm::vec3(0.0f, 0.0f, -5.5f));
 
@@ -98,6 +123,7 @@ int main(int argc, char *argv[])
 
 	// render loop
 	// -----------
+	testModel.startAnimation("testAnime");
 	bool loop = true;
 	while (loop)
 	{

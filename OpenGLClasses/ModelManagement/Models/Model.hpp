@@ -7,6 +7,7 @@
 
 #include "ModelMesh.hpp"
 #include "../../Shader.hpp"
+#include "../Animation/Animation.hpp"
 
 
 class Model {
@@ -22,8 +23,15 @@ public:
 
 	void draw(Shader &shaderProgram);
 
+	void addAnimation(Animation &animation, const std::string &name);
+	void startAnimation(const std::string &name);
+	void stopAnimation();
+
 private:
-	std::vector<ModelMesh *>	m_meshList;
+	std::vector<ModelMesh *>					m_meshList;
+	Transformation								m_modelTransformation;
+	std::unordered_map<std::string, Animation>	m_animationList;
+	Animation *									m_activeAnimation;
 };
 
 

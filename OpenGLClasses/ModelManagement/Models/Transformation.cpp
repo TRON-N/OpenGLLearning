@@ -11,7 +11,7 @@ Transformation::Transformation() : m_rotation(0.0f), m_translation(0.0f), m_scal
 Transformation::~Transformation() {
 }
 
-glm::mat4 Transformation::getTransformationMatrix() {
+glm::mat4 Transformation::getTransformationMatrix() const{
 	glm::mat4 modelToWorldMatrix = glm::mat4(1.0f);
 	modelToWorldMatrix *= glm::translate(glm::mat4(1.0f), this->m_translation);
 
@@ -40,4 +40,44 @@ Transformation &Transformation::operator=(const Transformation &obj) {
 		this->m_translation = obj.m_translation;
 	}
 	return *this;
+}
+
+glm::vec3 Transformation::getInterpolatedVec3(glm::vec3 startVector, glm::vec3 endVector,
+											  float interpolationValue) {
+	glm::vec3 difference(endVector.x - startVector.x, endVector.y - startVector.y, endVector.z - startVector.z);
+
+	glm::vec3 increase(difference.x * interpolationValue, difference.y * interpolationValue,
+					   difference.z * interpolationValue);
+
+	glm::vec3 newVector(startVector);
+	newVector += increase;
+	return newVector;
+}
+
+Transformation Transformation::getInterpolatedTransformation(const Transformation &t1, const Transformation &t2,
+															 float interpolationValue) {
+	Transformation interpolatedTransformation;
+
+	interpolatedTransformation.m_scaling = getInterpolatedVec3(t1.m_scaling, t2.m_scaling, interpolationValue);
+//	No rotation Interpolation at this time
+//	interpolatedTransformation.m_rotation = getInterpolatedVec3(t1.m_rotation, t2.m_rotation, interpolationValue);
+	interpolatedTransformation.m_translation = getInterpolatedVec3(t1.m_translation,
+																	t2.m_translation, interpolationValue);
+	return interpolatedTransformation;
+}
+
+Transformation Transformation::operator+(Transformation &rhs) const {
+
+	Transformation newTransformation;
+
+	newTransformation.m_translation = this->m_translation;
+	newTransformation.m_translation += rhs.m_translation;
+
+	newTransformation.m_rotation = this->m_rotation;
+	newTransformation.m_rotation += rhs.m_rotation;
+
+	newTransformation.m_scaling = this->m_scaling;
+	newTransformation.m_scaling *= rhs.m_scaling;
+
+	return Transformation();
 }
