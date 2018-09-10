@@ -85,8 +85,8 @@ int main(int argc, char *argv[])
 	glm::mat4 projection(1.0f);
 	projection = glm::perspective(glm::radians(55.0f), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
 
-	testModel.scale(1.7f, 1.7f, 1.7f);
-	testModel.translate(0.0f, -1.0f, 0.0f);
+	testModel.scale(glm::vec3(1.7f, 1.7f, 1.7f));
+	testModel.translate(glm::vec3(0.0f, -1.0f, 0.0f));
 
 	Shader shaderProgram(vertexShaderSource, fragmentShaderSource);
 	shaderProgram.bind();
@@ -114,7 +114,7 @@ int main(int argc, char *argv[])
 		GL_ERROR_WRAPPER(glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT ));
 
 		float angle = 20.0f * 2;
-		testModel.rotate(0, SDL_GetTicks() / angle, 0);
+		testModel.rotate(glm::vec3(0, SDL_GetTicks() / angle, 0));
 		testModel.draw(shaderProgram);
 
 		SDL_GL_SwapWindow(GLOBAL_SDL_WINDOW);

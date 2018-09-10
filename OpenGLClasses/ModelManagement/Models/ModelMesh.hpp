@@ -9,19 +9,16 @@
 #include <glm/mat4x4.hpp>
 #include "../../VertexArray.hpp"
 #include "../s_VertexData.hpp"
+#include "Transformation.hpp"
 
 class ModelMesh {
 public:
 	ModelMesh(std::vector<s_VertexData> vertexData, std::vector<unsigned int> vertexDrawingIndices);
 	~ModelMesh();
 
-	void rotate(float xRotation, float yRotation, float zRotation);
-	void scale(float scaleFactor, float yScaleFactor, float zScaleFactor);
-	void translate(float xTranslation, float yTranslation, float zTranslation);
-
+	Transformation &getMeshTransformation();
 	glm::mat4 getModelToWorldMatrix();
-	VertexArray & getVertexArray();
-
+	VertexArray &getVertexArray();
 	unsigned int getVertexAmount();
 
 
@@ -36,9 +33,7 @@ private:
 	std::vector<s_VertexData>	m_vertexData;
 	std::vector<unsigned int>	m_vertexDrawingIndices;
 
-	glm::mat4					m_rotationMatrix;
-	glm::mat4					m_translationMatrix;
-	glm::mat4					m_scalingMatrix;
+	Transformation				m_meshTransformation;
 	glm::mat4					m_modelToWorldMatrix;
 
 };

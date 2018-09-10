@@ -14,9 +14,11 @@ public:
 	Model(std::vector<ModelMesh *> meshList);
 	~Model();
 
-	void rotate(float xRotation, float yRotation, float zRotation);
-	void translate(float xTranslation, float yTranslation, float zTranslation);
-	void scale(float xScaleFactor, float yScaleFactor, float zScaleFactor);
+	void rotate(glm::vec3 rotationAboutEachAxis);
+	void translate(glm::vec3 translationAlongEachAxis);
+	void scale(glm::vec3 scalingOnEachAxis);
+
+	const Transformation& getModelTransformation();
 
 	void draw(Shader &shaderProgram);
 

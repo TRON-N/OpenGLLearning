@@ -19,19 +19,19 @@ Model::~Model() {
 	std::cout << "Model destructor called" << std::endl;
 }
 
-void Model::rotate(float xRotation, float yRotation, float zRotation) {
+void Model::rotate(glm::vec3 rotationAboutEachAxis) {
 	for (ModelMesh *mesh: this->m_meshList)
-		mesh->rotate(xRotation, yRotation, zRotation);
+		mesh->getMeshTransformation().m_rotation = rotationAboutEachAxis;
 }
 
-void Model::translate(float xTranslation, float yTranslation, float zTranslation) {
+void Model::translate(glm::vec3 translationAlongEachAxis) {
 	for (ModelMesh *mesh: this->m_meshList)
-		mesh->translate(xTranslation, yTranslation, zTranslation);
+		mesh->getMeshTransformation().m_translation = translationAlongEachAxis;
 }
 
-void Model::scale(float xScaleFactor, float yScaleFactor, float zScaleFactor) {
+void Model::scale(glm::vec3 scalingOnEachAxis) {
 	for (ModelMesh *mesh: this->m_meshList)
-		mesh->scale(xScaleFactor, yScaleFactor, zScaleFactor);
+		mesh->getMeshTransformation().m_scaling = scalingOnEachAxis;
 }
 
 void Model::draw(Shader &shaderProgram) {

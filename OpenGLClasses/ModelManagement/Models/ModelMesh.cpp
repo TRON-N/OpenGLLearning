@@ -2,7 +2,6 @@
 // Created by Leonard VAN GEND on 2018/09/05.
 //
 
-#include <glm/ext/matrix_transform.hpp>
 #include <glad/glad.h>
 #include <iostream>
 #include "ModelMesh.hpp"
@@ -19,10 +18,6 @@ ModelMesh::ModelMesh(std::vector<s_VertexData> vertexData, std::vector<unsigned 
 
 	this->setUpVertexArray();
 	this->setElementBuffer();
-
-	this->m_translationMatrix = glm::mat4(1.0f);
-	this->m_rotationMatrix = glm::mat4(1.0f);
-	this->m_scalingMatrix = glm::mat4(1.0f);
 }
 
 ModelMesh::~ModelMesh() {
@@ -31,31 +26,12 @@ ModelMesh::~ModelMesh() {
 	delete this->m_vertexArray;
 }
 
-void ModelMesh::rotate(float xRotation, float yRotation, float zRotation) {
-	glm::mat4 xRotationMatrix = glm::rotate(glm::mat4(1.0f), glm::radians(xRotation), glm::vec3(1.0f, 0.0f, 0.0f));
-	glm::mat4 yRotationMatrix = glm::rotate(glm::mat4(1.0f), glm::radians(yRotation), glm::vec3(0.0f, 1.0f, 0.0f));
-	glm::mat4 zRotationMatrix = glm::rotate(glm::mat4(1.0f), glm::radians(zRotation), glm::vec3(0.0f, 0.0f, 1.0f));
-
-	this->m_rotationMatrix = glm::mat4(1.0f);
-	this->m_rotationMatrix *= zRotationMatrix;
-	this->m_rotationMatrix *= yRotationMatrix;
-	this->m_rotationMatrix *= xRotationMatrix;
-}
-
-void ModelMesh::scale(float xScaleFactor, float yScaleFactor, float zScaleFactor) {
-	this->m_scalingMatrix = glm::scale(glm::mat4(1.0f), glm::vec3(xScaleFactor, yScaleFactor, zScaleFactor));
-}
-
-void ModelMesh::translate(float xTranslation, float yTranslation, float zTranslation) {
-	this->m_translationMatrix = glm::translate(glm::mat4(1.0f), glm::vec3(xTranslation, yTranslation, zTranslation));
+Transformation &ModelMesh::getMeshTransformation() {
+	return this->m_meshTransformation;
 }
 
 glm::mat4 ModelMesh::getModelToWorldMatrix() {
-	glm::mat4 modelToWorldMatrix = glm::mat4(1.0f);
-	modelToWorldMatrix *= this->m_translationMatrix;
-	modelToWorldMatrix *= this->m_rotationMatrix;
-	modelToWorldMatrix *= this->m_scalingMatrix;
-	return modelToWorldMatrix;
+	return m_meshTransformation.getTransformationMatrix();
 }
 
 VertexArray &ModelMesh::getVertexArray() {
@@ -89,3 +65,5 @@ void ModelMesh::setUpVertexArray() {
 unsigned int ModelMesh::getVertexAmount() {
 	return this->m_vertexDrawingIndices.size();
 }
+
+
