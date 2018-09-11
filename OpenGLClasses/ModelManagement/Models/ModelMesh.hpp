@@ -34,8 +34,6 @@ private:
 	std::vector<unsigned int>	m_vertexDrawingIndices;
 
 	Transformation				m_meshTransformation;
-	glm::mat4					m_modelToWorldMatrix;
-
 };
 
 

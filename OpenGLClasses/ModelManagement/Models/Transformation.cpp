@@ -5,7 +5,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include "Transformation.hpp"
 
-Transformation::Transformation() : m_rotation(0.0f), m_translation(0.0f), m_scaling(1.0f){
+Transformation::Transformation() : m_translation(0.0f), m_rotation(0.0f),  m_scaling(1.0f){
 }
 
 Transformation::~Transformation() {

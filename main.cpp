@@ -66,6 +66,9 @@ void createSDLWindow() {
 
 int main(int argc, char *argv[])
 {
+	if(argc == 0 && argv == nullptr)
+		std::cout << "no args" << std::endl;
+
 	createSDLWindow();
 	SDL_GLContext gl_context = SDL_GL_CreateContext(GLOBAL_SDL_WINDOW);
 
@@ -135,7 +138,7 @@ int main(int argc, char *argv[])
 		GL_ERROR_WRAPPER(glClearColor(0.2f, 0.3f, 0.3f, 1.0f));
 		GL_ERROR_WRAPPER(glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT ));
 
-		float angle = 20.0f * 2;
+//		float angle = 20.0f * 2;
 //		testModel.rotate(glm::vec3(0, SDL_GetTicks() / angle, 0));
 		testModel.draw(shaderProgram);
 

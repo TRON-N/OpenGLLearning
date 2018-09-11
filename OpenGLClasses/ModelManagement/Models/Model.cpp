@@ -71,6 +71,12 @@ void Model::stopAnimation() {
 }
 
 void Model::notify(void *arg) {
+	assert(arg != nullptr);
 	this->m_modelTransformation += this->m_activeAnimation->getFinalTransformation();
 	this->m_activeAnimation = nullptr;
+}
+
+void Model::notifyObservers() {
+	for (i_Observer *observer: this->m_observerList)
+		observer->notify(nullptr);
 }

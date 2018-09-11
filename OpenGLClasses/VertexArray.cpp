@@ -26,12 +26,14 @@ void VertexArray::setVertexBuffer(VertexBuffer &vbo, VertexBufferLayout &bufferL
 	auto layoutElements = bufferLayout.getLayoutElements();
 	unsigned int offset = 0;
 	for (LayoutElement &currentElement: layoutElements) {
+		void *ptrOffset = reinterpret_cast<void *>(offset);
+
 		GL_ERROR_WRAPPER(glVertexAttribPointer(this->m_attribPointerId,
 											   currentElement.m_amount,
 											   currentElement.m_type,
 											   GL_FALSE,
 											   bufferLayout.getStrideLength(),
-											   (void*)offset));
+												ptrOffset));
 		GL_ERROR_WRAPPER(glEnableVertexAttribArray(this->m_attribPointerId));
 
 		this->m_attribPointerId++;
