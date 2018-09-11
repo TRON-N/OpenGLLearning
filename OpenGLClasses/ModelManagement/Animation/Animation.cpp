@@ -28,6 +28,8 @@ Animation::~Animation() {
 }
 
 void Animation::addKeyFrame(KeyFrame &keyFrame) {
+	if (this->m_keyFrameList.size() > 0)
+		assert(this->m_keyFrameList.back().getTimeStampInMilliseconds() < keyFrame.getTimeStampInMilliseconds());
 	this->m_keyFrameList.push_back(keyFrame);
 }
 
