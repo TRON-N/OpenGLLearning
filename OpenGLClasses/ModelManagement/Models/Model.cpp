@@ -35,7 +35,7 @@ void Model::draw(Shader &shaderProgram) {
 	Transformation currentTransform = this->m_modelTransformation;
 
 	if (this->m_activeAnimation != nullptr)
-		currentTransform += this->m_activeAnimation->getCurrentTransformation();
+		currentTransform = this->m_modelTransformation + this->m_activeAnimation->getCurrentTransformation();
 
 	glm::mat4 modelToWorldMatrix = currentTransform.getTransformationMatrix();
 
@@ -71,9 +71,10 @@ void Model::stopAnimation() {
 }
 
 void Model::notify(void *arg) {
-	assert(arg != nullptr);
+	assert(arg == nullptr);
 	this->m_modelTransformation += this->m_activeAnimation->getFinalTransformation();
 	this->m_activeAnimation = nullptr;
+	this->notifyObservers();
 }
 
 void Model::notifyObservers() {

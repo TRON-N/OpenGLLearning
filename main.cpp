@@ -9,6 +9,19 @@
 #include "OpenGLClasses/openGLFunctionCallErrorManagementWrapper.hpp"
 #include "OpenGLClasses/ModelManagement/Models/Model.hpp"
 
+class testNotification : public i_Observer {
+public:
+	bool m_isActive;
+
+	testNotification() {
+		this->m_isActive = false;
+	}
+
+	void notify(void *arg) override {
+		this->m_isActive = false;
+	}
+};
+
 // settings
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
@@ -78,7 +91,7 @@ int main(int argc, char *argv[])
 		return -1;
 	}
 
-	AssimpInterperater interperater("../BomberBoi.obj");
+	AssimpInterperater interperater("../ballo.obj");
 	std::vector<ModelMesh *> modelMeshList = interperater.getModelMeshList();
 	Model testModel(modelMeshList);
 
@@ -88,12 +101,14 @@ int main(int argc, char *argv[])
 	KeyFrame keyFrame1(0.0f, keyFrame1Transformation);
 
 	Transformation keyFrame2Transformation;
-	keyFrame2Transformation.m_translation = glm::vec3(0, 0.25, 0);
-	KeyFrame keyFrame2(0.25f, keyFrame2Transformation);
+	keyFrame2Transformation.m_translation = glm::vec3(0.1, 0, 0);
+	keyFrame2Transformation.m_rotation = glm::vec3(0, 0, -10);
+	KeyFrame keyFrame2(0.10f, keyFrame2Transformation);
 
 	Transformation keyFrame3Transformation;
-	keyFrame3Transformation.m_translation = glm::vec3(0.5, 0, 0);
-	KeyFrame keyFrame3(0.5f, keyFrame3Transformation);
+	keyFrame3Transformation.m_translation = glm::vec3(0.2, 0, 0);
+	keyFrame3Transformation.m_rotation = glm::vec3(0, 0, -20);
+	KeyFrame keyFrame3(0.20f, keyFrame3Transformation);
 
 	testAnimation.addKeyFrame(keyFrame1);
 	testAnimation.addKeyFrame(keyFrame2);
@@ -108,7 +123,7 @@ int main(int argc, char *argv[])
 	glm::mat4 projection(1.0f);
 	projection = glm::perspective(glm::radians(55.0f), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
 
-	testModel.scale(glm::vec3(1.7f, 1.7f, 1.7f));
+	testModel.scale(glm::vec3(1.0f, 1.0f, 1.0f));
 	testModel.translate(glm::vec3(-1.0f, -1.0f, 0.0f));
 
 	Shader shaderProgram(vertexShaderSource, fragmentShaderSource);
@@ -122,6 +137,9 @@ int main(int argc, char *argv[])
 	// render loop
 	// -----------
 //	testModel.startAnimation("testAnime");
+
+	testNotification testNotificationClass;
+	testModel.registerObserver(&testNotificationClass);
 
 	bool loop = true;
 	while (loop)
@@ -141,6 +159,15 @@ int main(int argc, char *argv[])
 //		float angle = 20.0f * 2;
 //		testModel.rotate(glm::vec3(0, SDL_GetTicks() / angle, 0));
 		testModel.draw(shaderProgram);
+
+		if(testNotificationClass.m_isActive == false) {
+			testModel.startAnimation("testAnime");
+			testNotificationClass.m_isActive = true;
+		}
+
+		if(testModel.getModelTransformation().m_translation.x > 5) {
+			testModel.translate(glm::vec3(-5, -1, 0));
+		}
 
 		SDL_GL_SwapWindow(GLOBAL_SDL_WINDOW);
 	}

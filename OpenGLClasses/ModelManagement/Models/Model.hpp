@@ -10,7 +10,7 @@
 #include "../Animation/Animation.hpp"
 
 
-class Model : public i_Observer, Observable {
+class Model : public i_Observer, public Observable {
 public:
 	Model(std::vector<ModelMesh *> meshList);
 	~Model();
@@ -28,8 +28,6 @@ public:
 	void stopAnimation();
 
 	void notify(void *arg) override;
-
-private:
 	void notifyObservers() override;
 
 private:

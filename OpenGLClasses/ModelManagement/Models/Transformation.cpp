@@ -59,8 +59,7 @@ Transformation Transformation::getInterpolatedTransformation(const Transformatio
 	Transformation interpolatedTransformation;
 
 	interpolatedTransformation.m_scaling = getInterpolatedVec3(t1.m_scaling, t2.m_scaling, interpolationValue);
-//	No rotation Interpolation at this time
-//	interpolatedTransformation.m_rotation = getInterpolatedVec3(t1.m_rotation, t2.m_rotation, interpolationValue);
+	interpolatedTransformation.m_rotation = getInterpolatedVec3(t1.m_rotation, t2.m_rotation, interpolationValue);
 	interpolatedTransformation.m_translation = getInterpolatedVec3(t1.m_translation,
 																	t2.m_translation, interpolationValue);
 	return interpolatedTransformation;

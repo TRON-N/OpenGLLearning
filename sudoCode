@@ -1,0 +1,23 @@
+Game loop relates logic to what the user can see.
+
+We would have a number of entities that can be displayed on the screen,
+and these entities have specific actions that they can preform, for each action the entity will have an associated
+animation
+
+The entities would keep track of their own location.
+
+The game logic would use each entities location to decide how, when and where they can move
+
+The entities each have a update function that will play the next phase of their animation
+
+We will also have a renderer that does the job of displaying the game on the screen
+the renderer has an updateScreen function should be called each loop.
+
+
+While the game is running
+    get player input
+
+    preform action based on player input
+
+    update game entites
+    updateScreen
