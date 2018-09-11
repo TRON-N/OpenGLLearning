@@ -10,7 +10,7 @@
 #include "../Animation/Animation.hpp"
 
 
-class Model {
+class Model : public i_Observer {
 public:
 	Model(std::vector<ModelMesh *> meshList);
 	~Model();
@@ -26,6 +26,8 @@ public:
 	void addAnimation(Animation &animation, const std::string &name);
 	void startAnimation(const std::string &name);
 	void stopAnimation();
+
+	void notify(void *arg) override;
 
 private:
 	std::vector<ModelMesh *>					m_meshList;

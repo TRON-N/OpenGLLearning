@@ -23,7 +23,8 @@ public:
 	glm::vec3 m_rotation;
 	glm::vec3 m_scaling;
 
-	Transformation operator+ (Transformation &rhs) const;
+	Transformation operator+ (const Transformation &rhs) const;
+	Transformation operator+= (const Transformation &rhs);
 
 
 private:

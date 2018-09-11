@@ -85,21 +85,16 @@ int main(int argc, char *argv[])
 	KeyFrame keyFrame1(0.0f, keyFrame1Transformation);
 
 	Transformation keyFrame2Transformation;
-	keyFrame2Transformation.m_translation = glm::vec3(1, 0, 0);
-	KeyFrame keyFrame2(5.0f, keyFrame2Transformation);
+	keyFrame2Transformation.m_translation = glm::vec3(0, 0.25, 0);
+	KeyFrame keyFrame2(0.25f, keyFrame2Transformation);
 
 	Transformation keyFrame3Transformation;
-	keyFrame3Transformation.m_translation = glm::vec3(-1, 0, 0);
-	KeyFrame keyFrame3(5.5f, keyFrame3Transformation);
-
-	Transformation keyFrame4Transformation;
-	keyFrame4Transformation.m_translation = glm::vec3(0, 0, 0);
-	KeyFrame keyFrame4(10.0f, keyFrame4Transformation);
+	keyFrame3Transformation.m_translation = glm::vec3(0.5, 0, 0);
+	KeyFrame keyFrame3(0.5f, keyFrame3Transformation);
 
 	testAnimation.addKeyFrame(keyFrame1);
 	testAnimation.addKeyFrame(keyFrame2);
 	testAnimation.addKeyFrame(keyFrame3);
-	testAnimation.addKeyFrame(keyFrame4);
 
 	std::string animationName = "testAnime";
 	testModel.addAnimation(testAnimation, "testAnime");
@@ -111,7 +106,7 @@ int main(int argc, char *argv[])
 	projection = glm::perspective(glm::radians(55.0f), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
 
 	testModel.scale(glm::vec3(1.7f, 1.7f, 1.7f));
-	testModel.translate(glm::vec3(0.0f, -1.0f, 0.0f));
+	testModel.translate(glm::vec3(-1.0f, -1.0f, 0.0f));
 
 	Shader shaderProgram(vertexShaderSource, fragmentShaderSource);
 	shaderProgram.bind();
@@ -123,7 +118,8 @@ int main(int argc, char *argv[])
 
 	// render loop
 	// -----------
-	testModel.startAnimation("testAnime");
+//	testModel.startAnimation("testAnime");
+
 	bool loop = true;
 	while (loop)
 	{
@@ -140,7 +136,7 @@ int main(int argc, char *argv[])
 		GL_ERROR_WRAPPER(glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT ));
 
 		float angle = 20.0f * 2;
-		testModel.rotate(glm::vec3(0, SDL_GetTicks() / angle, 0));
+//		testModel.rotate(glm::vec3(0, SDL_GetTicks() / angle, 0));
 		testModel.draw(shaderProgram);
 
 		SDL_GL_SwapWindow(GLOBAL_SDL_WINDOW);

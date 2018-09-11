@@ -66,7 +66,7 @@ Transformation Transformation::getInterpolatedTransformation(const Transformatio
 	return interpolatedTransformation;
 }
 
-Transformation Transformation::operator+(Transformation &rhs) const {
+Transformation Transformation::operator +(const Transformation &rhs) const {
 
 	Transformation newTransformation;
 
@@ -79,5 +79,12 @@ Transformation Transformation::operator+(Transformation &rhs) const {
 	newTransformation.m_scaling = this->m_scaling;
 	newTransformation.m_scaling *= rhs.m_scaling;
 
-	return Transformation();
+	return newTransformation;
+}
+
+Transformation Transformation::operator +=(const Transformation &rhs) {
+	this->m_translation += rhs.m_translation;
+	this->m_rotation += rhs.m_rotation;
+	this->m_scaling *= rhs.m_scaling;
+	return *this;
 }

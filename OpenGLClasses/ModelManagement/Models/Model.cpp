@@ -20,32 +20,28 @@ Model::~Model() {
 }
 
 void Model::rotate(glm::vec3 rotationAboutEachAxis) {
-	for (ModelMesh *mesh: this->m_meshList)
-		mesh->getMeshTransformation().m_rotation = rotationAboutEachAxis;
+	this->m_modelTransformation.m_rotation = rotationAboutEachAxis;
 }
 
 void Model::translate(glm::vec3 translationAlongEachAxis) {
-	for (ModelMesh *mesh: this->m_meshList)
-		mesh->getMeshTransformation().m_translation = translationAlongEachAxis;
+	this->m_modelTransformation.m_translation = translationAlongEachAxis;
 }
 
 void Model::scale(glm::vec3 scalingOnEachAxis) {
-	for (ModelMesh *mesh: this->m_meshList)
-		mesh->getMeshTransformation().m_scaling = scalingOnEachAxis;
+	this->m_modelTransformation.m_scaling = scalingOnEachAxis;
 }
 
 void Model::draw(Shader &shaderProgram) {
-	glm::mat4 animationMatrix(1.0f);
-	if (this->m_activeAnimation != nullptr) {
-		animationMatrix = this->m_activeAnimation->getCurrentTransformation().getTransformationMatrix();
-	}
+	Transformation currentTransform = this->m_modelTransformation;
+
+	if (this->m_activeAnimation != nullptr)
+		currentTransform += this->m_activeAnimation->getCurrentTransformation();
+
+	glm::mat4 modelToWorldMatrix = currentTransform.getTransformationMatrix();
 
 	for (ModelMesh *mesh: this->m_meshList) {
 
 		mesh->getVertexArray().bind();
-		glm::mat4 modelToWorldMatrix = mesh->getModelToWorldMatrix();
-		modelToWorldMatrix *= animationMatrix;
-
 		shaderProgram.setUniformMatrix4fv("model", glm::value_ptr(modelToWorldMatrix), GL_FALSE);
 		glDrawElements(GL_TRIANGLES, mesh->getVertexAmount(), GL_UNSIGNED_INT, 0);;
 	}
@@ -56,7 +52,8 @@ const Transformation &Model::getModelTransformation() {
 }
 
 void Model::addAnimation(Animation &animation, const std::string &name) {
-		this->m_animationList[name] = animation;
+	this->m_animationList[name] = animation;
+	this->m_animationList[name].registerObserver(this);
 }
 
 void Model::startAnimation(const std::string &name) {
@@ -70,4 +67,10 @@ void Model::startAnimation(const std::string &name) {
 
 void Model::stopAnimation() {
 	this->m_activeAnimation->stop();
+	this->m_activeAnimation = nullptr;
+}
+
+void Model::notify(void *arg) {
+	this->m_modelTransformation += this->m_activeAnimation->getFinalTransformation();
+	this->m_activeAnimation = nullptr;
 }

@@ -57,6 +57,7 @@ const Transformation Animation::getCurrentTransformation() {
 	}
 
 	this->m_isActive = false;
+	this->notifyObservers();
 	return Transformation();
 }
 
@@ -93,6 +94,15 @@ float Animation::calculateInterpolationValue(unsigned int startTime, unsigned in
 
 	float interpolationValue = (float)actualTimeDifference / (float)maximumTimeDifference;
 	return (interpolationValue);
+}
+
+void Animation::notifyObservers() {
+	for (i_Observer *observer: this->m_observerList)
+		observer->notify(nullptr);
+}
+
+const Transformation Animation::getFinalTransformation() {
+	return this->m_keyFrameList.back().getFrameTransformation();
 }
 
 

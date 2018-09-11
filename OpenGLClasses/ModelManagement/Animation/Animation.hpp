@@ -8,18 +8,22 @@
 
 #include <vector>
 #include "KeyFrame.hpp"
+#include "../../ObserverPattern/Observable.hpp"
 
-class Animation {
+class Animation : public Observable {
 public:
 	Animation();
 	Animation(const Animation &obj);
 	Animation &operator =(const Animation &obj);
-	~Animation();
+	~Animation() override;
 
 	void addKeyFrame(KeyFrame &keyFrame);
 	const Transformation getCurrentTransformation();
+	const Transformation getFinalTransformation();
 	void start();
 	void stop();
+
+	void notifyObservers() override;
 
 private:
 	unsigned int getRunningTimeInMilliseconds();
