@@ -78,7 +78,7 @@ unsigned Animation::getRunningTimeInMilliseconds() {
 }
 
 void Animation::setKeyFrameIterator(unsigned int runningTimeInMilliseconds) {
-	if (this->m_keyFrameIterator == this->m_keyFrameList.end())
+	if (this->m_keyFrameIterator + 1 == this->m_keyFrameList.end())
 		return;
 
 	KeyFrame &nextKeyFrame = *(this->m_keyFrameIterator + 1);
@@ -106,5 +106,3 @@ void Animation::notifyObservers() {
 const Transformation Animation::getFinalTransformation() {
 	return this->m_keyFrameList.back().getFrameTransformation();
 }
-
-

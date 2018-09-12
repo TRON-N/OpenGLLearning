@@ -103,32 +103,46 @@ int main(int argc, char *argv[])
 	KeyFrame keyFrame1(0.0f, keyFrame1Transformation);
 
 	Transformation keyFrame2Transformation;
-	keyFrame2Transformation.m_translation = glm::vec3(0.1, 0, 0);
-	keyFrame2Transformation.m_rotation = glm::vec3(0, 0, -10);
-//	keyFrame2Transformation.m_scaling = glm::vec3(1, 0.7, 1);
+	keyFrame2Transformation.m_translation = glm::vec3(0.1, -0.2, 0);
+//	keyFrame2Transformation.m_rotation = glm::vec3(0, 0, -10);
+	keyFrame2Transformation.m_scaling = glm::vec3(1.1, 0.8, 1.1);
 	KeyFrame keyFrame2(0.10f, keyFrame2Transformation);
 
 	Transformation keyFrame3Transformation;
-	keyFrame3Transformation.m_translation = glm::vec3(0.2, 0, 0);
-	keyFrame3Transformation.m_rotation = glm::vec3(0, 0, -20);
-	KeyFrame keyFrame3(0.20f, keyFrame3Transformation);
+	keyFrame3Transformation.m_translation = glm::vec3(0.15, 0.4, 0);
+//	keyFrame3Transformation.m_rotation = glm::vec3(0, 0, -10);
+	keyFrame3Transformation.m_scaling = glm::vec3(0.9, 1.2, 0.9);
+	KeyFrame keyFrame3(0.17f, keyFrame3Transformation);
 
-//	Transformation keyFrame4Transformation;
-//	keyFrame4Transformation.m_translation = glm::vec3(0.4, 0, 0);
+	Transformation keyFrame4Transformation;
+	keyFrame4Transformation.m_translation = glm::vec3(0.2, 1.5, 0);
 //	keyFrame4Transformation.m_rotation = glm::vec3(0, 0, -20);
-////	keyFrame4Transformation.m_scaling = glm::vec3(1, 0.7, 1);
-//	KeyFrame keyFrame4(0.30f, keyFrame4Transformation);
+	KeyFrame keyFrame4(0.25f, keyFrame4Transformation);
+
+	Transformation keyFrame5Transformation;
+	keyFrame5Transformation.m_translation = glm::vec3(0.4, -0.2, 0);
+//	keyFrame4Transformation.m_rotation = glm::vec3(0, 0, -20);
+	keyFrame5Transformation.m_scaling = glm::vec3(1.1, 0.8, 1.1);
+	KeyFrame keyFrame5(0.35f, keyFrame5Transformation);
+
+	Transformation keyFrame6Transformation;
+	keyFrame6Transformation.m_translation = glm::vec3(0.4, 0, 0);
+	KeyFrame keyFrame6(0.40f, keyFrame6Transformation);
+
 
 	testAnimation.addKeyFrame(keyFrame1);
 	testAnimation.addKeyFrame(keyFrame2);
 	testAnimation.addKeyFrame(keyFrame3);
-//	testAnimation.addKeyFrame(keyFrame4);
+	testAnimation.addKeyFrame(keyFrame4);
+	testAnimation.addKeyFrame(keyFrame5);
+	testAnimation.addKeyFrame(keyFrame6);
 
 	std::string animationName = "testAnime";
 	testModel.addAnimation(testAnimation, "testAnime");
 
 	glm::mat4 view(1.0f);
 	view = glm::translate(view, glm::vec3(0.0f, 0.0f, -5.5f));
+	view = glm::rotate(view, glm::radians(90.0f), glm::vec3(1, 0, 0));
 
 	glm::mat4 projection(1.0f);
 	projection = glm::perspective(glm::radians(55.0f), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
