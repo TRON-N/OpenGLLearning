@@ -28,31 +28,33 @@ const unsigned int SCR_HEIGHT = 600;
 
 const char *vertexShaderSource =	"#version 330 core\n"
 									"layout (location = 0) in vec3 aPos;\n"
+		 							"layout (location = 1) in vec3 aNormal;\n"
+		 							"layout (location = 2) in vec2 atexCoord;\n"
 
 									"uniform mat4 model;\n"
 									"uniform mat4 view;\n"
 									"uniform mat4 projection;\n"
 
-		 							"out vec3 ourColor;\n"
+		  							"out vec2 texCoord;\n"
 
 									"void main()\n"
 									"{\n"
 									"	gl_Position = projection * view * model * vec4(aPos, 1.0);\n"
-									"	ourColor = vec3(0.5, 1.0, 0.3);\n"
+		 							"	texCoord = atexCoord;\n"
 									"}\0";
 
 const char *fragmentShaderSource = 	"#version 330 core\n"
-									"out vec4 FragColor;\n"
 									"\n"
-									"in vec3 ourColor;\n"
+		 							"out vec4 FragColor;\n"
+									"in vec2 texCoord;\n"
 									"\n"
 									"// texture sampler\n"
-									"uniform sampler2D texture1;\n"
+									"uniform sampler2D texture_diffuse1;\n"
 									"uniform sampler2D texture2;\n"
 									"\n"
 									"void main()\n"
 									"{\n"
-									"	FragColor = vec4(ourColor, 1.0);\n"
+									"	FragColor = texture(texture_diffuse1, texCoord);\n"
 									"}\0";
 SDL_Window* GLOBAL_SDL_WINDOW;
 
@@ -91,7 +93,7 @@ int main(int argc, char *argv[])
 		return -1;
 	}
 
-	AssimpInterperater interperater("../ballo.obj");
+	AssimpInterperater interperater("ballo2.obj", "..");
 	std::vector<ModelMesh *> modelMeshList = interperater.getModelMeshList();
 	Model testModel(modelMeshList);
 
@@ -103,7 +105,7 @@ int main(int argc, char *argv[])
 	Transformation keyFrame2Transformation;
 	keyFrame2Transformation.m_translation = glm::vec3(0.1, 0, 0);
 	keyFrame2Transformation.m_rotation = glm::vec3(0, 0, -10);
-	keyFrame2Transformation.m_scaling = glm::vec3(0.7, 0.7, 0.7);
+//	keyFrame2Transformation.m_scaling = glm::vec3(1, 0.7, 1);
 	KeyFrame keyFrame2(0.10f, keyFrame2Transformation);
 
 	Transformation keyFrame3Transformation;
@@ -111,9 +113,16 @@ int main(int argc, char *argv[])
 	keyFrame3Transformation.m_rotation = glm::vec3(0, 0, -20);
 	KeyFrame keyFrame3(0.20f, keyFrame3Transformation);
 
+//	Transformation keyFrame4Transformation;
+//	keyFrame4Transformation.m_translation = glm::vec3(0.4, 0, 0);
+//	keyFrame4Transformation.m_rotation = glm::vec3(0, 0, -20);
+////	keyFrame4Transformation.m_scaling = glm::vec3(1, 0.7, 1);
+//	KeyFrame keyFrame4(0.30f, keyFrame4Transformation);
+
 	testAnimation.addKeyFrame(keyFrame1);
 	testAnimation.addKeyFrame(keyFrame2);
 	testAnimation.addKeyFrame(keyFrame3);
+//	testAnimation.addKeyFrame(keyFrame4);
 
 	std::string animationName = "testAnime";
 	testModel.addAnimation(testAnimation, "testAnime");
@@ -133,7 +142,7 @@ int main(int argc, char *argv[])
 	shaderProgram.setUniformMatrix4fv("projection", glm::value_ptr(projection), GL_FALSE);
 
 	glEnable(GL_DEPTH_TEST);
-	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+//	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
 	// render loop
 	// -----------

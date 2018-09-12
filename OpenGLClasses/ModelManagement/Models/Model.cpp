@@ -36,13 +36,13 @@ void Model::draw(Shader &shaderProgram) {
 
 	if (this->m_activeAnimation != nullptr)
 		currentTransform = this->m_modelTransformation + this->m_activeAnimation->getCurrentTransformation();
-
 	glm::mat4 modelToWorldMatrix = currentTransform.getTransformationMatrix();
+	shaderProgram.setUniformMatrix4fv("model", glm::value_ptr(modelToWorldMatrix), GL_FALSE);
 
 	for (ModelMesh *mesh: this->m_meshList) {
-
 		mesh->getVertexArray().bind();
-		shaderProgram.setUniformMatrix4fv("model", glm::value_ptr(modelToWorldMatrix), GL_FALSE);
+
+		sendTexturesToShader(mesh, shaderProgram);
 		glDrawElements(GL_TRIANGLES, mesh->getVertexAmount(), GL_UNSIGNED_INT, 0);;
 	}
 }
@@ -81,3 +81,18 @@ void Model::notifyObservers() {
 	for (i_Observer *observer: this->m_observerList)
 		observer->notify(nullptr);
 }
+
+void Model::sendTexturesToShader(ModelMesh *currentMesh, Shader &shader) {
+	std::unordered_map<std::string, Texture *> textureList = currentMesh->getTextureList();
+
+	unsigned int textureNumber = 0;
+	for (auto textureIter: textureList) {
+		const std::string uniformName = textureIter.first;
+		Texture *texture = textureIter.second;
+
+		texture->bind();
+		texture->setActiveTextureSlot(textureNumber);
+		shader.setUniformInt(uniformName, texture->getId());
+	}
+}
+

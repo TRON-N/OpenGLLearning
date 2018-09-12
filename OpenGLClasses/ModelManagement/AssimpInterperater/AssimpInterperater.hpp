@@ -13,23 +13,30 @@
 #include <glm/vec3.hpp>
 #include "../Models/ModelMesh.hpp"
 #include "../s_VertexData.hpp"
+#include "../Texture.hpp"
 #include <assimp/Importer.hpp>
+#include <map>
 
 class AssimpInterperater {
 public:
-	AssimpInterperater(std::string fileName);
+	AssimpInterperater(std::string fileName, std::string folderPath);
 	~AssimpInterperater();
 	std::vector<ModelMesh *> getModelMeshList();
-
 
 private:
 	void processAssimpNode(aiNode *node);
 	void processAssimpMesh(unsigned int meshId);
-	std::vector<s_VertexData>	m_vertexData;
-	std::vector<unsigned int>	m_vertexDrawingIndices;
-	std::vector<ModelMesh *>		m_modelMeshList;
-	const aiScene *				m_scene;
-	Assimp::Importer			m_assimpImporter;
+	void processTextures(ModelMesh *modelMesh, aiMaterial *meshMaterial, aiTextureType textureType);
+	Texture *getTextureFromFile(std::string fileName);
+
+	std::vector<s_VertexData>			m_vertexData;
+	std::vector<unsigned int>			m_vertexDrawingIndices;
+	std::vector<ModelMesh *>			m_modelMeshList;
+	std::map<std::string, Texture *>	m_textureList;
+	const aiScene *						m_scene;
+	Assimp::Importer					m_assimpImporter;
+
+	std::string							m_folderPath;
 };
 
 

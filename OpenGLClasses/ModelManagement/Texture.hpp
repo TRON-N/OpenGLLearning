@@ -9,11 +9,18 @@
 #include <string>
 
 class Texture {
-	Texture(std::string path);
+public:
+	Texture(unsigned char *data, unsigned int format, int width, int height);
 	~Texture();
 
+	unsigned int getId();
 	void bind();
+	void setActiveTextureSlot(unsigned int textureSlot);
+	void activateDefaultTextureSlot();
 	void unbind();
+
+private:
+	unsigned int	m_textureId;
 };
 
 

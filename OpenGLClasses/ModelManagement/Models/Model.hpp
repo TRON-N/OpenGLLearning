@@ -6,8 +6,6 @@
 #define LEARNINGOPENGL_MODEL_HPP
 
 #include "ModelMesh.hpp"
-#include "../../Shader.hpp"
-#include "../Animation/Animation.hpp"
 
 
 class Model : public i_Observer, public Observable {
@@ -31,6 +29,8 @@ public:
 	void notifyObservers() override;
 
 private:
+	void sendTexturesToShader(ModelMesh *currentMesh, Shader &shader);
+
 	std::vector<ModelMesh *>					m_meshList;
 	Transformation								m_modelTransformation;
 	std::unordered_map<std::string, Animation>	m_animationList;

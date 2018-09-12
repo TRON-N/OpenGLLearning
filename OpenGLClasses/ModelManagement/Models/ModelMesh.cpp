@@ -2,6 +2,8 @@
 // Created by Leonard VAN GEND on 2018/09/05.
 //
 
+#include "Model.hpp"
+#include <glm/gtc/type_ptr.hpp>
 #include <glad/glad.h>
 #include <iostream>
 #include "ModelMesh.hpp"
@@ -66,4 +68,13 @@ unsigned int ModelMesh::getVertexAmount() {
 	return this->m_vertexDrawingIndices.size();
 }
 
+void ModelMesh::addTexture(const std::string &textureName, Texture *texture) {
+	if (this->m_textureList.find(textureName) == this->m_textureList.end())
+		this->m_textureList[textureName] = texture;
+	else
+		std::cout << "That texture is already in the list" << std::endl;
+}
 
+std::unordered_map<std::string, Texture *> ModelMesh::getTextureList() {
+	return this->m_textureList;
+}
