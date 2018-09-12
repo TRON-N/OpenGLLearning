@@ -12,10 +12,6 @@ Model::Model(std::vector<ModelMesh *> meshList) : m_meshList(meshList), m_active
 }
 
 Model::~Model() {
-	for (auto &mesh: this->m_meshList) {
-		delete mesh;
-		mesh = nullptr;
-	}
 	std::cout << "Model destructor called" << std::endl;
 }
 

@@ -79,23 +79,21 @@ void createSDLWindow() {
 
 }
 
-int main(int argc, char *argv[])
-{
-	if(argc == 0 && argv == nullptr)
+int main(int argc, char *argv[]) {
+	if (argc == 0 && argv == nullptr)
 		std::cout << "no args" << std::endl;
 
 	createSDLWindow();
 	SDL_GLContext gl_context = SDL_GL_CreateContext(GLOBAL_SDL_WINDOW);
-
-	if (!gladLoadGLLoader((SDL_GL_GetProcAddress)))
 	{
+
+	if (!gladLoadGLLoader((SDL_GL_GetProcAddress))) {
 		std::cout << "Failed to initialize GLAD" << std::endl;
 		return -1;
 	}
 
 	AssimpInterperater interperater("ballo2.obj", "..");
 	std::vector<ModelMesh *> modelMeshList = interperater.getModelMeshList();
-	Model testModel(modelMeshList);
 
 	Animation testAnimation;
 
@@ -137,23 +135,33 @@ int main(int argc, char *argv[])
 	testAnimation.addKeyFrame(keyFrame5);
 	testAnimation.addKeyFrame(keyFrame6);
 
+	std::vector<Model *> modelList;
+	std::vector<testNotification *> notificationClassList;
 	std::string animationName = "testAnime";
-	testModel.addAnimation(testAnimation, "testAnime");
+	for (int i = 0; i < 3; i++) {
+		modelList.emplace_back(new Model(modelMeshList));
+		modelList.back()->addAnimation(testAnimation, animationName);
+		notificationClassList.push_back(new testNotification());
+		modelList.back()->registerObserver(notificationClassList.back());
+	}
 
 	glm::mat4 view(1.0f);
-	view = glm::translate(view, glm::vec3(0.0f, 0.0f, -5.5f));
-	view = glm::rotate(view, glm::radians(90.0f), glm::vec3(1, 0, 0));
+	view = glm::translate(view, glm::vec3(0.0f, 2.0f, -8.5f));
+//	view = glm::rotate(view, glm::radians(0.0f), glm::vec3(1, 0, 0));
 
 	glm::mat4 projection(1.0f);
-	projection = glm::perspective(glm::radians(55.0f), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
+	projection = glm::ortho(0.0f, 10.0f, 0.0f, 10.0f, 0.1f, 100.0f);
 
-	testModel.scale(glm::vec3(1.0f, 1.0f, 1.0f));
-	testModel.translate(glm::vec3(-1.0f, -1.0f, 0.0f));
+	for (unsigned int i = 0; i < modelList.size(); i++) {
+		Model *testModel = modelList[i];
+		testModel->scale(glm::vec3(1.0f, 1.0f, 1.0f));
+		testModel->translate(glm::vec3(-1.0f, -1.0f + (float) i, 0.0f));
+	}
 
-	Shader shaderProgram(vertexShaderSource, fragmentShaderSource);
-	shaderProgram.bind();
-	shaderProgram.setUniformMatrix4fv("view", glm::value_ptr(view), GL_FALSE);
-	shaderProgram.setUniformMatrix4fv("projection", glm::value_ptr(projection), GL_FALSE);
+	Shader *shaderProgram = new Shader(vertexShaderSource, fragmentShaderSource);
+	shaderProgram->bind();
+	shaderProgram->setUniformMatrix4fv("view", glm::value_ptr(view), GL_FALSE);
+	shaderProgram->setUniformMatrix4fv("projection", glm::value_ptr(projection), GL_FALSE);
 
 	glEnable(GL_DEPTH_TEST);
 //	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
@@ -162,12 +170,8 @@ int main(int argc, char *argv[])
 	// -----------
 //	testModel.startAnimation("testAnime");
 
-	testNotification testNotificationClass;
-	testModel.registerObserver(&testNotificationClass);
-
 	bool loop = true;
-	while (loop)
-	{
+	while (loop) {
 
 		SDL_Event event;
 		while (SDL_PollEvent(&event)) {
@@ -178,23 +182,38 @@ int main(int argc, char *argv[])
 		}
 
 		GL_ERROR_WRAPPER(glClearColor(0.2f, 0.3f, 0.3f, 1.0f));
-		GL_ERROR_WRAPPER(glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT ));
+		GL_ERROR_WRAPPER(glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT));
 
 //		float angle = 20.0f * 2;
 //		testModel.rotate(glm::vec3(0, SDL_GetTicks() / angle, 0));
-		testModel.draw(shaderProgram);
 
-		if(testNotificationClass.m_isActive == false) {
-			testModel.startAnimation("testAnime");
-			testNotificationClass.m_isActive = true;
-		}
+		for (unsigned int i = 0; i < modelList.size(); i++) {
+			Model *currentModel = modelList[i];
+			testNotification *currentNotificationClass = notificationClassList[i];
+			currentModel->draw(*shaderProgram);
 
-		if(testModel.getModelTransformation().m_translation.x > 5) {
-			testModel.translate(glm::vec3(-5, -1, 0));
+			if (currentModel->getModelTransformation().m_translation.x > 10)
+				currentModel->translate(glm::vec3(-1.0f, -1.0f + (float)i, 0));
+			if (currentNotificationClass->m_isActive == false) {
+				currentModel->startAnimation(animationName);
+				currentNotificationClass->m_isActive = true;
+			}
 		}
 
 		SDL_GL_SwapWindow(GLOBAL_SDL_WINDOW);
 	}
+	for (Model *model: modelList) {
+		delete model;
+	}
+
+	for (testNotification *testNotificationClass: notificationClassList) {
+		delete testNotificationClass;
+	}
+
+	for (ModelMesh *mesh: modelMeshList)
+		delete mesh;
+	delete shaderProgram;
+}
 	SDL_GL_DeleteContext(gl_context);
 	SDL_DestroyWindow(GLOBAL_SDL_WINDOW);
 	SDL_Quit();
