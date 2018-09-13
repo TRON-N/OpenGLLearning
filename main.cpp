@@ -105,10 +105,10 @@ int main(int argc, char *argv[]) {
 	KeyFrame keyFrame2(0.10f, keyFrame2Transformation);
 
 	Transformation keyFrame3Transformation;
-	keyFrame3Transformation.m_translation = glm::vec3(0.15, 0.4, 0);
+		keyFrame3Transformation.m_translation = glm::vec3(0.15, 0.7, 0);
 //	keyFrame3Transformation.m_rotation = glm::vec3(0, 0, -10);
-	keyFrame3Transformation.m_scaling = glm::vec3(0.9, 1.2, 0.9);
-	KeyFrame keyFrame3(0.17f, keyFrame3Transformation);
+		keyFrame3Transformation.m_scaling = glm::vec3(0.8, 1.4, 0.8);
+		KeyFrame keyFrame3(0.20f, keyFrame3Transformation);
 
 	Transformation keyFrame4Transformation;
 	keyFrame4Transformation.m_translation = glm::vec3(0.2, 1.5, 0);
@@ -195,10 +195,11 @@ int main(int argc, char *argv[]) {
 		for (unsigned int i = 0; i < modelList.size(); i++) {
 			Model *currentModel = modelList[i];
 			testNotification *currentNotificationClass = notificationClassList[i];
+
 			currentModel->draw(*shaderProgram);
 
 			if (currentModel->getModelTransformation().m_translation.x > 24)
-				currentModel->translate(glm::vec3(6.0f, 0.0f, -3.5 + (float) i * 3));
+				currentModel->translate(glm::vec3(5, 0.0f, -3.5f + (float) i * 3));
 			if (currentNotificationClass->m_isActive == false) {
 				currentModel->startAnimation(animationName);
 				currentNotificationClass->m_isActive = true;
