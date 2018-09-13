@@ -138,7 +138,7 @@ int main(int argc, char *argv[]) {
 	std::vector<Model *> modelList;
 	std::vector<testNotification *> notificationClassList;
 	std::string animationName = "testAnime";
-	for (int i = 0; i < 1; i++) {
+	for (int i = 0; i < 3; i++) {
 		modelList.emplace_back(new Model(modelMeshList));
 		modelList.back()->addAnimation(testAnimation, animationName);
 		notificationClassList.push_back(new testNotification());
