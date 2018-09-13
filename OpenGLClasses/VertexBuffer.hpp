@@ -10,6 +10,8 @@ class VertexBuffer {
 public:
 	VertexBuffer(unsigned int size, void *data);
 	VertexBuffer();
+	VertexBuffer(const VertexBuffer& obj);
+	VertexBuffer &operator=(const VertexBuffer &obj);
 	~VertexBuffer();
 
 	void bind();

@@ -11,6 +11,11 @@
 class Shader {
 public:
 	Shader(const std::string &vertexShaderSource, const std::string &fragShaderSource);
+	Shader();
+	Shader(const Shader &obj);
+	Shader &operator=(const Shader &obj);
+	~Shader();
+
 	void bind();
 	void unbind();
 
@@ -18,7 +23,7 @@ public:
 	void setUniformMatrix4fv(const std::string &name, const float *data, bool shouldTranspose);
 	void setUniformInt(const std::string &name, int value);
 
-	~Shader();
+
 
 private:
 	unsigned int createShader(unsigned int shaderType, const std::string &sourceString);

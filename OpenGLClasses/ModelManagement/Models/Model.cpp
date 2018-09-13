@@ -92,3 +92,21 @@ void Model::sendTexturesToShader(ModelMesh *currentMesh, Shader &shader) {
 	}
 }
 
+Model::Model() {
+}
+
+Model::Model(const Model &obj) {
+	*this = obj;
+}
+
+Model &Model::operator=(const Model &obj) {
+	if (this != &obj) {
+		this->m_meshList = obj.m_meshList;
+		this->m_activeAnimation = obj.m_activeAnimation;
+		this->m_animationList = obj.m_animationList;
+		this->m_modelTransformation = obj.m_modelTransformation;
+		this->m_observerList = obj.m_observerList;
+	}
+	return *this;
+}
+

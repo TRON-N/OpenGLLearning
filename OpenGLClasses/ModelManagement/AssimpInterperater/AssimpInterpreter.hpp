@@ -17,10 +17,13 @@
 #include <assimp/Importer.hpp>
 #include <map>
 
-class AssimpInterperater {
+class AssimpInterpreter {
 public:
-	AssimpInterperater(std::string fileName, std::string folderPath);
-	~AssimpInterperater();
+	AssimpInterpreter(std::string fileName, std::string folderPath);
+	AssimpInterpreter();
+	AssimpInterpreter(const AssimpInterpreter& obj);
+	AssimpInterpreter &operator=(const AssimpInterpreter& obj);
+	~AssimpInterpreter();
 	std::vector<ModelMesh *> getModelMeshList();
 
 private:

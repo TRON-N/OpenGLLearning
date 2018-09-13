@@ -65,13 +65,12 @@ void VertexArray::unbind() {
 }
 
 VertexArray::VertexArray(VertexArray &obj) {
-	*this = obj;
+	std::cout << "ERROR: VertexArray objects cannot be copied" << std::endl;
+	assert(&obj == nullptr);
 }
 
 VertexArray &VertexArray::operator=(const VertexArray &obj){
-	if (&obj != this) {
-		this->m_attribPointerId = obj.m_attribPointerId;
-		this->m_vertexArrayId = obj.m_vertexArrayId;
-	}
+	std::cout << "ERROR: VertexArray objects cannot be copied" << std::endl;
+	assert(&obj == nullptr);
 	return *this;
 }

@@ -36,4 +36,15 @@ ElementBuffer::ElementBuffer() {
 
 }
 
+ElementBuffer::ElementBuffer(const ElementBuffer &obj) {
+	std::cout << "ERROR: ElementBuffer objects cannot be copied" << std::endl;
+	assert(&obj == nullptr);
+}
+
+ElementBuffer &ElementBuffer::operator=(const ElementBuffer &obj) {
+	std::cout << "ERROR: ElementBuffer objects cannot be copied" << std::endl;
+	assert(&obj == nullptr);
+	return *this;
+}
+
 

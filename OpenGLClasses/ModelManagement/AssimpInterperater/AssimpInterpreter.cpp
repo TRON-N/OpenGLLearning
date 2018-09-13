@@ -7,9 +7,9 @@
 #include <cassert>
 #include <stb_image.h>
 #include <glad/glad.h>
-#include "AssimpInterperater.hpp"
+#include "AssimpInterpreter.hpp"
 
-AssimpInterperater::AssimpInterperater(std::string fileName, std::string folderPath) {
+AssimpInterpreter::AssimpInterpreter(std::string fileName, std::string folderPath) {
 	std::string fullFilePath = folderPath + "/" + fileName;
 
 	const aiScene *scene = this->m_assimpImporter.ReadFile(fullFilePath, aiProcess_Triangulate
@@ -24,7 +24,7 @@ AssimpInterperater::AssimpInterperater(std::string fileName, std::string folderP
 	this->m_folderPath = folderPath;
 }
 
-void AssimpInterperater::processAssimpNode(aiNode *node) {
+void AssimpInterpreter::processAssimpNode(aiNode *node) {
 	assert(node != nullptr);
 	std::cout << "Meshes In Node: " << node->mNumMeshes << std::endl;
 	std::cout << "Children In Node: " << node->mNumChildren << std::endl;
@@ -35,7 +35,7 @@ void AssimpInterperater::processAssimpNode(aiNode *node) {
 		processAssimpMesh(node->mMeshes[i]);
 }
 
-void AssimpInterperater::processAssimpMesh(unsigned int meshId) {
+void AssimpInterpreter::processAssimpMesh(unsigned int meshId) {
 	assert(this->m_scene != nullptr);
 	aiMesh *mesh = this->m_scene->mMeshes[meshId];
 	assert(mesh != nullptr);
@@ -69,7 +69,7 @@ void AssimpInterperater::processAssimpMesh(unsigned int meshId) {
 	this->m_vertexDrawingIndices.clear();
 }
 
-std::vector<ModelMesh *> AssimpInterperater::getModelMeshList() {
+std::vector<ModelMesh *> AssimpInterpreter::getModelMeshList() {
 	assert(this->m_scene != nullptr);
 	aiNode *assimpRootNode = this->m_scene->mRootNode;
 	assert(assimpRootNode != nullptr);
@@ -79,11 +79,11 @@ std::vector<ModelMesh *> AssimpInterperater::getModelMeshList() {
 	return this->m_modelMeshList;
 }
 
-AssimpInterperater::~AssimpInterperater() {
+AssimpInterpreter::~AssimpInterpreter() {
 
 }
 
-void AssimpInterperater::processTextures(ModelMesh *modelMesh, aiMaterial *meshMaterial, aiTextureType textureType) {
+void AssimpInterpreter::processTextures(ModelMesh *modelMesh, aiMaterial *meshMaterial, aiTextureType textureType) {
 
 	std::string textureTypeStr;
 
@@ -112,7 +112,7 @@ void AssimpInterperater::processTextures(ModelMesh *modelMesh, aiMaterial *meshM
 	}
 }
 
-Texture *AssimpInterperater::getTextureFromFile(std::string fileName) {
+Texture *AssimpInterpreter::getTextureFromFile(std::string fileName) {
 	int width;
 	int height;
 	int numberOfComponents;
@@ -142,4 +142,19 @@ Texture *AssimpInterperater::getTextureFromFile(std::string fileName) {
 	if (newTexture == nullptr)
 		std::cout << "Texture at " << fullFilePath << " could not be loaded." << std::endl;
 	return newTexture;
+}
+
+AssimpInterpreter::AssimpInterpreter() {
+
+}
+
+AssimpInterpreter::AssimpInterpreter(const AssimpInterpreter &obj) {
+	std::cout << "ERROR: AssimpInterpreter objects cannot be copied" << std::endl;
+	assert(&obj == nullptr);
+}
+
+AssimpInterpreter &AssimpInterpreter::operator=(const AssimpInterpreter &obj) {
+	std::cout << "ERROR: AssimpInterpreter objects cannot be copied" << std::endl;
+	assert(&obj == nullptr);
+	return *this;
 }

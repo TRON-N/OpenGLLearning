@@ -30,3 +30,14 @@ void VertexBuffer::unbind() {
 VertexBuffer::VertexBuffer() {
 
 }
+
+VertexBuffer::VertexBuffer(const VertexBuffer &obj) {
+	std::cout << "ERROR: VertexBuffer objects cannot be copied" << std::endl;
+	assert(&obj == nullptr);
+}
+
+VertexBuffer &VertexBuffer::operator=(const VertexBuffer &obj) {
+	std::cout << "ERROR: VertexBuffer objects cannot be copied" << std::endl;
+	assert(&obj == nullptr);
+	return *this;
+}

@@ -3,6 +3,7 @@
 //
 
 #include <glad/glad.h>
+#include <iostream>
 #include "Texture.hpp"
 #include "../openGLFunctionCallErrorManagementWrapper.hpp"
 
@@ -40,4 +41,18 @@ void Texture::activateDefaultTextureSlot() {
 
 unsigned int Texture::getId() {
 	return this->m_textureId;
+}
+
+Texture::Texture() {
+}
+
+Texture::Texture(const Texture &obj) {
+	std::cout << "ERROR: Texture objects cannot be copied" << std::endl;
+	assert(&obj == nullptr);
+}
+
+Texture &Texture::operator=(const Texture &obj) {
+	std::cout << "ERROR: Texture objects cannot be copied" << std::endl;
+	assert(&obj == nullptr);
+	return *this;
 }

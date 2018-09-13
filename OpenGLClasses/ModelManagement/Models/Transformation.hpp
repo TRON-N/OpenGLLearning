@@ -15,6 +15,7 @@ public:
 	Transformation(const Transformation &obj);
 	Transformation& operator =(const Transformation &obj);
 	~Transformation();
+
 	glm::mat4 getTransformationMatrix() const;
 	static Transformation getInterpolatedTransformation(const Transformation &t1, const Transformation &t2,
 														float interpolationValue);

@@ -9,6 +9,8 @@ class ElementBuffer {
 public:
 	ElementBuffer(unsigned int size, void *data, int drawOption);
 	ElementBuffer();
+	ElementBuffer(const ElementBuffer& obj);
+	ElementBuffer &operator =(const ElementBuffer& obj);
 	~ElementBuffer();
 
 	void setUpForVertexArray();

@@ -18,6 +18,9 @@ class ModelMesh {
 
 public:
 	ModelMesh(std::vector<s_VertexData> vertexData, std::vector<unsigned int> vertexDrawingIndices);
+	ModelMesh();
+	ModelMesh(const ModelMesh &obj);
+	ModelMesh &operator=(const ModelMesh &obj);
 	~ModelMesh();
 
 	Transformation &getMeshTransformation();

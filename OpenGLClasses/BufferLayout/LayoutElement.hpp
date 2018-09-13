@@ -9,6 +9,9 @@
 class LayoutElement {
 public:
 	LayoutElement(unsigned int type, unsigned int amount, bool shouldNormalize);
+	LayoutElement();
+	LayoutElement(const LayoutElement &obj);
+	LayoutElement &operator=(const LayoutElement &obj);
 	~LayoutElement();
 
 	static unsigned int getSizeOfType(unsigned int type);

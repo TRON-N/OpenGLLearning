@@ -24,3 +24,15 @@ void VertexBufferLayout::push(unsigned int type, unsigned count, bool shouldNorm
 unsigned int VertexBufferLayout::getStrideLength() {
 	return this->m_strideLength;
 }
+
+VertexBufferLayout::VertexBufferLayout(const VertexBufferLayout &obj) {
+	*this = obj;
+}
+
+VertexBufferLayout &VertexBufferLayout::operator=(const VertexBufferLayout &obj) {
+	if (this != &obj) {
+		this->m_strideLength = obj.m_strideLength;
+		this->m_layoutElements = obj.m_layoutElements;
+	}
+	return *this;
+}

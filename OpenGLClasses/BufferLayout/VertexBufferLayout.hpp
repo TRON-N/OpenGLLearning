@@ -11,6 +11,8 @@
 class VertexBufferLayout {
 public:
 	VertexBufferLayout();
+	VertexBufferLayout(const VertexBufferLayout &obj);
+	VertexBufferLayout &operator=(const VertexBufferLayout &obj);
 	~VertexBufferLayout();
 	const std::vector<LayoutElement>& getLayoutElements();
 
