@@ -4,7 +4,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 #include "OpenGLClasses/ModelManagement/AssimpInterperater/AssimpInterpreter.hpp"
-#include "extern/stb_image.h"
+#include <stb_image.h>
 #include "OpenGLClasses/Shader.hpp"
 #include "OpenGLClasses/openGLFunctionCallErrorManagementWrapper.hpp"
 #include "OpenGLClasses/ModelManagement/Models/Model.hpp"
@@ -105,29 +105,30 @@ int main(int argc, char *argv[])
 
 	Transformation keyFrame2Transformation;
 	keyFrame2Transformation.m_translation = glm::vec3(0.1, -0.2, 0);
-//	keyFrame2Transformation.m_rotation = glm::vec3(0, 0, -10);
-	keyFrame2Transformation.m_scaling = glm::vec3(1.1, 0.8, 1.1);
+	keyFrame2Transformation.m_rotation = glm::vec3(0, 0, 0);
+	keyFrame2Transformation.m_scaling = glm::vec3(1.2, 0.6, 1.2);
 	KeyFrame keyFrame2(0.10f, keyFrame2Transformation);
 
 	Transformation keyFrame3Transformation;
 	keyFrame3Transformation.m_translation = glm::vec3(0.15, 0.4, 0);
-//	keyFrame3Transformation.m_rotation = glm::vec3(0, 0, -10);
+	keyFrame3Transformation.m_rotation = glm::vec3(0, 10, 0);
 	keyFrame3Transformation.m_scaling = glm::vec3(0.9, 1.2, 0.9);
 	KeyFrame keyFrame3(0.17f, keyFrame3Transformation);
 
 	Transformation keyFrame4Transformation;
 	keyFrame4Transformation.m_translation = glm::vec3(0.2, 1.5, 0);
-//	keyFrame4Transformation.m_rotation = glm::vec3(0, 0, -20);
+	keyFrame4Transformation.m_rotation = glm::vec3(0, 30, 0);
 	KeyFrame keyFrame4(0.25f, keyFrame4Transformation);
 
 	Transformation keyFrame5Transformation;
 	keyFrame5Transformation.m_translation = glm::vec3(0.4, -0.2, 0);
-//	keyFrame4Transformation.m_rotation = glm::vec3(0, 0, -20);
-	keyFrame5Transformation.m_scaling = glm::vec3(1.1, 0.8, 1.1);
+	keyFrame5Transformation.m_rotation = glm::vec3(0, 40, 0);
+	keyFrame5Transformation.m_scaling = glm::vec3(1.2, 0.6, 1.2);
 	KeyFrame keyFrame5(0.35f, keyFrame5Transformation);
 
 	Transformation keyFrame6Transformation;
 	keyFrame6Transformation.m_translation = glm::vec3(0.4, 0, 0);
+	keyFrame6Transformation.m_rotation = glm::vec3(0, 40, 0);
 	KeyFrame keyFrame6(0.40f, keyFrame6Transformation);
 
 
