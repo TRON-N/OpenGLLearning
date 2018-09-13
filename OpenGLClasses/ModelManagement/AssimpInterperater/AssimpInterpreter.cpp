@@ -106,7 +106,7 @@ void AssimpInterpreter::processTextures(ModelMesh *modelMesh, aiMaterial *meshMa
 
 		if (this->m_textureList.find(textureNameStr) == this->m_textureList.end())
 			this->m_textureList[textureNameStr] = this->getTextureFromFile(textureNameStr);
-
+		std::cout << "Texture name: " << textureNameStr << std::endl;
 		modelMesh->addTexture(textureTypeStr + std::to_string(textureTypeNumber),
 							  this->m_textureList[textureNameStr]);
 	}
@@ -120,6 +120,8 @@ Texture *AssimpInterpreter::getTextureFromFile(std::string fileName) {
 	std::string fullFilePath = this->m_folderPath + "/" + fileName;
 	unsigned char *data = stbi_load(fullFilePath.c_str(), &width, &height, &numberOfComponents, 0);
 	Texture *newTexture = nullptr;
+
+	std::cout << "Trying to load this texture: " << fullFilePath << std::endl;
 
 	if (data != nullptr) {
 

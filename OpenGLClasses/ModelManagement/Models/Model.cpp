@@ -6,7 +6,6 @@
 #include <glm/gtc/type_ptr.hpp>
 #include <iostream>
 #include "Model.hpp"
-#include "../../Shader.hpp"
 
 Model::Model(std::vector<ModelMesh *> meshList) : m_meshList(meshList), m_activeAnimation(nullptr){
 }
@@ -36,10 +35,9 @@ void Model::draw(Shader &shaderProgram) {
 	shaderProgram.setUniformMatrix4fv("model", glm::value_ptr(modelToWorldMatrix), GL_FALSE);
 
 	for (ModelMesh *mesh: this->m_meshList) {
-		mesh->getVertexArray().bind();
-
 		sendTexturesToShader(mesh, shaderProgram);
-		glDrawElements(GL_TRIANGLES, mesh->getVertexAmount(), GL_UNSIGNED_INT, 0);;
+		mesh->getVertexArray().bind();
+		glDrawElements(GL_TRIANGLES, mesh->getVertexAmount(), GL_UNSIGNED_INT, nullptr);;
 	}
 }
 
@@ -86,9 +84,10 @@ void Model::sendTexturesToShader(ModelMesh *currentMesh, Shader &shader) {
 		const std::string uniformName = textureIter.first;
 		Texture *texture = textureIter.second;
 
-		texture->bind();
 		texture->setActiveTextureSlot(textureNumber);
-		shader.setUniformInt(uniformName, texture->getId());
+		texture->bind();
+		shader.setUniformInt(uniformName, textureNumber);
+		textureNumber++;
 	}
 }
 

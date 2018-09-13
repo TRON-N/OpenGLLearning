@@ -4,8 +4,6 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 #include "OpenGLClasses/ModelManagement/AssimpInterperater/AssimpInterpreter.hpp"
-#include <stb_image.h>
-#include "OpenGLClasses/Shader.hpp"
 #include "OpenGLClasses/openGLFunctionCallErrorManagementWrapper.hpp"
 #include "OpenGLClasses/ModelManagement/Models/Model.hpp"
 
@@ -138,7 +136,7 @@ int main(int argc, char *argv[]) {
 	std::vector<Model *> modelList;
 	std::vector<testNotification *> notificationClassList;
 	std::string animationName = "testAnime";
-	for (int i = 0; i < 3; i++) {
+		for (int i = 0; i < 10; i++) {
 		modelList.emplace_back(new Model(modelMeshList));
 		modelList.back()->addAnimation(testAnimation, animationName);
 		notificationClassList.push_back(new testNotification());
@@ -146,16 +144,16 @@ int main(int argc, char *argv[]) {
 	}
 
 	glm::mat4 view(1.0f);
-	view = glm::translate(view, glm::vec3(0.0f, 2.0f, -8.5f));
-//	view = glm::rotate(view, glm::radians(0.0f), glm::vec3(1, 0, 0));
+		view = glm::translate(view, glm::vec3(0.0f, 20.0f, -15.0f));
+		view = glm::rotate(view, glm::radians(45.0f), glm::vec3(1, 0, 0));
 
 	glm::mat4 projection(1.0f);
-	projection = glm::ortho(0.0f, 10.0f, 0.0f, 10.0f, 0.1f, 100.0f);
+		projection = glm::ortho(0.0f, 30.0f, 0.0f, 30.0f, -10.0f, 100.0f);
 
 	for (unsigned int i = 0; i < modelList.size(); i++) {
 		Model *testModel = modelList[i];
 		testModel->scale(glm::vec3(1.0f, 1.0f, 1.0f));
-		testModel->translate(glm::vec3(-1.0f, -1.0f + (float) i, 0.0f));
+		testModel->translate(glm::vec3(6.0f + (float) i, 0.0f, -3.5f + (float) i * 3));
 	}
 
 	Shader *shaderProgram = new Shader(vertexShaderSource, fragmentShaderSource);
@@ -169,6 +167,12 @@ int main(int argc, char *argv[]) {
 	// render loop
 	// -----------
 //	testModel.startAnimation("testAnime");
+
+		AssimpInterpreter interpreter2("cubo.obj", "..");
+		std::vector<ModelMesh *> boxList = interpreter2.getModelMeshList();
+		Model boxModel(boxList);
+		boxModel.scale(glm::vec3(10, 1, 15));
+		boxModel.translate(glm::vec3(15, -1.5, 10));
 
 	bool loop = true;
 	while (loop) {
@@ -187,13 +191,14 @@ int main(int argc, char *argv[]) {
 //		float angle = 20.0f * 2;
 //		testModel.rotate(glm::vec3(0, SDL_GetTicks() / angle, 0));
 
+		boxModel.draw(*shaderProgram);
 		for (unsigned int i = 0; i < modelList.size(); i++) {
 			Model *currentModel = modelList[i];
 			testNotification *currentNotificationClass = notificationClassList[i];
 			currentModel->draw(*shaderProgram);
 
-			if (currentModel->getModelTransformation().m_translation.x > 10)
-				currentModel->translate(glm::vec3(-1.0f, -1.0f + (float)i, 0));
+			if (currentModel->getModelTransformation().m_translation.x > 24)
+				currentModel->translate(glm::vec3(6.0f, 0.0f, -3.5 + (float) i * 3));
 			if (currentNotificationClass->m_isActive == false) {
 				currentModel->startAnimation(animationName);
 				currentNotificationClass->m_isActive = true;
