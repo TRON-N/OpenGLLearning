@@ -3,8 +3,8 @@
 #include <glad/glad.h>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
-#include "OpenGLClasses/ModelManagement/AssimpInterperater/AssimpInterperater.hpp"
-#include "extern/stb_image.h"
+#include "OpenGLClasses/ModelManagement/AssimpInterperater/AssimpInterpreter.hpp"
+#include <stb_image.h>
 #include "OpenGLClasses/Shader.hpp"
 #include "OpenGLClasses/openGLFunctionCallErrorManagementWrapper.hpp"
 #include "OpenGLClasses/ModelManagement/Models/Model.hpp"
@@ -92,7 +92,7 @@ int main(int argc, char *argv[]) {
 		return -1;
 	}
 
-	AssimpInterperater interperater("ballo2.obj", "..");
+	AssimpInterpreter interperater("ballo2.obj", "..");
 	std::vector<ModelMesh *> modelMeshList = interperater.getModelMeshList();
 
 	Animation testAnimation;
@@ -138,7 +138,7 @@ int main(int argc, char *argv[]) {
 	std::vector<Model *> modelList;
 	std::vector<testNotification *> notificationClassList;
 	std::string animationName = "testAnime";
-	for (int i = 0; i < 3; i++) {
+	for (int i = 0; i < 1; i++) {
 		modelList.emplace_back(new Model(modelMeshList));
 		modelList.back()->addAnimation(testAnimation, animationName);
 		notificationClassList.push_back(new testNotification());

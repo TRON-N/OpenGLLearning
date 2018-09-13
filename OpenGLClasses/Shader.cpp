@@ -27,7 +27,7 @@ Shader::Shader(const std::string &vertexShaderSource, const std::string &fragmen
 
 Shader::~Shader() {
 	std::cout << "Shader Destructor called" << std::endl;
-	GL_ERROR_WRAPPER(glDeleteShader(this->m_shaderId));
+	GL_ERROR_WRAPPER(glDeleteProgram(this->m_shaderId));
 }
 
 unsigned int Shader::createShader(unsigned int shaderType, const std::string &sourceString) {
