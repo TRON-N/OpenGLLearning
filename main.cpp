@@ -3,7 +3,7 @@
 #include <glad/glad.h>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
-#include "OpenGLClasses/ModelManagement/AssimpInterperater/AssimpInterperater.hpp"
+#include "OpenGLClasses/ModelManagement/AssimpInterperater/AssimpInterpreter.hpp"
 #include "extern/stb_image.h"
 #include "OpenGLClasses/Shader.hpp"
 #include "OpenGLClasses/openGLFunctionCallErrorManagementWrapper.hpp"
@@ -86,6 +86,7 @@ int main(int argc, char *argv[])
 
 	createSDLWindow();
 	SDL_GLContext gl_context = SDL_GL_CreateContext(GLOBAL_SDL_WINDOW);
+	SDL_GL_MakeCurrent(GLOBAL_SDL_WINDOW, gl_context);
 
 	if (!gladLoadGLLoader((SDL_GL_GetProcAddress)))
 	{
@@ -93,7 +94,7 @@ int main(int argc, char *argv[])
 		return -1;
 	}
 
-	AssimpInterperater interperater("ballo2.obj", "..");
+	AssimpInterpreter interperater("ballo2.obj", "..");
 	std::vector<ModelMesh *> modelMeshList = interperater.getModelMeshList();
 	Model testModel(modelMeshList);
 
@@ -142,7 +143,7 @@ int main(int argc, char *argv[])
 
 	glm::mat4 view(1.0f);
 	view = glm::translate(view, glm::vec3(0.0f, 0.0f, -5.5f));
-	view = glm::rotate(view, glm::radians(90.0f), glm::vec3(1, 0, 0));
+//	view = glm::rotate(view, glm::radians(90.0f), glm::vec3(1, 0, 0));
 
 	glm::mat4 projection(1.0f);
 	projection = glm::perspective(glm::radians(55.0f), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
@@ -177,9 +178,6 @@ int main(int argc, char *argv[])
 			}
 		}
 
-		GL_ERROR_WRAPPER(glClearColor(0.2f, 0.3f, 0.3f, 1.0f));
-		GL_ERROR_WRAPPER(glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT ));
-
 //		float angle = 20.0f * 2;
 //		testModel.rotate(glm::vec3(0, SDL_GetTicks() / angle, 0));
 		testModel.draw(shaderProgram);
@@ -194,6 +192,9 @@ int main(int argc, char *argv[])
 		}
 
 		SDL_GL_SwapWindow(GLOBAL_SDL_WINDOW);
+
+		GL_ERROR_WRAPPER(glClearColor(0.2f, 0.3f, 0.3f, 1.0f));
+		GL_ERROR_WRAPPER(glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT ));
 	}
 	SDL_GL_DeleteContext(gl_context);
 	SDL_DestroyWindow(GLOBAL_SDL_WINDOW);

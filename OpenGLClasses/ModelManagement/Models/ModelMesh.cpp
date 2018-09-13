@@ -78,3 +78,18 @@ void ModelMesh::addTexture(const std::string &textureName, Texture *texture) {
 std::unordered_map<std::string, Texture *> ModelMesh::getTextureList() {
 	return this->m_textureList;
 }
+
+ModelMesh::ModelMesh() {
+
+}
+
+ModelMesh::ModelMesh(const ModelMesh &obj) {
+	std::cout << "ERROR: ModelMesh objects cannot be copied" << std::endl;
+	assert(&obj == nullptr);
+}
+
+ModelMesh &ModelMesh::operator=(const ModelMesh &obj) {
+	std::cout << "ERROR: ModelMesh objects cannot be copied" << std::endl;
+	assert(&obj == nullptr);
+	return *this;
+}

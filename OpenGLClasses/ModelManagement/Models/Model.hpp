@@ -11,6 +11,9 @@
 class Model : public i_Observer, public Observable {
 public:
 	Model(std::vector<ModelMesh *> meshList);
+	Model();
+	Model(const Model &obj);
+	Model &operator=(const Model &obj);
 	~Model();
 
 	void rotate(glm::vec3 rotationAboutEachAxis);

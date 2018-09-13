@@ -93,4 +93,19 @@ void Shader::setUniformInt(const std::string &name, int value) {
 	glUniform1i(this->getUniformLocation(name), value);
 }
 
+Shader::Shader() {
+
+}
+
+Shader::Shader(const Shader &obj) {
+	std::cout << "ERROR: Shader objects cannot be copied" << std::endl;
+	assert(&obj == nullptr);
+}
+
+Shader &Shader::operator=(const Shader &obj) {
+	std::cout << "ERROR: Shader objects cannot be copied" << std::endl;
+	assert(&obj == nullptr);
+	return *this;
+}
+
 

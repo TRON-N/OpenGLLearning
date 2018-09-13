@@ -11,6 +11,9 @@
 class Texture {
 public:
 	Texture(unsigned char *data, unsigned int format, int width, int height);
+	Texture();
+	Texture(const Texture &obj);
+	Texture &operator=(const Texture &obj);
 	~Texture();
 
 	unsigned int getId();

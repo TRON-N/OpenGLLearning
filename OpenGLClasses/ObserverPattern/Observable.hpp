@@ -12,7 +12,7 @@ class Observable {
 public:
 	Observable();
 	Observable(const Observable &obj);
-	Observable &operator=(const Observable &obj);
+	virtual Observable &operator=(const Observable &obj);
 	virtual ~Observable();
 
 	void registerObserver(i_Observer *observer);

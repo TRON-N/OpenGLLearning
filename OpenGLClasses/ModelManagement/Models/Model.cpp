@@ -12,10 +12,6 @@ Model::Model(std::vector<ModelMesh *> meshList) : m_meshList(meshList), m_active
 }
 
 Model::~Model() {
-	for (auto &mesh: this->m_meshList) {
-		delete mesh;
-		mesh = nullptr;
-	}
 	std::cout << "Model destructor called" << std::endl;
 }
 
@@ -94,5 +90,23 @@ void Model::sendTexturesToShader(ModelMesh *currentMesh, Shader &shader) {
 		texture->setActiveTextureSlot(textureNumber);
 		shader.setUniformInt(uniformName, texture->getId());
 	}
+}
+
+Model::Model() {
+}
+
+Model::Model(const Model &obj) {
+	*this = obj;
+}
+
+Model &Model::operator=(const Model &obj) {
+	if (this != &obj) {
+		this->m_meshList = obj.m_meshList;
+		this->m_activeAnimation = obj.m_activeAnimation;
+		this->m_animationList = obj.m_animationList;
+		this->m_modelTransformation = obj.m_modelTransformation;
+		this->m_observerList = obj.m_observerList;
+	}
+	return *this;
 }
 
