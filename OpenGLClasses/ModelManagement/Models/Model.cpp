@@ -32,7 +32,7 @@ void Model::draw(Shader &shaderProgram) {
 	if (this->m_activeAnimation != nullptr)
 		currentTransform = this->m_modelTransformation + this->m_activeAnimation->getCurrentTransformation();
 	glm::mat4 modelToWorldMatrix = currentTransform.getTransformationMatrix();
-	shaderProgram.setUniformMatrix4fv("model", glm::value_ptr(modelToWorldMatrix), GL_FALSE);
+	shaderProgram.setUniformMatrix4fv("model", glm::value_ptr(modelToWorldMatrix));
 
 	for (ModelMesh *mesh: this->m_meshList) {
 		sendTexturesToShader(mesh, shaderProgram);
