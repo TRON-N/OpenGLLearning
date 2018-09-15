@@ -9,6 +9,7 @@
 Camera::Camera(Shader *shaderProgram, float cameraViewWidth, float cameraViewHeight) {
 	this->m_shaderProgram = shaderProgram;
 	this->m_isAnimationActive = false;
+	this->m_isTranslationLimited = false;
 
 	float halfWidth = cameraViewWidth / 2.0f;
 	float halfHeight = cameraViewHeight / 2.0f;
@@ -41,6 +42,10 @@ Camera &Camera::operator=(const Camera &obj) {
 }
 
 void Camera::translate(glm::vec3 translationAlongEachAxis) {
+
+	if (this->m_isTranslationLimited)
+		if (isInsideLimits(translationAlongEachAxis) == false)
+			return;
 	this->m_transformation.m_translation = translationAlongEachAxis;
 	this->m_transformation.m_translation *= -1;
 	this->sendTransfromationMatrixToShader();
@@ -103,4 +108,37 @@ void Camera::notify(void *arg) {
 	this->m_transformation += this->m_animation.getFinalTransformation();
 //	delete this->m_animation;
 	this->m_isAnimationActive = false;
+}
+
+void Camera::setTranslationLimits(glm::vec3 min, glm::vec3 max) {
+	assert(min.x <= max.x);
+	assert(min.y <= max.y);
+	assert(min.z <= max.z);
+	this->m_minTranslationLimit = min;
+	this->m_maxMaxTranslationLimit = max;
+	this->m_isTranslationLimited = true;
+}
+
+void Camera::removeTranslationLimits() {
+	this->m_isTranslationLimited = false;
+}
+
+bool Camera::isInsideLimits(glm::vec3 newVector) {
+	bool isInsideLimits = true;
+
+	if (newVector.x > this->m_maxMaxTranslationLimit.x || newVector.x < this->m_minTranslationLimit.x)
+		isInsideLimits = false;
+	if (newVector.y > this->m_maxMaxTranslationLimit.y || newVector.y < this->m_minTranslationLimit.y)
+		isInsideLimits = false;
+	if (newVector.z > this->m_maxMaxTranslationLimit.z || newVector.z < this->m_minTranslationLimit.z)
+		isInsideLimits = false;
+	return isInsideLimits;
+}
+
+glm::vec3 Camera::getMinTranslation() {
+	return this->m_minTranslationLimit;
+}
+
+glm::vec3 Camera::getMaxTranslation() {
+	return this->m_maxMaxTranslationLimit;
 }

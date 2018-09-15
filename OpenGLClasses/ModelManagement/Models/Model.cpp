@@ -27,11 +27,11 @@ void Model::scale(glm::vec3 scalingOnEachAxis) {
 }
 
 void Model::draw(Shader &shaderProgram) {
-	Transformation currentTransform = this->m_modelTransformation;
-
+	this->m_animatedTransformation = this->m_modelTransformation;
 	if (this->m_activeAnimation != nullptr)
-		currentTransform = this->m_modelTransformation + this->m_activeAnimation->getCurrentTransformation();
-	glm::mat4 modelToWorldMatrix = currentTransform.getTransformationMatrix();
+		this->m_animatedTransformation = this->m_modelTransformation
+										 + this->m_activeAnimation->getCurrentTransformation();
+	glm::mat4 modelToWorldMatrix = this->m_animatedTransformation.getTransformationMatrix();
 	shaderProgram.setUniformMatrix4fv("model", glm::value_ptr(modelToWorldMatrix));
 
 	for (ModelMesh *mesh: this->m_meshList) {
@@ -107,5 +107,9 @@ Model &Model::operator=(const Model &obj) {
 		this->m_observerList = obj.m_observerList;
 	}
 	return *this;
+}
+
+const Transformation &Model::getAnimatedTransformation() {
+	return this->m_animatedTransformation;
 }
 

@@ -102,13 +102,13 @@ int main(int argc, char *argv[]) {
 	Transformation keyFrame2Transformation;
 	keyFrame2Transformation.m_translation = glm::vec3(0.1, -0.2, 0);
 //	keyFrame2Transformation.m_rotation = glm::vec3(0, 0, -10);
-	keyFrame2Transformation.m_scaling = glm::vec3(1.1, 0.8, 1.1);
+		keyFrame2Transformation.m_scaling = glm::vec3(1.2, 0.6, 1.2);
 	KeyFrame keyFrame2(0.10f, keyFrame2Transformation);
 
 	Transformation keyFrame3Transformation;
 		keyFrame3Transformation.m_translation = glm::vec3(0.15, 0.7, 0);
 //	keyFrame3Transformation.m_rotation = glm::vec3(0, 0, -10);
-//		keyFrame3Transformation.m_scaling = glm::vec3(0.8, 1.4, 0.8);
+		keyFrame3Transformation.m_scaling = glm::vec3(0.8, 1.4, 0.8);
 		KeyFrame keyFrame3(0.20f, keyFrame3Transformation);
 
 	Transformation keyFrame4Transformation;
@@ -119,12 +119,12 @@ int main(int argc, char *argv[]) {
 	Transformation keyFrame5Transformation;
 	keyFrame5Transformation.m_translation = glm::vec3(0.4, -0.2, 0);
 //	keyFrame4Transformation.m_rotation = glm::vec3(0, 0, -20);
-	keyFrame5Transformation.m_scaling = glm::vec3(1.1, 0.8, 1.1);
+		keyFrame5Transformation.m_scaling = glm::vec3(1.2, 0.6, 1.2);
 	KeyFrame keyFrame5(0.35f, keyFrame5Transformation);
 
 	Transformation keyFrame6Transformation;
 	keyFrame6Transformation.m_translation = glm::vec3(0.4, 0, 0);
-	KeyFrame keyFrame6(0.40f, keyFrame6Transformation);
+		KeyFrame keyFrame6(0.37f, keyFrame6Transformation);
 
 
 	testAnimation.addKeyFrame(keyFrame1);
@@ -147,7 +147,7 @@ int main(int argc, char *argv[]) {
 	for (unsigned int i = 0; i < modelList.size(); i++) {
 		Model *testModel = modelList[i];
 		testModel->scale(glm::vec3(1.0f, 1.0f, 1.0f));
-		testModel->translate(glm::vec3(6.0f + (float) i, 0.0f, 10.0f + (float) i * 3));
+		testModel->translate(glm::vec3(-5.0f + (float) i, 0.0f, 10.0f + (float) i * 3));
 	}
 
 	Shader *shaderProgram = new Shader(vertexShaderSource, fragmentShaderSource);
@@ -157,10 +157,12 @@ int main(int argc, char *argv[]) {
 		glm::vec3 cameraRotation(-35, 0, 0);
 		camera.rotate(cameraRotation);
 
-		glm::vec3 cameraTrans = glm::vec3(6.0f + 0.4f, 0.0f, 10.0f);
+		glm::vec3 cameraTrans = glm::vec3(-5.0f + camera.getWidthAndHeight().x / 2, 0.0f, 10.0f);
 		cameraTrans.y -= 15;
 		cameraTrans.z += 20;
-
+		camera.setTranslationLimits({cameraTrans.x, cameraTrans.y, cameraTrans.z},
+									{cameraTrans.x + (40 - camera.getWidthAndHeight().x),
+									 cameraTrans.y, cameraTrans.z});
 		camera.translate(cameraTrans);
 	glEnable(GL_DEPTH_TEST);
 //	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
@@ -171,7 +173,7 @@ int main(int argc, char *argv[]) {
 		AssimpInterpreter interpreter2("cubo.obj", "..");
 		std::vector<ModelMesh *> boxList = interpreter2.getModelMeshList();
 		Model boxModel(boxList);
-		boxModel.scale(glm::vec3(10, 1, 15));
+		boxModel.scale(glm::vec3(20, 1, 15));
 		boxModel.translate(glm::vec3(15, -1.5, 20));
 
 	bool loop = true;
@@ -195,16 +197,19 @@ int main(int argc, char *argv[]) {
 
 			currentModel->draw(*shaderProgram);
 			camera.update();
-
-//			camera.translate(cameraTrans);
-			if (currentModel->getModelTransformation().m_translation.x > 24)
-				currentModel->translate(glm::vec3(5, 0.0f, 10.0f + (float) i * 3));
+			cameraTrans.x = currentModel->getAnimatedTransformation().m_translation.x;
+			camera.translate(cameraTrans);
+			if (currentModel->getModelTransformation().m_translation.x > 35) {
+				currentModel->translate(glm::vec3(-5.0f + (float) i, 0.0f, 10.0f + (float) i * 3));
+				camera.animatedMove(0.6, camera.getMinTranslation(), cameraRotation);
+			}
 			if (currentNotificationClass->m_isActive == false) {
 				currentModel->startAnimation(animationName);
 				currentNotificationClass->m_isActive = true;
 
-				cameraTrans.x += 0.4;
-				camera.animatedMove(0.40f, cameraTrans, cameraRotation);
+//
+//				cameraTrans.x += 0.4;
+//				camera.animatedMove(0.41f, cameraTrans, cameraRotation);
 			}
 		}
 

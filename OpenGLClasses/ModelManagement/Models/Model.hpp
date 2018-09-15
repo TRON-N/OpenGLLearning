@@ -21,6 +21,7 @@ public:
 	void scale(glm::vec3 scalingOnEachAxis);
 
 	const Transformation& getModelTransformation();
+	const Transformation &getAnimatedTransformation();
 
 	void draw(Shader &shaderProgram);
 
@@ -36,6 +37,7 @@ private:
 
 	std::vector<ModelMesh *>					m_meshList;
 	Transformation								m_modelTransformation;
+	Transformation m_animatedTransformation;
 	std::unordered_map<std::string, Animation>	m_animationList;
 	Animation *									m_activeAnimation;
 };
