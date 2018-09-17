@@ -29,3 +29,24 @@ void Renderer::update() {
 Renderer::~Renderer() {
 	SDL_GL_DeleteContext(this->m_glContext);
 }
+
+Renderer::Renderer() {
+
+}
+
+Renderer::Renderer(const Renderer &obj) {
+	std::cout << "ERROR: Renderer objects cannot be copied" << std::endl;
+	assert(&obj == nullptr);
+}
+
+Renderer &Renderer::operator=(const Renderer &obj) {
+	std::cout << "ERROR: Renderer objects cannot be copied" << std::endl;
+	assert(&obj == nullptr);
+	return *this;
+}
+
+void Renderer::notify(void *arg) {
+	unsigned int *resolution = (unsigned int *) arg;
+
+	GL_ERROR_WRAPPER(glViewport(0, 0, resolution[0], resolution[1]));
+}

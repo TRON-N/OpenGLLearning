@@ -8,26 +8,23 @@
 
 #include <SDL_video.h>
 #include <vector>
+#include "ObserverPattern/Observable.hpp"
 
-class Window {
+class Window : public Observable {
 public:
 	Window();
 
-	explicit Window(bool isFullScreen, unsigned int resolutionSetting);
-
+	Window(bool isFullScreen, unsigned int resolutionSetting);
 	Window(const Window &obj);
-
 	Window &operator=(const Window &obj);
-
 	~Window();
 
 	SDL_Window *getWindowPtr();
-
 	std::vector<std::vector<int>> getValidResolutionList();
-
 	void setResolution(unsigned int i);
-
 	void toggleFullScreen();
+
+	void notifyObservers() override;
 
 private:
 	void populateValidResolutionList();
@@ -35,6 +32,7 @@ private:
 	SDL_Window *m_window;
 	std::vector<std::vector<int>> m_validResolutionList;
 	bool m_isFullScreen;
+	unsigned int m_resolutionIndex;
 };
 
 

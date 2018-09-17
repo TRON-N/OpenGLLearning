@@ -65,6 +65,8 @@ int main(int argc, char *argv[]) {
 		Window gameWindow(false, 3);
 		Renderer renderer(gameWindow.getWindowPtr());
 
+		gameWindow.registerObserver(&renderer);
+
 
 	AssimpInterpreter interperater("ballo2.obj", "..");
 	std::vector<ModelMesh *> modelMeshList = interperater.getModelMeshList();
@@ -155,8 +157,40 @@ int main(int argc, char *argv[]) {
 		SDL_Event event;
 		while (SDL_PollEvent(&event)) {
 			if (event.type == SDL_KEYDOWN) {
-				loop = false;
-				break;
+				switch (event.key.keysym.sym) {
+					case SDLK_0:
+						gameWindow.setResolution(0);
+						break;
+					case SDLK_1:
+						gameWindow.setResolution(1);
+						break;
+					case SDLK_2:
+						gameWindow.setResolution(2);
+						break;
+					case SDLK_3:
+						gameWindow.setResolution(3);
+						break;
+					case SDLK_4:
+						gameWindow.setResolution(4);
+						break;
+					case SDLK_5:
+						gameWindow.setResolution(5);
+						break;
+					case SDLK_6:
+						gameWindow.setResolution(6);
+						break;
+					case SDLK_7:
+						gameWindow.setResolution(7);
+						break;
+					case SDLK_8:
+						gameWindow.setResolution(8);
+						break;
+					case SDLK_TAB:
+						gameWindow.toggleFullScreen();
+						break;
+					default:
+						loop = false;
+				}
 			}
 			if (event.type == SDL_QUIT) {
 				loop = false;
