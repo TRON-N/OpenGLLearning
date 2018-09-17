@@ -1,12 +1,12 @@
 #include <SDL.h>
 #include <iostream>
-#include <glad/glad.h>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 #include "OpenGLClasses/ModelManagement/AssimpInterperater/AssimpInterpreter.hpp"
-#include "OpenGLClasses/openGLFunctionCallErrorManagementWrapper.hpp"
 #include "OpenGLClasses/ModelManagement/Models/Model.hpp"
 #include "OpenGLClasses/Camera.hpp"
+#include "OpenGLClasses/Renderer.hpp"
+#include "OpenGLClasses/Window.hpp"
 
 class testNotification : public i_Observer {
 public:
@@ -55,41 +55,16 @@ const char *fragmentShaderSource = 	"#version 330 core\n"
 									"{\n"
 									"	FragColor = texture(texture_diffuse1, texCoord);\n"
 									"}\0";
-SDL_Window* GLOBAL_SDL_WINDOW;
-
-void createSDLWindow() {
-
-
-	// SDL: initialize and configure
-	// ------------------------------
-
-	if(SDL_Init(SDL_INIT_VIDEO)) {
-		std::cout << SDL_GetError() << std::endl;
-		exit(EXIT_FAILURE);
-	}
-
-	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
-	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 3);
-	SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
-
-	GLOBAL_SDL_WINDOW = SDL_CreateWindow("SDL GL Test", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
-			800, 600, SDL_WINDOW_OPENGL);
-
-
-}
-
 int main(int argc, char *argv[]) {
 	if (argc == 0 && argv == nullptr)
 		std::cout << "no args" << std::endl;
 
-	createSDLWindow();
-	SDL_GLContext gl_context = SDL_GL_CreateContext(GLOBAL_SDL_WINDOW);
+
 	{
 
-	if (!gladLoadGLLoader((SDL_GL_GetProcAddress))) {
-		std::cout << "Failed to initialize GLAD" << std::endl;
-		return -1;
-	}
+		Window gameWindow(false, 3);
+		Renderer renderer(gameWindow.getWindowPtr());
+
 
 	AssimpInterpreter interperater("ballo2.obj", "..");
 	std::vector<ModelMesh *> modelMeshList = interperater.getModelMeshList();
@@ -164,10 +139,8 @@ int main(int argc, char *argv[]) {
 									{cameraTrans.x + (40 - camera.getWidthAndHeight().x),
 									 cameraTrans.y, cameraTrans.z});
 		camera.translate(cameraTrans);
-	glEnable(GL_DEPTH_TEST);
-//	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
-	// render loop
+		// render loop
 	// -----------
 
 		AssimpInterpreter interpreter2("cubo.obj", "..");
@@ -181,14 +154,15 @@ int main(int argc, char *argv[]) {
 
 		SDL_Event event;
 		while (SDL_PollEvent(&event)) {
+			if (event.type == SDL_KEYDOWN) {
+				loop = false;
+				break;
+			}
 			if (event.type == SDL_QUIT) {
 				loop = false;
 				break;
 			}
 		}
-
-		GL_ERROR_WRAPPER(glClearColor(0.2f, 0.3f, 0.3f, 1.0f));
-		GL_ERROR_WRAPPER(glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT));
 
 		boxModel.draw(*shaderProgram);
 		for (unsigned int i = 0; i < modelList.size(); i++) {
@@ -206,14 +180,9 @@ int main(int argc, char *argv[]) {
 			if (currentNotificationClass->m_isActive == false) {
 				currentModel->startAnimation(animationName);
 				currentNotificationClass->m_isActive = true;
-
-//
-//				cameraTrans.x += 0.4;
-//				camera.animatedMove(0.41f, cameraTrans, cameraRotation);
 			}
 		}
-
-		SDL_GL_SwapWindow(GLOBAL_SDL_WINDOW);
+		renderer.update();
 	}
 	for (Model *model: modelList) {
 		delete model;
@@ -226,10 +195,7 @@ int main(int argc, char *argv[]) {
 	for (ModelMesh *mesh: modelMeshList)
 		delete mesh;
 	delete shaderProgram;
-}
-	SDL_GL_DeleteContext(gl_context);
-	SDL_DestroyWindow(GLOBAL_SDL_WINDOW);
-	SDL_Quit();
+	}
 	std::cout << "Program Ended" << std::endl;
 	return 0;
 }
