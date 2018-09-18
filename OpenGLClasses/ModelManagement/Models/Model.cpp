@@ -42,7 +42,7 @@ void Model::draw(Shader &shaderProgram) {
 }
 
 const Transformation &Model::getModelTransformation() {
-	return this->m_modelTransformation;
+	return this->m_animatedTransformation;
 }
 
 void Model::addAnimation(Animation &animation, const std::string &name) {
@@ -95,21 +95,12 @@ Model::Model() {
 }
 
 Model::Model(const Model &obj) {
-	*this = obj;
+	std::cout << "ERROR: Model objects cannot be copied" << std::endl;
+	assert(&obj == nullptr);
 }
 
 Model &Model::operator=(const Model &obj) {
-	if (this != &obj) {
-		this->m_meshList = obj.m_meshList;
-		this->m_activeAnimation = obj.m_activeAnimation;
-		this->m_animationList = obj.m_animationList;
-		this->m_modelTransformation = obj.m_modelTransformation;
-		this->m_observerList = obj.m_observerList;
-	}
+	std::cout << "ERROR: Model objects cannot be copied" << std::endl;
+	assert(&obj == nullptr);
 	return *this;
 }
-
-const Transformation &Model::getAnimatedTransformation() {
-	return this->m_animatedTransformation;
-}
-

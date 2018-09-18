@@ -22,6 +22,7 @@ AssimpInterpreter::AssimpInterpreter(std::string fileName, std::string folderPat
 	}
 	this->m_scene = scene;
 	this->m_folderPath = folderPath;
+	this->m_isFileProcessed = false;
 }
 
 void AssimpInterpreter::processAssimpNode(aiNode *node) {
@@ -75,12 +76,18 @@ std::vector<ModelMesh *> AssimpInterpreter::getModelMeshList() {
 	assert(assimpRootNode != nullptr);
 	assert(assimpRootNode->mNumChildren >= 1);
 
-	processAssimpNode(assimpRootNode);
+	if (this->m_isFileProcessed == false) {
+		processAssimpNode(assimpRootNode);
+		this->m_isFileProcessed = true;
+	}
 	return this->m_modelMeshList;
 }
 
 AssimpInterpreter::~AssimpInterpreter() {
-
+	for (auto iter: this->m_textureList)
+		delete iter.second;
+	for (ModelMesh *mesh: this->m_modelMeshList)
+		delete mesh;
 }
 
 void AssimpInterpreter::processTextures(ModelMesh *modelMesh, aiMaterial *meshMaterial, aiTextureType textureType) {

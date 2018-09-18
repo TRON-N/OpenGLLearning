@@ -6,7 +6,7 @@
 
 KeyFrame::KeyFrame(float timeStampInSeconds, Transformation keyFrameTransformation) :
 		m_keyFrameTransformation(keyFrameTransformation){
-	this->m_timeStamp = timeStampInSeconds * 1000.0f;
+	this->m_timeStampInMilliseconds = timeStampInSeconds * 1000.0f;
 }
 
 KeyFrame::KeyFrame(const KeyFrame &obj) {
@@ -16,7 +16,7 @@ KeyFrame::KeyFrame(const KeyFrame &obj) {
 KeyFrame &KeyFrame::operator=(const KeyFrame &obj) {
 	if (this != &obj) {
 		this->m_keyFrameTransformation = obj.m_keyFrameTransformation;
-		this->m_timeStamp = obj.m_timeStamp;
+		this->m_timeStampInMilliseconds = obj.m_timeStampInMilliseconds;
 	}
 	return *this;
 }
@@ -25,7 +25,7 @@ KeyFrame::~KeyFrame() {
 }
 
 unsigned int KeyFrame::getTimeStampInMilliseconds() {
-	return this->m_timeStamp;
+	return this->m_timeStampInMilliseconds;
 }
 
 const Transformation &KeyFrame::getFrameTransformation() {

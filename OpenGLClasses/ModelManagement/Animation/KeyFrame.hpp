@@ -19,7 +19,7 @@ public:
 	unsigned int getTimeStampInMilliseconds();
 
 private:
-	unsigned int	m_timeStamp;
+	unsigned int m_timeStampInMilliseconds;
 	Transformation	m_keyFrameTransformation;
 };
 

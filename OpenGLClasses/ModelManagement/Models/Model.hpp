@@ -21,7 +21,6 @@ public:
 	void scale(glm::vec3 scalingOnEachAxis);
 
 	const Transformation& getModelTransformation();
-	const Transformation &getAnimatedTransformation();
 
 	void draw(Shader &shaderProgram);
 

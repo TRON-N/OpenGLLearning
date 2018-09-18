@@ -40,6 +40,7 @@ private:
 	Assimp::Importer					m_assimpImporter;
 
 	std::string							m_folderPath;
+	bool m_isFileProcessed;
 };
 
 
