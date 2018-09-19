@@ -2,12 +2,12 @@
 #include <iostream>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
-#include "OpenGLClasses/ModelManagement/AssimpInterperater/AssimpInterpreter.hpp"
-#include "OpenGLClasses/ModelManagement/Models/Model.hpp"
-#include "OpenGLClasses/Camera.hpp"
-#include "OpenGLClasses/Renderer.hpp"
-#include "OpenGLClasses/Window.hpp"
-#include "OpenGLClasses/ModelManagement/Models/ModelDispenser.hpp"
+#include "AssimpInterpreter.hpp"
+#include "Model.hpp"
+#include "Camera.hpp"
+#include "Renderer.hpp"
+#include "Window.hpp"
+#include "ModelDispenser.hpp"
 
 class testNotification : public i_Observer {
 public:
