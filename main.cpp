@@ -80,7 +80,14 @@ int main(int argc, char *argv[]) {
 
 		Model *boxModel = modelDispenser.getModel("cubo.obj", "..");
 		boxModel->scale(glm::vec3(20, 1, 15));
-		boxModel->translate(glm::vec3(15, -1.5, 20));
+		boxModel->translate(glm::vec3(15, -5.0f, 20));
+
+		Model *testBoxSpecial = modelDispenser.getModel("Crate.obj", "../../blender/71943_Low_poly_Crate");
+		testBoxSpecial->translate(glm::vec3(10 + (float) 0, 1.0f, 10.0f + (float) 0 * 3));
+//		testBoxSpecial->scale({1.2, 1.2, 1.2});
+
+		Model *testBoxSpecial2 = modelDispenser.getModel("box_simple.obj", "../../blender/69222_Simple_box");
+		testBoxSpecial2->translate(glm::vec3(10 + (float) 0, 1.0f, 15.0f + (float) 0 * 3));
 
 		std::vector<Model *> modelList;
 		std::vector<testNotification *> notificationClassList;
@@ -88,7 +95,7 @@ int main(int argc, char *argv[]) {
 			notificationClassList.push_back(new testNotification);
 			modelList.push_back(modelDispenser.getModel("ballo2.obj", ".."));
 			modelList.back()->addAnimation(testAnimation, animationName);
-			modelList.back()->translate(glm::vec3(-5.0f + (float) i, 0.0f, 10.0f + (float) i * 3));
+			modelList.back()->translate(glm::vec3(-5.0f + (float) i, 1.0f, 10.0f + (float) i * 3));
 			modelList.back()->registerObserver(notificationClassList.back());
 		}
 
@@ -159,6 +166,8 @@ int main(int argc, char *argv[]) {
 
 
 			boxModel->draw(shaderProgram);
+			testBoxSpecial->draw(shaderProgram);
+			testBoxSpecial2->draw(shaderProgram);
 			for (unsigned int i = 0; i < modelList.size(); i++) {
 				Model &currentModel = *modelList[i];
 				testNotification &notification = *notificationClassList[i];

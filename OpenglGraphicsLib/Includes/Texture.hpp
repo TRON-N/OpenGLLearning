@@ -18,8 +18,10 @@ public:
 
 	unsigned int getId();
 	void bind();
-	void setActiveTextureSlot(unsigned int textureSlot);
-	void activateDefaultTextureSlot();
+
+	static void setActiveTextureSlot(unsigned int textureSlot);
+
+	static void activateDefaultTextureSlot();
 	void unbind();
 
 private:

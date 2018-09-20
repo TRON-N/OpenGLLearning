@@ -38,7 +38,7 @@ void Texture::setActiveTextureSlot(unsigned int textureSlot) {
 }
 
 void Texture::activateDefaultTextureSlot() {
-	this->setActiveTextureSlot(0);
+	setActiveTextureSlot(0);
 }
 
 unsigned int Texture::getId() {
