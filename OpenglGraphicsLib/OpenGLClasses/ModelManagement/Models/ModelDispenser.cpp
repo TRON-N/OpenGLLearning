@@ -10,12 +10,14 @@ ModelDispenser::ModelDispenser() {
 
 ModelDispenser::ModelDispenser(const ModelDispenser &obj) {
 	std::cout << "ERROR: AssimpInterpreter objects cannot be copied" << std::endl;
-	assert(&obj == nullptr);
+	*this = obj;
+	assert(false);
 }
 
 ModelDispenser &ModelDispenser::operator=(const ModelDispenser &obj) {
 	std::cout << "ERROR: AssimpInterpreter objects cannot be copied" << std::endl;
-	assert(&obj == nullptr);
+	this->m_interpereterPerFileList = obj.m_interpereterPerFileList;
+	assert(false);
 	return *this;
 }
 

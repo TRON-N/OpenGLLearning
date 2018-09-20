@@ -38,12 +38,14 @@ ElementBuffer::ElementBuffer() {
 
 ElementBuffer::ElementBuffer(const ElementBuffer &obj) {
 	std::cout << "ERROR: ElementBuffer objects cannot be copied" << std::endl;
-	assert(&obj == nullptr);
+	*this = obj;
+	assert(false);
 }
 
 ElementBuffer &ElementBuffer::operator=(const ElementBuffer &obj) {
 	std::cout << "ERROR: ElementBuffer objects cannot be copied" << std::endl;
-	assert(&obj == nullptr);
+	this->m_elementBufferId = obj.m_elementBufferId;
+	assert(false);
 	return *this;
 }
 

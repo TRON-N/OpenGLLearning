@@ -12,12 +12,14 @@ Window::Window() {
 
 Window::Window(const Window &obj) {
 	std::cout << "ERROR: Window objects cannot be copied" << std::endl;
-	assert(&obj == nullptr);
+	*this = obj;
+	assert(false);
 }
 
 Window &Window::operator=(const Window &obj) {
 	std::cout << "ERROR: Window objects cannot be copied" << std::endl;
-	assert(&obj == nullptr);
+	this->m_window = obj.m_window;
+	assert(false);
 	return *this;
 }
 

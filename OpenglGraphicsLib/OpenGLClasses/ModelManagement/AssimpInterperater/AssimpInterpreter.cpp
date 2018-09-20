@@ -7,6 +7,7 @@
 #include <cassert>
 #include <stb_image.h>
 #include <glad/glad.h>
+#include <GenericProgException.hpp>
 #include "../../../Includes/AssimpInterpreter.hpp"
 
 AssimpInterpreter::AssimpInterpreter(std::string fileName, std::string folderPath) {
@@ -17,8 +18,9 @@ AssimpInterpreter::AssimpInterpreter(std::string fileName, std::string folderPat
 
 	if(!scene || scene->mFlags & AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode)
 	{
-		std::cout << "ERROR::ASSIMP::" << this->m_assimpImporter.GetErrorString() << std::endl;
-		exit(EXIT_FAILURE);
+		std::string errorStr = "Exception: ASSIMP: ";
+		errorStr.append(this->m_assimpImporter.GetErrorString());
+		throw GenericProgException(errorStr.c_str());
 	}
 	this->m_scene = scene;
 	this->m_folderPath = folderPath;
@@ -148,8 +150,10 @@ Texture *AssimpInterpreter::getTextureFromFile(std::string fileName) {
 		newTexture = new Texture(data, format, width, height);
 	}
 	stbi_image_free(data);
-	if (newTexture == nullptr)
-		std::cout << "Texture at " << fullFilePath << " could not be loaded." << std::endl;
+	if (newTexture == nullptr) {
+		std::string errorStr = "Texture at " + fullFilePath + " could not be loaded.\n";
+		throw GenericProgException(errorStr.c_str());
+	}
 	return newTexture;
 }
 
@@ -159,11 +163,13 @@ AssimpInterpreter::AssimpInterpreter() {
 
 AssimpInterpreter::AssimpInterpreter(const AssimpInterpreter &obj) {
 	std::cout << "ERROR: AssimpInterpreter objects cannot be copied" << std::endl;
-	assert(&obj == nullptr);
+	*this = obj;
+	assert(false);
 }
 
 AssimpInterpreter &AssimpInterpreter::operator=(const AssimpInterpreter &obj) {
 	std::cout << "ERROR: AssimpInterpreter objects cannot be copied" << std::endl;
-	assert(&obj == nullptr);
+	this->m_folderPath = obj.m_folderPath;
+	assert(false);
 	return *this;
 }

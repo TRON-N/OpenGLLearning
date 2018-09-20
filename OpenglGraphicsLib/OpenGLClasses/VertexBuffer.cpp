@@ -33,11 +33,13 @@ VertexBuffer::VertexBuffer() {
 
 VertexBuffer::VertexBuffer(const VertexBuffer &obj) {
 	std::cout << "ERROR: VertexBuffer objects cannot be copied" << std::endl;
-	assert(&obj == nullptr);
+	*this = obj;
+	assert(false);
 }
 
 VertexBuffer &VertexBuffer::operator=(const VertexBuffer &obj) {
 	std::cout << "ERROR: VertexBuffer objects cannot be copied" << std::endl;
-	assert(&obj == nullptr);
+	this->m_vertexBufferId = obj.m_vertexBufferId;
+	assert(false);
 	return *this;
 }

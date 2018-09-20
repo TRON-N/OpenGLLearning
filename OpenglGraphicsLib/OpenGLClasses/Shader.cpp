@@ -99,12 +99,14 @@ Shader::Shader() {
 
 Shader::Shader(const Shader &obj) {
 	std::cout << "ERROR: Shader objects cannot be copied" << std::endl;
-	assert(&obj == nullptr);
+	*this = obj;
+	assert(false);
 }
 
 Shader &Shader::operator=(const Shader &obj) {
 	std::cout << "ERROR: Shader objects cannot be copied" << std::endl;
-	assert(&obj == nullptr);
+	this->m_shaderId = obj.m_shaderId;
+	assert(false);
 	return *this;
 }
 

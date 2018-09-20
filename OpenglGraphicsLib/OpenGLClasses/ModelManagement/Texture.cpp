@@ -50,11 +50,13 @@ Texture::Texture() {
 
 Texture::Texture(const Texture &obj) {
 	std::cout << "ERROR: Texture objects cannot be copied" << std::endl;
-	assert(&obj == nullptr);
+	*this = obj;
+	assert(false);
 }
 
 Texture &Texture::operator=(const Texture &obj) {
 	std::cout << "ERROR: Texture objects cannot be copied" << std::endl;
-	assert(&obj == nullptr);
+	this->m_textureId = obj.m_textureId;
+	assert(false);
 	return *this;
 }

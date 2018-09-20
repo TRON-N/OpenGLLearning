@@ -59,6 +59,7 @@ set(CPP_SOURCE_FILES OpenGLClasses/ObserverPattern/Observable.cpp
         OpenGLClasses/VertexArray.cpp
         OpenGLClasses/VertexArray.cpp
         OpenGLClasses/VertexBuffer.cpp
+        ExceptionClass/GenericProgException.cpp
         ${glad_SOURCE_FILE})
 
 set(HEADER_FILES Includes/VertexBuffer.hpp
@@ -78,9 +79,11 @@ set(HEADER_FILES Includes/VertexBuffer.hpp
         Includes/Camera.hpp OpenGLClasses/Renderer.cpp
         Includes/Renderer.hpp OpenGLClasses/Window.cpp
         Includes/Window.hpp OpenGLClasses/ModelManagement/Models/ModelDispenser.cpp
-        Includes/ModelDispenser.hpp)
+        Includes/ModelDispenser.hpp
+        Includes/GenericProgException.hpp)
 
 add_library(OpenglGraphicsLib STATIC ${CPP_SOURCE_FILES} ${HEADER_FILES})
+target_include_directories(OpenglGraphicsLib PRIVATE Includes)
 
 if (stb_image_download_POPULATED)
     target_include_directories(OpenglGraphicsLib PUBLIC "${stb_image_download_SOURCE_DIR}/stb_image")
@@ -96,4 +99,4 @@ if (assimp_download_POPULATED)
 endif ()
 
 target_link_libraries(OpenglGraphicsLib assimp stb_image_lib)
-#target_compile_options(learningOpenGL PRIVATE "-Wall" "-Werror" "-Wextra")
+target_compile_options(OpenglGraphicsLib PRIVATE "-Wall" "-Werror" "-Wextra")

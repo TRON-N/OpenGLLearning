@@ -70,12 +70,14 @@ Renderer::Renderer() {
 
 Renderer::Renderer(const Renderer &obj) {
 	std::cout << "ERROR: Renderer objects cannot be copied" << std::endl;
-	assert(&obj == nullptr);
+	*this = obj;
+	assert(false);
 }
 
 Renderer &Renderer::operator=(const Renderer &obj) {
 	std::cout << "ERROR: Renderer objects cannot be copied" << std::endl;
-	assert(&obj == nullptr);
+	this->m_window = obj.m_window;
+	assert(false);
 	return *this;
 }
 

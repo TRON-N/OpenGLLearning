@@ -2,7 +2,7 @@
 // Created by Leonard VAN GEND on 2018/09/05.
 //
 
-#include "../../../Includes/Model.hpp"
+#include <ModelMesh.hpp>
 #include <glm/gtc/type_ptr.hpp>
 #include <glad/glad.h>
 #include <iostream>
@@ -84,11 +84,13 @@ ModelMesh::ModelMesh() {
 
 ModelMesh::ModelMesh(const ModelMesh &obj) {
 	std::cout << "ERROR: ModelMesh objects cannot be copied" << std::endl;
-	assert(&obj == nullptr);
+	*this = obj;
+	assert(false);
 }
 
 ModelMesh &ModelMesh::operator=(const ModelMesh &obj) {
 	std::cout << "ERROR: ModelMesh objects cannot be copied" << std::endl;
-	assert(&obj == nullptr);
+	this->m_meshTransformation = obj.m_meshTransformation;
+	assert(false);
 	return *this;
 }

@@ -95,12 +95,13 @@ Model::Model() {
 }
 
 Model::Model(const Model &obj) {
+	*this = obj;
 	std::cout << "ERROR: Model objects cannot be copied" << std::endl;
-	assert(&obj == nullptr);
 }
 
 Model &Model::operator=(const Model &obj) {
+	this->m_activeAnimation = obj.m_activeAnimation;
 	std::cout << "ERROR: Model objects cannot be copied" << std::endl;
-	assert(&obj == nullptr);
+	assert(false);
 	return *this;
 }
