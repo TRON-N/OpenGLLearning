@@ -5,6 +5,7 @@
 #include <SDL.h>
 #include <iostream>
 #include "../Includes/Window.hpp"
+#include <cassert>
 
 Window::Window() {
 

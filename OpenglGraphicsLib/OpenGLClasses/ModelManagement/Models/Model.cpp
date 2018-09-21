@@ -94,7 +94,7 @@ void Model::sendTexturesToShader(ModelMesh *currentMesh, Shader &shader) {
 Model::Model() {
 }
 
-Model::Model(const Model &obj) {
+Model::Model(const Model &obj) : Observable() {
 	*this = obj;
 	std::cout << "ERROR: Model objects cannot be copied" << std::endl;
 }

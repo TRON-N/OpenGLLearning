@@ -99,4 +99,4 @@ if (assimp_download_POPULATED)
 endif ()
 
 target_link_libraries(OpenglGraphicsLib assimp stb_image_lib)
-target_compile_options(OpenglGraphicsLib PRIVATE "-Wall" "-Werror" "-Wextra")
+#target_compile_options(OpenglGraphicsLib PRIVATE "-Wall" "-Werror" "-Wextra")

@@ -47,7 +47,7 @@ void AssimpInterpreter::processAssimpMesh(unsigned int meshId) {
 	for (unsigned int i = 0; i < mesh->mNumVertices; i++) {
 		glm::vec3 currentVertexPosition(mesh->mVertices[i].x, mesh->mVertices[i].y, mesh->mVertices[i].z);
 		glm::vec3 currentVertexNormal(mesh->mNormals[i].x, mesh->mNormals[i].y, mesh->mNormals[i].z);
-		glm::vec2 currentTextureCoords;
+		glm::vec2 currentTextureCoords = {0, 0};
 
 		if (mesh->HasTextureCoords(0))
 			currentTextureCoords = {mesh->mTextureCoords[0][i].x, mesh->mTextureCoords[0][i].y};
