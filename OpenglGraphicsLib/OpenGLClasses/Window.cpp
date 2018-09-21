@@ -11,7 +11,7 @@ Window::Window() {
 
 }
 
-Window::Window(const Window &obj) {
+Window::Window(const Window &obj) : Observable() {
 	std::cout << "ERROR: Window objects cannot be copied" << std::endl;
 	*this = obj;
 	assert(false);

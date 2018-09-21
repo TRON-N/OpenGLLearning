@@ -2,10 +2,12 @@
 // Created by Leonard VAN GEND on 2018/09/05.
 //
 
+#include <climits>
 #include <ModelMesh.hpp>
 #include <glm/gtc/type_ptr.hpp>
 #include <glad/glad.h>
 #include <iostream>
+
 
 ModelMesh::ModelMesh(std::vector<s_VertexData> vertexData, std::vector<unsigned int> vertexDrawingIndices) :
 		m_vertexData(vertexData), m_vertexDrawingIndices(vertexDrawingIndices){
