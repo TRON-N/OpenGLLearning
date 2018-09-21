@@ -79,15 +79,8 @@ int main(int argc, char *argv[]) {
 		ModelDispenser modelDispenser;
 
 		Model *boxModel = modelDispenser.getModel("cubo.obj", "..");
-		boxModel->scale(glm::vec3(20, 1, 15));
-		boxModel->translate(glm::vec3(15, -5.0f, 20));
-
-//		Model *testBoxSpecial = modelDispenser.getModel("Crate.obj", "../../blender/71943_Low_poly_Crate");
-//		testBoxSpecial->translate(glm::vec3(10 + (float) 0, 1.0f, 10.0f + (float) 0 * 3));
-////		testBoxSpecial->scale({1.2, 1.2, 1.2});
-//
-//		Model *testBoxSpecial2 = modelDispenser.getModel("box_simple.obj", "../../blender/69222_Simple_box");
-//		testBoxSpecial2->translate(glm::vec3(10 + (float) 0, 1.0f, 15.0f + (float) 0 * 3));
+		boxModel->scale(glm::vec3(20, 1, 12));
+		boxModel->translate(glm::vec3(15, -5.0f, 16));
 
 		std::vector<Model *> modelList;
 		std::vector<testNotification *> notificationClassList;
@@ -103,12 +96,12 @@ int main(int argc, char *argv[]) {
 		shaderProgram.bind();
 
 		Camera camera(&shaderProgram, 30, 30);
-		glm::vec3 cameraRotation(-35, 0, 0);
+		glm::vec3 cameraRotation(-45, 5, 0);
 		camera.rotate(cameraRotation);
 
 		glm::vec3 cameraTrans = glm::vec3(-5.0f + camera.getWidthAndHeight().x / 2, 0.0f, 10.0f);
-		cameraTrans.y -= 15;
-		cameraTrans.z += 20;
+		cameraTrans.y -= 13;
+		cameraTrans.z += 35;
 		camera.setTranslationLimits({cameraTrans.x, cameraTrans.y, cameraTrans.z},
 									{cameraTrans.x + (40 - camera.getWidthAndHeight().x),
 									 cameraTrans.y, cameraTrans.z});
@@ -166,8 +159,8 @@ int main(int argc, char *argv[]) {
 
 
 			boxModel->draw(shaderProgram);
-			testBoxSpecial->draw(shaderProgram);
-			testBoxSpecial2->draw(shaderProgram);
+//			testBoxSpecial->draw(shaderProgram);
+//			testBoxSpecial2->draw(shaderProgram);
 			for (unsigned int i = 0; i < modelList.size(); i++) {
 				Model &currentModel = *modelList[i];
 				testNotification &notification = *notificationClassList[i];
@@ -182,7 +175,7 @@ int main(int argc, char *argv[]) {
 				if (currentModel.getModelTransformation().m_translation.x > 35) {
 					currentModel.translate(glm::vec3(-5.0f + (float) i, 0.0f, 10.0f + (float) i * 3));
 					if (i == 0)
-						camera.animatedMove(0.6, camera.getMinTranslation(), cameraRotation);
+						camera.animatedMove(0.6f, camera.getMinTranslation(), cameraRotation);
 				}
 
 				if (notification.m_isActive == false) {
