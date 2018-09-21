@@ -99,4 +99,10 @@ if (assimp_download_POPULATED)
 endif ()
 
 target_link_libraries(OpenglGraphicsLib assimp stb_image_lib)
-#target_compile_options(OpenglGraphicsLib PRIVATE "-Wall" "-Werror" "-Wextra")
+if (${CMAKE_CXX_COMPILER_ID} STREQUAL "MSVC")
+    target_compile_options(OpenglGraphicsLib PRIVATE "/Wall")
+endif ()
+
+if (${CMAKE_CXX_COMPILER_ID} STREQUAL "Clang" OR ${CMAKE_CXX_COMPILER_ID} STREQUAL "GNU")
+    target_compile_options(OpenglGraphicsLib PRIVATE "-Wall" "-Werror" "-Wextra")
+endif ()
