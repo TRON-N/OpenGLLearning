@@ -9,7 +9,7 @@ Animation::Animation() {
 
 }
 
-Animation::Animation(const Animation &obj) {
+Animation::Animation(const Animation &obj) : Observable() {
 	*this = obj;
 }
 
