@@ -49,7 +49,7 @@ set(CPP_SOURCE_FILES OpenGLClasses/ObserverPattern/Observable.cpp
         OpenGLClasses/BufferLayout/LayoutElement.hpp
         OpenGLClasses/ModelManagement/Models/ModelMesh.cpp
         OpenGLClasses/ModelManagement/Models/Model.cpp
-        OpenGLClasses/ModelManagement/Texture.cpp
+        OpenGLClasses/Texture.cpp
         OpenGLClasses/openGLErrorManagementFunctions.cpp
         OpenGLClasses/BufferLayout/VertexBufferLayout.cpp
         OpenGLClasses/BufferLayout/VertexBufferLayout.hpp
@@ -60,7 +60,7 @@ set(CPP_SOURCE_FILES OpenGLClasses/ObserverPattern/Observable.cpp
         OpenGLClasses/VertexArray.cpp
         OpenGLClasses/VertexBuffer.cpp
         ExceptionClass/GenericProgException.cpp
-        ${glad_SOURCE_FILE})
+        ${glad_SOURCE_FILE} Lights/Light.cpp Lights/Light.hpp)
 
 set(HEADER_FILES Includes/VertexBuffer.hpp
         Includes/VertexArray.hpp

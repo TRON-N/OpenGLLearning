@@ -5,7 +5,7 @@
 #ifndef LEARNINGOPENGL_RENDERER_HPP
 #define LEARNINGOPENGL_RENDERER_HPP
 
-
+#include <SDL.h>
 #include "i_Observer.hpp"
 #include "Shader.hpp"
 
@@ -21,6 +21,7 @@ public:
 	void notify(void *arg) override;
 
 	Shader &getShaderProgram();
+	SDL_GLContext &getGlContext();
 
 
 private:

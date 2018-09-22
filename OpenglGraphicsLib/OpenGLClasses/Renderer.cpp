@@ -44,6 +44,7 @@ Renderer::Renderer(SDL_Window *window) {
 
 	this->m_window = window;
 	this->m_glContext = SDL_GL_CreateContext(this->m_window);
+	SDL_GL_MakeCurrent(this->m_window, this->m_glContext);
 
 	if (!gladLoadGLLoader((SDL_GL_GetProcAddress))) {
 		std::cout << "Failed to initialize GLAD" << std::endl;
@@ -52,6 +53,7 @@ Renderer::Renderer(SDL_Window *window) {
 	this->m_shaderProgram = new Shader(m_vertexShaderSource, m_fragmentShaderSource);
 	GL_ERROR_WRAPPER(glClearColor(0.2f, 0.3f, 0.3f, 1.0f));
 	GL_ERROR_WRAPPER(glEnable(GL_DEPTH_TEST));
+	GL_ERROR_WRAPPER(glEnable(GL_MULTISAMPLE));
 }
 
 void Renderer::update() {
@@ -89,4 +91,8 @@ void Renderer::notify(void *arg) {
 
 Shader &Renderer::getShaderProgram() {
 	return *this->m_shaderProgram;
+}
+
+SDL_GLContext &Renderer::getGlContext() {
+	return this->m_glContext;
 }

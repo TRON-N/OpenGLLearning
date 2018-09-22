@@ -4,19 +4,24 @@
 
 #include <glad/glad.h>
 #include <iostream>
-#include "../../Includes/Texture.hpp"
-#include "../../Includes/openGLFunctionCallErrorManagementWrapper.hpp"
+#include <SDL_opengl_glext.h>
+#include "Texture.hpp"
+#include "openGLFunctionCallErrorManagementWrapper.hpp"
 
 Texture::Texture(unsigned char *data, unsigned int format, int width, int height) {
 	GL_ERROR_WRAPPER(glGenTextures(1, &(this->m_textureId)));
 	this->bind();
 	GL_ERROR_WRAPPER(glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, data));
 	GL_ERROR_WRAPPER(glGenerateMipmap(GL_TEXTURE_2D));
-
 	GL_ERROR_WRAPPER(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT));
 	GL_ERROR_WRAPPER(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT));
 	GL_ERROR_WRAPPER(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR));
 	GL_ERROR_WRAPPER(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR));
+
+	float anisotropicMax;
+	GL_ERROR_WRAPPER(glGetFloatv(GL_MAX_TEXTURE_MAX_ANISOTROPY_EXT, &anisotropicMax));
+	GL_ERROR_WRAPPER(glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAX_ANISOTROPY_EXT, anisotropicMax));
+
 	this->unbind();
 }
 

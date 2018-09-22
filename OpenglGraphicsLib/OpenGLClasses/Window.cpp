@@ -82,6 +82,9 @@ Window::Window(bool isFullScreen, unsigned int resolutionSetting) {
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 3);
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
 
+	SDL_GL_SetAttribute(SDL_GL_MULTISAMPLEBUFFERS, 1);
+	SDL_GL_SetAttribute(SDL_GL_MULTISAMPLESAMPLES, 4);
+
 	this->m_window = SDL_CreateWindow("SDL GL Test", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_UNDEFINED,
 									  this->m_validResolutionList[resolutionSetting][0],
 									  this->m_validResolutionList[resolutionSetting][1], SDL_WINDOW_OPENGL);
