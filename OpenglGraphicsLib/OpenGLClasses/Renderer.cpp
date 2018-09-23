@@ -84,9 +84,13 @@ Renderer &Renderer::operator=(const Renderer &obj) {
 }
 
 void Renderer::notify(void *arg) {
-	unsigned int *resolution = (unsigned int *) arg;
+	SDL_Window *sdlWindow = (SDL_Window *) arg;
+	int width;
+	int height;
+	SDL_GL_GetDrawableSize(sdlWindow, &width, &height);
+	std::cout << "drawable size: " << width << "x" << height << std::endl;
 
-	GL_ERROR_WRAPPER(glViewport(0, 0, resolution[0], resolution[1]));
+	GL_ERROR_WRAPPER(glViewport(0, 0, width, height));
 }
 
 Shader &Renderer::getShaderProgram() {
