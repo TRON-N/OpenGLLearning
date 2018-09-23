@@ -21,6 +21,7 @@ public:
 
 	SDL_Window *getWindowPtr();
 	std::vector<std::vector<int>> getValidResolutionList();
+	std::vector<int> getCurrentResolution();
 	void setResolution(unsigned int i);
 	void toggleFullScreen();
 

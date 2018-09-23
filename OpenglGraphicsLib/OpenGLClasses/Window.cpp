@@ -106,3 +106,7 @@ void Window::notifyObservers() {
 		observer->notify(this->m_window);
 	}
 }
+
+std::vector<int> Window::getCurrentResolution() {
+	return this->m_validResolutionList[this->m_resolutionIndex];
+}
