@@ -84,6 +84,7 @@ set(HEADER_FILES Includes/VertexBuffer.hpp
 
 add_library(OpenglGraphicsLib STATIC ${CPP_SOURCE_FILES} ${HEADER_FILES})
 target_include_directories(OpenglGraphicsLib PRIVATE Includes)
+target_link_libraries(OpenglGraphicsLib assimp stb_image_lib)
 
 if (stb_image_download_POPULATED)
     target_include_directories(OpenglGraphicsLib PUBLIC "${stb_image_download_SOURCE_DIR}/stb_image")
@@ -98,7 +99,6 @@ if (assimp_download_POPULATED)
     target_include_directories(OpenglGraphicsLib PUBLIC ${assimp_download_BINARY_DIR}/include)
 endif ()
 
-target_link_libraries(OpenglGraphicsLib assimp stb_image_lib)
 if (${CMAKE_CXX_COMPILER_ID} STREQUAL "MSVC")
     target_compile_options(OpenglGraphicsLib PRIVATE "/Wall")
 endif ()
