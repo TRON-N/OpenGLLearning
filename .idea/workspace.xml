@@ -23,17 +23,12 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="43a6e302-55a7-4802-b1b9-a750c5982f27" name="Revert: Fixed the bug in the shader class" comment="Fixed another two platform specific bugs">
-      <change afterPath="$PROJECT_DIR$/OpenglGraphicsLib/Lights/Light.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OpenglGraphicsLib/Lights/Light.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenglGraphicsLib/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/OpenglGraphicsLib/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenglGraphicsLib/Includes/Renderer.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/OpenglGraphicsLib/Includes/Renderer.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/ModelManagement/Texture.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/Texture.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/Renderer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/Renderer.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/Window.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/Window.cpp" afterDir="false" />
-    </list>
     <list id="0426633c-ebfc-4ce9-8efb-baa9f9034645" name="Default" comment="Deleted old leftover code from the main." />
+    <list default="true" id="43a6e302-55a7-4802-b1b9-a750c5982f27" name="Revert: Fixed the bug in the shader class" comment="Added AA and anisotropic filtering">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/Window.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/Window.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -45,11 +40,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
-              <caret line="24" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="101">
+              <caret line="31" column="36" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -90,24 +85,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/CMakeLists.txt">
+      <file leaf-file-name="Window.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/Window.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1393">
-              <caret line="107" selection-start-line="107" selection-end-line="107" />
+            <state relative-caret-position="188">
+              <caret line="63" selection-start-line="63" selection-end-line="63" />
+              <folding>
+                <element signature="e#53#69#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Window.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/Window.cpp">
+      <file leaf-file-name="Window.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/Includes/Window.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="560">
-              <caret line="85" column="4" selection-start-line="85" selection-start-column="4" selection-end-line="85" selection-end-column="4" />
-              <caret line="84" column="4" selection-start-line="84" selection-start-column="4" selection-end-line="84" selection-end-column="4" />
-              <folding>
-                <element signature="e#53#69#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="358">
+              <caret line="32" column="15" selection-start-line="32" selection-start-column="15" selection-end-line="32" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -122,7 +116,7 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file leaf-file-name="Renderer.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Renderer.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/Renderer.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="111">
@@ -171,7 +165,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/OpenGLClasses/ElementBuffer.hpp" />
         <option value="$PROJECT_DIR$/OpenGLClasses/VertexBuffer.hpp" />
         <option value="$PROJECT_DIR$/OpenGLClasses/ModelManagement/Texture.hpp" />
         <option value="$PROJECT_DIR$/OpenGLClasses/ModelManagement/Models/ModelMesh.hpp" />
@@ -214,14 +207,15 @@
         <option value="$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/ModelManagement/Models/ModelDispenser.cpp" />
         <option value="$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/ModelManagement/AssimpInterperater/AssimpInterpreter.cpp" />
         <option value="$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/ModelManagement/Models/Model.cpp" />
-        <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/ModelManagement/Animation/Animation.cpp" />
         <option value="$PROJECT_DIR$/OpenglGraphicsLib/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/ModelManagement/Models/ModelMesh.cpp" />
         <option value="$PROJECT_DIR$/OpenglGraphicsLib/Includes/Renderer.hpp" />
         <option value="$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/Texture.cpp" />
-        <option value="$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/Window.cpp" />
         <option value="$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/Renderer.cpp" />
+        <option value="$PROJECT_DIR$/OpenglGraphicsLib/Includes/Window.hpp" />
+        <option value="$PROJECT_DIR$/main.cpp" />
+        <option value="$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/Window.cpp" />
       </list>
     </option>
   </component>
@@ -236,10 +230,10 @@
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="754" />
+    <option name="x" value="1358" />
+    <option name="y" value="-392" />
+    <option name="width" value="528" />
+    <option name="height" value="370" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -858,23 +852,30 @@
       <option name="project" value="LOCAL" />
       <updated>1537547328099</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Added AA and anisotropic filtering">
+      <created>1537646046905</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1537646046905</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="243051000" />
+    <option name="totallyTimeSpent" value="244494000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <frame x="1358" y="-434" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2514881" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1780822" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.3254818" />
       <window_info anchor="bottom" id="CMake" order="11" weight="0.24304068" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32976446" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.43086818" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2869379" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -962,7 +963,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Made a small change, so the system now supports loading .dae files." />
     <MESSAGE value="Deleted some extra unused stuff from the main, and add two object files" />
     <MESSAGE value="Added a Transformation class, and changed the model, and modelmesh&#10;classes to use it." />
     <MESSAGE value="I have animations working, but they have a distortion when moving in some directions" />
@@ -987,7 +987,8 @@
     <MESSAGE value="Added extra error sensitivity to cmake" />
     <MESSAGE value="added climits to the file" />
     <MESSAGE value="Fixed another two platform specific bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed another two platform specific bugs" />
+    <MESSAGE value="Added AA and anisotropic filtering" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added AA and anisotropic filtering" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1041,13 +1042,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/Includes/Window.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -1147,13 +1141,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-915">
-          <caret line="82" column="51" selection-start-line="82" selection-start-column="51" selection-end-line="82" selection-end-column="51" />
         </state>
       </provider>
     </entry>
@@ -1314,23 +1301,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/Window.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="85" column="4" selection-start-line="85" selection-start-column="4" selection-end-line="85" selection-end-column="4" />
-          <caret line="84" column="4" selection-start-line="84" selection-start-column="4" selection-end-line="84" selection-end-column="4" />
-          <folding>
-            <element signature="e#53#69#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/Renderer.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="111">
           <caret line="55" selection-start-line="55" selection-end-line="55" />
           <folding>
             <element signature="e#53#75#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/Includes/Window.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="32" column="15" selection-start-line="32" selection-start-column="15" selection-end-line="32" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="31" column="36" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/Window.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="63" selection-start-line="63" selection-end-line="63" />
+          <folding>
+            <element signature="e#53#69#0" expanded="true" />
           </folding>
         </state>
       </provider>

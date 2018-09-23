@@ -33,6 +33,11 @@ int main(int argc, char *argv[]) {
 		Renderer renderer(gameWindow.getWindowPtr());
 		gameWindow.registerObserver(&renderer);
 
+		auto resolutionList = gameWindow.getValidResolutionList();
+		for (auto resolution: resolutionList) {
+			std::cout << resolution[0] << "x" << resolution[1] << std::endl;
+		}
+
 
 		Animation testAnimation;
 

@@ -62,10 +62,15 @@ void Window::toggleFullScreen() {
 }
 
 void Window::populateValidResolutionList() {
+	int previousResolution[] = {0, 0};
 	for (int i = 0; i < SDL_GetNumDisplayModes(0); i++) {
 		SDL_DisplayMode mode;
 		SDL_GetDisplayMode(0, i, &mode);
-		this->m_validResolutionList.push_back({mode.w, mode.h});
+		if (mode.w != previousResolution[0] || mode.h != previousResolution[1]) {
+			this->m_validResolutionList.push_back({mode.w, mode.h});
+			previousResolution[0] = mode.w;
+			previousResolution[1] = mode.h;
+		}
 	}
 }
 
