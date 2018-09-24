@@ -24,7 +24,7 @@ public:
 	static void activateDefaultTextureSlot();
 	void unbind();
 
-private:
+protected:
 	unsigned int	m_textureId;
 };
 

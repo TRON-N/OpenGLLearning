@@ -48,8 +48,8 @@ void Window::setResolution(unsigned int i) {
 		desiredDisplayMode.h = this->m_validResolutionList[i][1];
 
 		SDL_DisplayMode closestMatch;
-		SDL_SetWindowDisplayMode(this->m_window, &desiredDisplayMode);
-		SDL_GetCurrentDisplayMode(0, &closestMatch);
+		SDL_GetClosestDisplayMode(0, &desiredDisplayMode, &closestMatch);
+		SDL_SetWindowDisplayMode(this->m_window, &closestMatch);
 		SDL_SetWindowSize(this->m_window, this->m_validResolutionList[i][0], this->m_validResolutionList[i][1]);
 	}
 	this->notifyObservers();

@@ -22,7 +22,7 @@ public:
 
 	const Transformation& getModelTransformation();
 
-	void draw(Shader &shaderProgram);
+	virtual void draw(Shader &shaderProgram);
 
 	void addAnimation(Animation &animation, const std::string &name);
 	void startAnimation(const std::string &name);

@@ -54,6 +54,8 @@ Renderer::Renderer(SDL_Window *window) {
 	GL_ERROR_WRAPPER(glClearColor(0.2f, 0.3f, 0.3f, 1.0f));
 	GL_ERROR_WRAPPER(glEnable(GL_DEPTH_TEST));
 	GL_ERROR_WRAPPER(glEnable(GL_MULTISAMPLE));
+	GL_ERROR_WRAPPER(glEnable(GL_BLEND));
+	GL_ERROR_WRAPPER(glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA));
 }
 
 void Renderer::update() {

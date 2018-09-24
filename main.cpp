@@ -2,8 +2,9 @@
 #include <iostream>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
+#include <OpenGLClasses/TextDisplaySystem/TextDisplaySystem.hpp>
+#include <glad/glad.h>
 #include "AssimpInterpreter.hpp"
-#include "Model.hpp"
 #include "Camera.hpp"
 #include "Renderer.hpp"
 #include "Window.hpp"
@@ -32,12 +33,6 @@ int main(int argc, char *argv[]) {
 		Window gameWindow(false, 3);
 		Renderer renderer(gameWindow.getWindowPtr());
 		gameWindow.registerObserver(&renderer);
-
-		auto resolutionList = gameWindow.getValidResolutionList();
-		for (auto resolution: resolutionList) {
-			std::cout << resolution[0] << "x" << resolution[1] << std::endl;
-		}
-
 
 		Animation testAnimation;
 
@@ -83,7 +78,7 @@ int main(int argc, char *argv[]) {
 
 		ModelDispenser modelDispenser;
 
-		Model *boxModel = modelDispenser.getModel("cubo.obj", "..");
+		Model *boxModel = modelDispenser.getModel("cubo.obj", "../3dModelsAndTextures");
 		boxModel->scale(glm::vec3(20, 1, 12));
 		boxModel->translate(glm::vec3(15, -5.0f, 16));
 
@@ -91,11 +86,33 @@ int main(int argc, char *argv[]) {
 		std::vector<testNotification *> notificationClassList;
 		for (unsigned int i = 0; i < 8; i++) {
 			notificationClassList.push_back(new testNotification);
-			modelList.push_back(modelDispenser.getModel("ballo2.obj", ".."));
+			modelList.push_back(modelDispenser.getModel("ballo2.obj", "../3dModelsAndTextures"));
 			modelList.back()->addAnimation(testAnimation, animationName);
 			modelList.back()->translate(glm::vec3(-5.0f + (float) i, 1.0f, 10.0f + (float) i * 3));
 			modelList.back()->registerObserver(notificationClassList.back());
 		}
+
+//		Transformation explodeTrans0;
+//		explodeTrans0.m_scaling = {0.0001, 0.0001, 0.0001};
+		KeyFrame explodeKeyFrame(0.0f, Transformation());
+		Transformation explodeTrans;
+		explodeTrans.m_scaling = {1, 1, 1};
+		KeyFrame explodeKeyFrame2(0.15f, explodeTrans);
+		Transformation explodeTrans2;
+		explodeTrans2.m_scaling = {0, 0, 0};
+		KeyFrame explodeKeyFrame3(0.3f, explodeTrans2);
+		Transformation explodeTrans3;
+
+		Animation explodeAnimation;
+		explodeAnimation.addKeyFrame(explodeKeyFrame);
+		explodeAnimation.addKeyFrame(explodeKeyFrame2);
+		explodeAnimation.addKeyFrame(explodeKeyFrame3);
+
+		Model *explodeMod = modelDispenser.getModel("explosion.obj", "../3dModelsAndTextures");
+		explodeMod->addAnimation(explodeAnimation, "explode");
+		explodeMod->translate(glm::vec3(0.0f, 1.0f, 10.0f));
+		testNotification explodeNotifier;
+		explodeMod->registerObserver(&explodeNotifier);
 
 		Shader &shaderProgram = renderer.getShaderProgram();
 		shaderProgram.bind();
@@ -111,6 +128,18 @@ int main(int argc, char *argv[]) {
 									{cameraTrans.x + (40 - camera.getWidthAndHeight().x),
 									 cameraTrans.y, cameraTrans.z});
 		camera.translate(cameraTrans);
+
+		TextDisplaySystem textDisplaySystem("../Xcelsion.ttf", 48);
+
+		glm::mat4 projection = glm::ortho(0.0f, (float) gameWindow.getCurrentResolution()[0], 0.0f,
+										  (float) gameWindow.getCurrentResolution()[1]);
+		Shader &textShader = textDisplaySystem.getTextShader();
+		textShader.bind();
+		textShader.setUniformMatrix4fv("projection", glm::value_ptr(projection));
+
+		TextModel *fontModel = textDisplaySystem.getTextModel("BombiBoi!!");
+		fontModel->translate({(float) gameWindow.getCurrentResolution()[0] / 2.0f,
+							  (float) gameWindow.getCurrentResolution()[1] / 2.0f, 0.0f});
 
 		// render loop
 		// -----------
@@ -162,8 +191,14 @@ int main(int argc, char *argv[]) {
 				}
 			}
 
-
+			shaderProgram.bind();
 			boxModel->draw(shaderProgram);
+			explodeMod->draw(shaderProgram);
+			if (explodeNotifier.m_isActive == false) {
+				explodeMod->scale({1, 1, 1});
+				explodeMod->startAnimation("explode");
+				explodeNotifier.m_isActive = true;
+			}
 //			testBoxSpecial->draw(shaderProgram);
 //			testBoxSpecial2->draw(shaderProgram);
 			for (unsigned int i = 0; i < modelList.size(); i++) {
@@ -188,7 +223,12 @@ int main(int argc, char *argv[]) {
 					notification.m_isActive = true;
 				}
 			}
+			glDisable(GL_DEPTH_TEST);
+			textShader.bind();
+			fontModel->draw(textShader, {1, 0, 0});
+			glEnable(GL_DEPTH_TEST);
 			renderer.update();
+
 		}
 
 	}

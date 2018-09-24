@@ -4,6 +4,7 @@
 
 #include <glad/glad.h>
 #include <iostream>
+#include <glm/vec4.hpp>
 #include "../Includes/Shader.hpp"
 #include "../Includes/openGLFunctionCallErrorManagementWrapper.hpp"
 
@@ -71,10 +72,6 @@ void Shader::unbind() {
 	GL_ERROR_WRAPPER(glUseProgram(0));
 }
 
-void Shader::setUniform4f(const std::string &name, float f0, float f1, float f2, float f3) {
-	GL_ERROR_WRAPPER(glUniform4f(this->getUniformLocation(name), f0, f1, f2, f3));
-}
-
 int Shader::getUniformLocation(const std::string &name) {
 	if (this->m_uniformLocationCache.find(name) == this->m_uniformLocationCache.end()) {
 		GL_ERROR_WRAPPER(int location = glGetUniformLocation(this->m_shaderId, name.c_str()));
@@ -85,16 +82,23 @@ int Shader::getUniformLocation(const std::string &name) {
 	return this->m_uniformLocationCache[name];
 }
 
+void Shader::setUniform4f(const std::string &name, glm::vec4 values) {
+	GL_ERROR_WRAPPER(glUniform4f(this->getUniformLocation(name), values[0], values[1], values[2], values[3]));
+}
+
 void Shader::setUniformMatrix4fv(const std::string &name, const float *data, bool shouldTranspose) {
-	glUniformMatrix4fv(this->getUniformLocation(name), 1, shouldTranspose ? GL_TRUE : GL_FALSE, data);
+	GL_ERROR_WRAPPER(glUniformMatrix4fv(this->getUniformLocation(name), 1, shouldTranspose ? GL_TRUE : GL_FALSE, data));
 }
 
 void Shader::setUniformInt(const std::string &name, int value) {
-	glUniform1i(this->getUniformLocation(name), value);
+	GL_ERROR_WRAPPER(glUniform1i(this->getUniformLocation(name), value));
+}
+
+void Shader::setUniform3f(const std::string &name, glm::vec3 values) {
+	GL_ERROR_WRAPPER(glUniform3f(this->getUniformLocation(name), values[0], values[1], values[2]));
 }
 
 Shader::Shader() {
-
 }
 
 Shader::Shader(const Shader &obj) {
@@ -109,5 +113,6 @@ Shader &Shader::operator=(const Shader &obj) {
 	assert(false);
 	return *this;
 }
+
 
 

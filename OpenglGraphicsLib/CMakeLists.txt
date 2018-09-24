@@ -45,6 +45,18 @@ if (NOT stb_image_download_POPULATED)
     add_subdirectory(${stb_image_download_SOURCE_DIR} ${stb_image_download_BINARY_DIR})
 endif ()
 
+FetchContent_Declare(
+        free_type_download
+        URL https://download.savannah.gnu.org/releases/freetype/ft291.zip
+)
+
+FetchContent_GetProperties(free_type_download)
+
+if (NOT free_type_download_POPULATED)
+    FetchContent_Populate(free_type_download)
+    add_subdirectory(${free_type_download_SOURCE_DIR} ${free_type_download_BINARY_DIR})
+endif ()
+
 set(CPP_SOURCE_FILES OpenGLClasses/ObserverPattern/Observable.cpp
         OpenGLClasses/BufferLayout/LayoutElement.hpp
         OpenGLClasses/ModelManagement/Models/ModelMesh.cpp
@@ -60,7 +72,7 @@ set(CPP_SOURCE_FILES OpenGLClasses/ObserverPattern/Observable.cpp
         OpenGLClasses/VertexArray.cpp
         OpenGLClasses/VertexBuffer.cpp
         ExceptionClass/GenericProgException.cpp
-        ${glad_SOURCE_FILE} Lights/Light.cpp Lights/Light.hpp)
+        ${glad_SOURCE_FILE} Lights/Light.cpp Lights/Light.hpp OpenGLClasses/TextDisplaySystem/TextDisplaySystem.cpp OpenGLClasses/TextDisplaySystem/TextDisplaySystem.hpp)
 
 set(HEADER_FILES Includes/VertexBuffer.hpp
         Includes/VertexArray.hpp
@@ -80,11 +92,11 @@ set(HEADER_FILES Includes/VertexBuffer.hpp
         Includes/Renderer.hpp OpenGLClasses/Window.cpp
         Includes/Window.hpp OpenGLClasses/ModelManagement/Models/ModelDispenser.cpp
         Includes/ModelDispenser.hpp
-        Includes/GenericProgException.hpp)
+        Includes/GenericProgException.hpp OpenGLClasses/TextDisplaySystem/freeTypeErrorWrapper.hpp OpenGLClasses/TextDisplaySystem/s_CharacterGlyph.hpp OpenGLClasses/TextDisplaySystem/GlyphTexture.cpp OpenGLClasses/TextDisplaySystem/GlyphTexture.hpp OpenGLClasses/TextDisplaySystem/TextModel.cpp OpenGLClasses/TextDisplaySystem/TextModel.hpp)
 
 add_library(OpenglGraphicsLib STATIC ${CPP_SOURCE_FILES} ${HEADER_FILES})
 target_include_directories(OpenglGraphicsLib PRIVATE Includes)
-target_link_libraries(OpenglGraphicsLib assimp stb_image_lib)
+target_link_libraries(OpenglGraphicsLib assimp stb_image_lib freetype)
 
 if (stb_image_download_POPULATED)
     target_include_directories(OpenglGraphicsLib PUBLIC "${stb_image_download_SOURCE_DIR}/stb_image")
@@ -97,6 +109,10 @@ endif ()
 if (assimp_download_POPULATED)
     target_include_directories(OpenglGraphicsLib PUBLIC ${assimp_download_SOURCE_DIR}/include)
     target_include_directories(OpenglGraphicsLib PUBLIC ${assimp_download_BINARY_DIR}/include)
+endif ()
+
+if (free_type_download_POPULATED)
+    target_include_directories(OpenglGraphicsLib PUBLIC ${free_type_download_SOURCE_DIR}/include)
 endif ()
 
 if (${CMAKE_CXX_COMPILER_ID} STREQUAL "MSVC")

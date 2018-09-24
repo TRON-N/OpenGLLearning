@@ -37,7 +37,7 @@ void Model::draw(Shader &shaderProgram) {
 	for (ModelMesh *mesh: this->m_meshList) {
 		sendTexturesToShader(mesh, shaderProgram);
 		mesh->getVertexArray().bind();
-		glDrawElements(GL_TRIANGLES, mesh->getVertexAmount(), GL_UNSIGNED_INT, nullptr);;
+		glDrawElements(GL_TRIANGLES, mesh->getVertexAmount(), GL_UNSIGNED_INT, nullptr);
 	}
 }
 

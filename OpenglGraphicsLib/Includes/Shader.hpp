@@ -7,6 +7,8 @@
 
 #include <string>
 #include <unordered_map>
+#include <glm/vec3.hpp>
+#include <glm/vec4.hpp>
 
 class Shader {
 public:
@@ -19,9 +21,10 @@ public:
 	void bind();
 	void unbind();
 
-	void setUniform4f(const std::string &name, float f0, float f1, float f2, float f3);
+	void setUniform4f(const std::string &name, glm::vec4 values);
 	void setUniformMatrix4fv(const std::string &name, const float *data, bool shouldTranspose = false);
 	void setUniformInt(const std::string &name, int value);
+	void setUniform3f(const std::string &name, glm::vec3 values);
 
 
 
