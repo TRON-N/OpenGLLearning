@@ -5,6 +5,8 @@ set(CMAKE_CXX_STANDARD 17)
 
 include(FetchContent)
 
+set(FETCHCONTENT_FULLY_DISCONNECTED ON CACHE BOOL "" FORCE)
+
 FetchContent_Declare(
         sdl2_download
         URL https://www.libsdl.org/release/SDL2-2.0.8.zip

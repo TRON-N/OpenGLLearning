@@ -20,9 +20,9 @@ public:
 	void translate(glm::vec3 translationAlongEachAxis);
 	void scale(glm::vec3 scalingOnEachAxis);
 
-	const Transformation& getModelTransformation();
+	const Transformation &getModelTransformation() const;
 
-	virtual void draw(Shader &shaderProgram);
+	void draw(Shader &shaderProgram);
 
 	void addAnimation(Animation &animation, const std::string &name);
 	void startAnimation(const std::string &name);

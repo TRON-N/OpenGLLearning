@@ -57,14 +57,13 @@ if (NOT free_type_download_POPULATED)
     add_subdirectory(${free_type_download_SOURCE_DIR} ${free_type_download_BINARY_DIR})
 endif ()
 
-set(CPP_SOURCE_FILES OpenGLClasses/ObserverPattern/Observable.cpp
-        OpenGLClasses/BufferLayout/LayoutElement.hpp
+set(CPP_SOURCE_FILES
+        OpenGLClasses/ObserverPattern/Observable.cpp
         OpenGLClasses/ModelManagement/Models/ModelMesh.cpp
         OpenGLClasses/ModelManagement/Models/Model.cpp
         OpenGLClasses/Texture.cpp
         OpenGLClasses/openGLErrorManagementFunctions.cpp
         OpenGLClasses/BufferLayout/VertexBufferLayout.cpp
-        OpenGLClasses/BufferLayout/VertexBufferLayout.hpp
         OpenGLClasses/ModelManagement/AssimpInterperater/AssimpInterpreter.cpp
         OpenGLClasses/Shader.cpp
         OpenGLClasses/ElementBuffer.cpp
@@ -72,9 +71,26 @@ set(CPP_SOURCE_FILES OpenGLClasses/ObserverPattern/Observable.cpp
         OpenGLClasses/VertexArray.cpp
         OpenGLClasses/VertexBuffer.cpp
         ExceptionClass/GenericProgException.cpp
-        ${glad_SOURCE_FILE} Lights/Light.cpp Lights/Light.hpp OpenGLClasses/TextDisplaySystem/TextDisplaySystem.cpp OpenGLClasses/TextDisplaySystem/TextDisplaySystem.hpp)
+        ${glad_SOURCE_FILE} OpenGLClasses/TextDisplaySystem/TextDisplaySystem.cpp
+        OpenGLClasses/TextDisplaySystem/TextModel.cpp
+        OpenGLClasses/ModelManagement/Models/Transformation.cpp
+        OpenGLClasses/ModelManagement/Animation/KeyFrame.cpp
+        OpenGLClasses/ModelManagement/Animation/Animation.cpp
+        OpenGLClasses/BufferLayout/LayoutElement.cpp
+        OpenGLClasses/TextDisplaySystem/GlyphTexture.cpp
+        OpenGLClasses/Window.cpp
+        OpenGLClasses/ModelManagement/Models/ModelDispenser.cpp
+        OpenGLClasses/Camera.cpp
+        OpenGLClasses/Renderer.cpp)
 
-set(HEADER_FILES Includes/VertexBuffer.hpp
+set(HEADER_FILES
+        Includes/LayoutElement.hpp
+        Includes/VertexBuffer.hpp
+        Includes/Animation.hpp
+        Includes/KeyFrame.hpp
+        Includes/Transformation.hpp
+        Includes/Model.hpp
+        Includes/VertexBufferLayout.hpp
         Includes/VertexArray.hpp
         Includes/ElementBuffer.hpp
         Includes/openGLFunctionCallErrorManagementWrapper.hpp
@@ -82,17 +98,19 @@ set(HEADER_FILES Includes/VertexBuffer.hpp
         Includes/AssimpInterpreter.hpp
         Includes/s_VertexData.hpp
         Includes/Texture.hpp
-        Includes/Model.hpp OpenGLClasses/ModelManagement/Models/Transformation.cpp
-        Includes/Transformation.hpp OpenGLClasses/ModelManagement/Animation/KeyFrame.cpp
-        Includes/KeyFrame.hpp OpenGLClasses/ModelManagement/Animation/Animation.cpp
-        Includes/Animation.hpp OpenGLClasses/BufferLayout/LayoutElement.cpp
-        Includes/ModelMesh.hpp Includes/i_Observer.hpp
-        Includes/Observable.hpp OpenGLClasses/Camera.cpp
-        Includes/Camera.hpp OpenGLClasses/Renderer.cpp
-        Includes/Renderer.hpp OpenGLClasses/Window.cpp
-        Includes/Window.hpp OpenGLClasses/ModelManagement/Models/ModelDispenser.cpp
+        Includes/ModelMesh.hpp
+        Includes/i_Observer.hpp
         Includes/ModelDispenser.hpp
-        Includes/GenericProgException.hpp OpenGLClasses/TextDisplaySystem/freeTypeErrorWrapper.hpp OpenGLClasses/TextDisplaySystem/s_CharacterGlyph.hpp OpenGLClasses/TextDisplaySystem/GlyphTexture.cpp OpenGLClasses/TextDisplaySystem/GlyphTexture.hpp OpenGLClasses/TextDisplaySystem/TextModel.cpp OpenGLClasses/TextDisplaySystem/TextModel.hpp)
+        Includes/GenericProgException.hpp
+        Includes/freeTypeErrorWrapper.hpp
+        Includes/s_CharacterGlyph.hpp
+        Includes/GlyphTexture.hpp
+        Includes/TextModel.hpp
+        Includes/TextDisplaySystem.hpp
+        Includes/Window.hpp
+        Includes/Camera.hpp
+        Includes/ModelDispenser.hpp
+        Includes/Renderer.hpp)
 
 add_library(OpenglGraphicsLib STATIC ${CPP_SOURCE_FILES} ${HEADER_FILES})
 target_include_directories(OpenglGraphicsLib PRIVATE Includes)
@@ -119,6 +137,6 @@ if (${CMAKE_CXX_COMPILER_ID} STREQUAL "MSVC")
     target_compile_options(OpenglGraphicsLib PRIVATE "/Wall")
 endif ()
 
-if (${CMAKE_CXX_COMPILER_ID} STREQUAL "Clang" OR ${CMAKE_CXX_COMPILER_ID} STREQUAL "GNU")
+if (${CMAKE_CXX_COMPILER_ID} STREQUAL "Clang" OR ${CMAKE_CXX_COMPILER_ID} STREQUAL "GNU" OR ${CMAKE_CXX_COMPILER_ID} STREQUAL "AppleClang")
     target_compile_options(OpenglGraphicsLib PRIVATE "-Wall" "-Werror" "-Wextra")
 endif ()

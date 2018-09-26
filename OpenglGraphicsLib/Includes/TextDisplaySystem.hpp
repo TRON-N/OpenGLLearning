@@ -22,6 +22,8 @@ public:
 
 	TextModel *getTextModel(const std::string &text);
 	void deleteTextModelMesh(const std::string &text);
+
+	bool isTextModelMeshCreated(const std::string &text);
 	Shader &getTextShader();
 
 private:

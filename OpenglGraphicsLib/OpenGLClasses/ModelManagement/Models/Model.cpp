@@ -41,7 +41,7 @@ void Model::draw(Shader &shaderProgram) {
 	}
 }
 
-const Transformation &Model::getModelTransformation() {
+const Transformation &Model::getModelTransformation() const {
 	return this->m_animatedTransformation;
 }
 

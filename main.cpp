@@ -2,8 +2,9 @@
 #include <iostream>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
-#include <OpenGLClasses/TextDisplaySystem/TextDisplaySystem.hpp>
+#include <TextDisplaySystem.hpp>
 #include <glad/glad.h>
+#include <openGLFunctionCallErrorManagementWrapper.hpp>
 #include "AssimpInterpreter.hpp"
 #include "Camera.hpp"
 #include "Renderer.hpp"
@@ -131,15 +132,14 @@ int main(int argc, char *argv[]) {
 
 		TextDisplaySystem textDisplaySystem("../Xcelsion.ttf", 48);
 
-		glm::mat4 projection = glm::ortho(0.0f, (float) gameWindow.getCurrentResolution()[0], 0.0f,
-										  (float) gameWindow.getCurrentResolution()[1]);
+		glm::mat4 projection = glm::ortho(0.0f, (float) gameWindow.getCurrentResolution()[0],
+										  (float) gameWindow.getCurrentResolution()[1], 0.0f);
 		Shader &textShader = textDisplaySystem.getTextShader();
 		textShader.bind();
 		textShader.setUniformMatrix4fv("projection", glm::value_ptr(projection));
 
 		TextModel *fontModel = textDisplaySystem.getTextModel("BombiBoi!!");
-		fontModel->translate({(float) gameWindow.getCurrentResolution()[0] / 2.0f,
-							  (float) gameWindow.getCurrentResolution()[1] / 2.0f, 0.0f});
+		fontModel->translate({0, 200, -1.0f});
 
 		// render loop
 		// -----------
@@ -223,10 +223,13 @@ int main(int argc, char *argv[]) {
 					notification.m_isActive = true;
 				}
 			}
-			glDisable(GL_DEPTH_TEST);
+			GL_ERROR_WRAPPER(glDisable(GL_DEPTH_TEST));
+			GL_ERROR_WRAPPER(glEnable(GL_BLEND));
+			GL_ERROR_WRAPPER(glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA));
 			textShader.bind();
 			fontModel->draw(textShader, {1, 0, 0});
-			glEnable(GL_DEPTH_TEST);
+			GL_ERROR_WRAPPER(glEnable(GL_DEPTH_TEST));
+			GL_ERROR_WRAPPER(glDisable(GL_BLEND));
 			renderer.update();
 
 		}

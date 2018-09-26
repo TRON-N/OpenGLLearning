@@ -8,7 +8,7 @@
 
 #include "VertexBuffer.hpp"
 #include "ElementBuffer.hpp"
-#include "../OpenGLClasses/BufferLayout/VertexBufferLayout.hpp"
+#include "VertexBufferLayout.hpp"
 
 class VertexArray {
 public:

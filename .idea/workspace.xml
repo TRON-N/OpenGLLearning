@@ -9,10 +9,8 @@
       <config projectName="OpenglLearning" targetName="assimp_cmd" />
       <config projectName="OpenglLearning" targetName="IrrXML" />
       <config projectName="OpenglLearning" targetName="openglLearning" />
-      <config projectName="OpenglLearning" targetName="zlib" />
-      <config projectName="OpenglLearning" targetName="zlibstatic" />
+      <config projectName="OpenglLearning" targetName="freetype" />
       <config projectName="OpenglLearning" targetName="OpenglGraphicsLib" />
-      <config projectName="OpenglLearning" targetName="UpdateAssimpLibsDebugSymbolsAndDLLs" />
       <config projectName="OpenglLearning" targetName="uninstall" />
       <config projectName="OpenglLearning" targetName="SDL2main" />
     </generated>
@@ -23,12 +21,27 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
+    <list id="0426633c-ebfc-4ce9-8efb-baa9f9034645" name="Default" comment="Deleted old leftover code from the main." />
     <list default="true" id="43a6e302-55a7-4802-b1b9-a750c5982f27" name="Revert: Fixed the bug in the shader class" comment="Fixed a bug where valid resolutions were duplicated.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenglGraphicsLib/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/OpenglGraphicsLib/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenglGraphicsLib/Includes/Model.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/OpenglGraphicsLib/Includes/Model.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenglGraphicsLib/Includes/VertexArray.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/OpenglGraphicsLib/Includes/VertexArray.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenglGraphicsLib/Lights/Light.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenglGraphicsLib/Lights/Light.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/BufferLayout/LayoutElement.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/OpenglGraphicsLib/Includes/LayoutElement.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/BufferLayout/VertexBufferLayout.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/OpenglGraphicsLib/Includes/VertexBufferLayout.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/ModelManagement/Models/Model.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/ModelManagement/Models/Model.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/Renderer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/Renderer.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/Window.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/Window.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/TextDisplaySystem/GlyphTexture.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/OpenglGraphicsLib/Includes/GlyphTexture.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/TextDisplaySystem/TextDisplaySystem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/TextDisplaySystem/TextDisplaySystem.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/TextDisplaySystem/TextDisplaySystem.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/OpenglGraphicsLib/Includes/TextDisplaySystem.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/TextDisplaySystem/TextModel.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/OpenglGraphicsLib/Includes/TextModel.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/TextDisplaySystem/freeTypeErrorWrapper.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/OpenglGraphicsLib/Includes/freeTypeErrorWrapper.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/TextDisplaySystem/s_CharacterGlyph.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/OpenglGraphicsLib/Includes/s_CharacterGlyph.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
-    <list id="0426633c-ebfc-4ce9-8efb-baa9f9034645" name="Default" comment="Deleted old leftover code from the main." />
     <ignored path="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -43,49 +56,36 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="101">
-              <caret line="31" column="36" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
+            <state relative-caret-position="1288">
+              <caret line="225" column="8" selection-start-line="225" selection-start-column="8" selection-end-line="225" selection-end-column="8" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ModelMesh.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/ModelManagement/Models/ModelMesh.cpp">
+      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
-              <folding>
-                <element signature="e#53#71#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="426">
+              <caret line="112" column="29" selection-start-line="112" selection-start-column="29" selection-end-line="112" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ModelMesh.hpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/Includes/ModelMesh.hpp">
+      <file leaf-file-name="TextModel.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/Includes/TextModel.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
-              <folding>
-                <element signature="e#129#154#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="210">
+              <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Texture.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/Texture.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
-              <folding>
-                <element signature="e#53#75#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+      <file leaf-file-name="Camera.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/Camera.cpp">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file leaf-file-name="Window.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Window.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/Window.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="489">
@@ -97,30 +97,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Window.hpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/Includes/Window.hpp">
+      <file leaf-file-name="AssimpInterpreter.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/ModelManagement/AssimpInterperater/AssimpInterpreter.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+            <state relative-caret-position="498">
+              <caret line="149" column="43" selection-start-line="149" selection-start-column="43" selection-end-line="149" selection-end-column="43" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Light.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/Lights/Light.cpp">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="Light.hpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/Lights/Light.hpp">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="Renderer.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/Renderer.cpp">
+      <file leaf-file-name="Texture.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/Texture.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="86" selection-start-line="86" selection-end-line="86" />
+            <state relative-caret-position="185">
+              <caret line="14" column="54" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="54" />
               <folding>
                 <element signature="e#53#75#0" expanded="true" />
               </folding>
@@ -128,14 +118,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Renderer.hpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/Includes/Renderer.hpp">
+      <file leaf-file-name="VertexArray.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/Includes/VertexArray.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
-              <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
-              <folding>
-                <element signature="e#126#142#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="150">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="490">
+              <caret line="34" selection-start-line="34" selection-end-line="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Model.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/Includes/Model.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -165,9 +170,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/OpenGLClasses/VertexBuffer.hpp" />
-        <option value="$PROJECT_DIR$/OpenGLClasses/ModelManagement/Texture.hpp" />
-        <option value="$PROJECT_DIR$/OpenGLClasses/ModelManagement/Models/ModelMesh.hpp" />
         <option value="$PROJECT_DIR$/OpenGLClasses/ModelManagement/Models/Transformation.hpp" />
         <option value="$PROJECT_DIR$/OpenGLClasses/ModelManagement/AssimpInterperater/AssimpInterperater.hpp" />
         <option value="$PROJECT_DIR$/OpenGLClasses/ModelManagement/AssimpInterperater/AssimpInterperater.cpp" />
@@ -198,7 +200,6 @@
         <option value="$PROJECT_DIR$/OpenGLClasses/ModelManagement/Models/Model.cpp" />
         <option value="$PROJECT_DIR$/OpenGLClasses/Renderer.cpp" />
         <option value="$PROJECT_DIR$/OpenglGraphicsLib/Includes/AssimpInterpreter.hpp" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/ModelManagement/Texture.cpp" />
         <option value="$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/Shader.cpp" />
         <option value="$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/ElementBuffer.cpp" />
@@ -206,16 +207,20 @@
         <option value="$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/VertexBuffer.cpp" />
         <option value="$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/ModelManagement/Models/ModelDispenser.cpp" />
         <option value="$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/ModelManagement/AssimpInterperater/AssimpInterpreter.cpp" />
-        <option value="$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/ModelManagement/Models/Model.cpp" />
         <option value="$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/ModelManagement/Animation/Animation.cpp" />
-        <option value="$PROJECT_DIR$/OpenglGraphicsLib/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/ModelManagement/Models/ModelMesh.cpp" />
         <option value="$PROJECT_DIR$/OpenglGraphicsLib/Includes/Renderer.hpp" />
-        <option value="$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/Texture.cpp" />
         <option value="$PROJECT_DIR$/OpenglGraphicsLib/Includes/Window.hpp" />
-        <option value="$PROJECT_DIR$/main.cpp" />
-        <option value="$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/Renderer.cpp" />
         <option value="$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/Window.cpp" />
+        <option value="$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/Texture.cpp" />
+        <option value="$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/Renderer.cpp" />
+        <option value="$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/ModelManagement/Models/Model.cpp" />
+        <option value="$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/TextDisplaySystem/TextDisplaySystem.hpp" />
+        <option value="$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/TextDisplaySystem/TextDisplaySystem.cpp" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/main.cpp" />
+        <option value="$PROJECT_DIR$/OpenglGraphicsLib/Includes/Model.hpp" />
+        <option value="$PROJECT_DIR$/OpenglGraphicsLib/CMakeLists.txt" />
       </list>
     </option>
   </component>
@@ -229,7 +234,7 @@
     <packageJsonPaths />
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="656" />
@@ -246,18 +251,31 @@
           <expand>
             <path>
               <item name="OpenglLearning" type="b2602c69:ProjectViewProjectNode" />
-              <item name="learningOpenGL" type="462c0819:PsiDirectoryNode" />
+              <item name="OpenGLLearning" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="OpenglLearning" type="b2602c69:ProjectViewProjectNode" />
-              <item name="learningOpenGL" type="462c0819:PsiDirectoryNode" />
+              <item name="OpenGLLearning" type="462c0819:PsiDirectoryNode" />
               <item name="OpenglGraphicsLib" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="OpenglLearning" type="b2602c69:ProjectViewProjectNode" />
-              <item name="learningOpenGL" type="462c0819:PsiDirectoryNode" />
+              <item name="OpenGLLearning" type="462c0819:PsiDirectoryNode" />
+              <item name="OpenglGraphicsLib" type="462c0819:PsiDirectoryNode" />
+              <item name="Includes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OpenglLearning" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OpenGLLearning" type="462c0819:PsiDirectoryNode" />
               <item name="OpenglGraphicsLib" type="462c0819:PsiDirectoryNode" />
               <item name="OpenGLClasses" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OpenglLearning" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OpenGLLearning" type="462c0819:PsiDirectoryNode" />
+              <item name="OpenglGraphicsLib" type="462c0819:PsiDirectoryNode" />
+              <item name="OpenGLClasses" type="462c0819:PsiDirectoryNode" />
+              <item name="TextDisplaySystem" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -268,21 +286,21 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../externalRescourcesForOpenGLLearning" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="CPPToolchains" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\User\Documents\WTC\openGL\learningOpenGL\cmake-build-debug" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\User\Documents\WTC\openGL\learningOpenGL\OpenglGraphicsLib\OpenGLClasses" />
       <recent name="$PROJECT_DIR$/OpenglGraphicsLib/Includes" />
+      <recent name="C:\Users\User\Documents\WTC\openGL\learningOpenGL\OpenglGraphicsLib\OpenGLClasses" />
       <recent name="$PROJECT_DIR$/OpenglGraphicsLib/ExceptionClass" />
       <recent name="$PROJECT_DIR$/OpenglGraphicsLib" />
       <recent name="$PROJECT_DIR$/Includes" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Documents\WTC\openGL\learningOpenGL\cmake-build-debug" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -298,173 +316,171 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.openglLearning">
-    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" EXPLICIT_BUILD_TARGET_NAME="all" />
+    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" EXPLICIT_BUILD_TARGET_NAME="all" />
     <configuration name="IrrXML" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="IrrXML" CONFIG_NAME="Debug" />
     <configuration name="OpenglGraphicsLib" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="OpenglGraphicsLib" CONFIG_NAME="Debug" />
     <configuration name="SDL2-static" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="SDL2-static" CONFIG_NAME="Debug" />
     <configuration name="SDL2" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="SDL2" CONFIG_NAME="Debug" />
     <configuration name="SDL2main" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="SDL2main" CONFIG_NAME="Debug" />
-    <configuration name="UpdateAssimpLibsDebugSymbolsAndDLLs" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="UpdateAssimpLibsDebugSymbolsAndDLLs" CONFIG_NAME="Debug" />
     <configuration name="assimp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="assimp" CONFIG_NAME="Debug" />
     <configuration name="assimp_cmd" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="assimp_cmd" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="assimp_cmd" />
-    <configuration name="glm_shared" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="glm_shared" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="glm_static" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="glm_static" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
+    <configuration name="freetype" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="freetype" CONFIG_NAME="Debug" />
+    <configuration name="glm_shared" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="glm_shared" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="glm_static" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="glm_static" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
     <configuration name="openglLearning" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="openglLearning" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
     <configuration name="stb_image_lib" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="stb_image_lib" CONFIG_NAME="Debug" />
-    <configuration name="test-bug_ms_vec_static" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-bug_ms_vec_static" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-core_cpp_constexpr" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_cpp_constexpr" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-core_cpp_defaulted_ctor" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_cpp_defaulted_ctor" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-core_force_aligned_gentypes" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_force_aligned_gentypes" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-core_force_ctor_init" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_force_ctor_init" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-core_force_explicit_ctor" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_force_explicit_ctor" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-core_force_inline" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_force_inline" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-core_force_pure" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_force_pure" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-core_force_unrestricted_gentype" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_force_unrestricted_gentype" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-core_force_xyzw_only" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_force_xyzw_only" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-core_func_common" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_func_common" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-core_func_exponential" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_func_exponential" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-core_func_geometric" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_func_geometric" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-core_func_integer" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_func_integer" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-core_func_integer_bit_count" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_func_integer_bit_count" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-core_func_integer_find_lsb" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_func_integer_find_lsb" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-core_func_integer_find_msb" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_func_integer_find_msb" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-core_func_matrix" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_func_matrix" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-core_func_noise" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_func_noise" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-core_func_packing" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_func_packing" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-core_func_swizzle" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_func_swizzle" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-core_func_trigonometric" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_func_trigonometric" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-core_func_vector_relational" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_func_vector_relational" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-core_setup_force_cxx98" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_setup_force_cxx98" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-core_setup_force_size_t_length" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_setup_force_size_t_length" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-core_setup_message" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_setup_message" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-core_setup_platform_unknown" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_setup_platform_unknown" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-core_setup_precision" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_setup_precision" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-core_type_aligned" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_type_aligned" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-core_type_cast" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_type_cast" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-core_type_ctor" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_type_ctor" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-core_type_int" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_type_int" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-core_type_length" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_type_length" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-core_type_mat2x2" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_type_mat2x2" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-core_type_mat2x3" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_type_mat2x3" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-core_type_mat2x4" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_type_mat2x4" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-core_type_mat3x2" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_type_mat3x2" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-core_type_mat3x3" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_type_mat3x3" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-core_type_mat3x4" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_type_mat3x4" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-core_type_mat4x2" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_type_mat4x2" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-core_type_mat4x3" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_type_mat4x3" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-core_type_mat4x4" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_type_mat4x4" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-core_type_vec1" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_type_vec1" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-core_type_vec2" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_type_vec2" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-core_type_vec3" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_type_vec3" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-core_type_vec4" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_type_vec4" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-ext_matrix_relational" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-ext_matrix_relational" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-ext_matrix_transform" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-ext_matrix_transform" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-ext_quaternion_common" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-ext_quaternion_common" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-ext_quaternion_exponential" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-ext_quaternion_exponential" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-ext_quaternion_geometric" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-ext_quaternion_geometric" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-ext_quaternion_relational" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-ext_quaternion_relational" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-ext_quaternion_transform" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-ext_quaternion_transform" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-ext_quaternion_trigonometric" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-ext_quaternion_trigonometric" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-ext_quaternion_type" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-ext_quaternion_type" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-ext_scalar_common" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-ext_scalar_common" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-ext_scalar_constants" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-ext_scalar_constants" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-ext_scalar_float_sized" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-ext_scalar_float_sized" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-ext_scalar_int_sized" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-ext_scalar_int_sized" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-ext_scalar_relational" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-ext_scalar_relational" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-ext_scalar_uint_sized" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-ext_scalar_uint_sized" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-ext_vec1" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-ext_vec1" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-ext_vector_bool1" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-ext_vector_bool1" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-ext_vector_common" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-ext_vector_common" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-ext_vector_iec559" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-ext_vector_iec559" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-ext_vector_integer" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-ext_vector_integer" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-ext_vector_relational" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-ext_vector_relational" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtc_bitfield" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtc_bitfield" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtc_color_space" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtc_color_space" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtc_constants" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtc_constants" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtc_epsilon" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtc_epsilon" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtc_integer" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtc_integer" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtc_matrix_access" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtc_matrix_access" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtc_matrix_integer" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtc_matrix_integer" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtc_matrix_inverse" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtc_matrix_inverse" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtc_matrix_transform" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtc_matrix_transform" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtc_noise" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtc_noise" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtc_packing" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtc_packing" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtc_quaternion" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtc_quaternion" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtc_random" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtc_random" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtc_reciprocal" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtc_reciprocal" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtc_round" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtc_round" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtc_type_aligned" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtc_type_aligned" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtc_type_precision" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtc_type_precision" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtc_type_ptr" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtc_type_ptr" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtc_ulp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtc_ulp" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtc_vec1" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtc_vec1" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_associated_min_max" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_associated_min_max" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_closest_point" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_closest_point" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_color_encoding" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_color_encoding" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_color_space" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_color_space" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_color_space_YCoCg" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_color_space_YCoCg" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_common" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_common" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_compatibility" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_compatibility" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_component_wise" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_component_wise" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_dual_quaternion" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_dual_quaternion" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_easing" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_easing" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_euler_angle" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_euler_angle" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_extend" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_extend" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_extended_min_max" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_extended_min_max" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_exterior_product" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_exterior_product" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_fast_exponential" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_fast_exponential" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_fast_square_root" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_fast_square_root" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_fast_trigonometry" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_fast_trigonometry" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_functions" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_functions" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_gradient_paint" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_gradient_paint" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_handed_coordinate_space" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_handed_coordinate_space" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_integer" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_integer" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_intersect" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_intersect" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_io" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_io" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_load" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_load" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_log_base" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_log_base" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_matrix_cross_product" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_matrix_cross_product" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_matrix_decompose" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_matrix_decompose" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_matrix_factorisation" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_matrix_factorisation" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_matrix_interpolation" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_matrix_interpolation" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_matrix_major_storage" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_matrix_major_storage" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_matrix_operation" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_matrix_operation" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_matrix_query" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_matrix_query" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_matrix_transform_2d" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_matrix_transform_2d" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_norm" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_norm" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_normal" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_normal" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_normalize_dot" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_normalize_dot" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_number_precision" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_number_precision" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_optimum_pow" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_optimum_pow" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_orthonormalize" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_orthonormalize" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_perpendicular" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_perpendicular" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_polar_coordinates" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_polar_coordinates" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_projection" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_projection" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_quaternion" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_quaternion" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_range" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_range" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_rotate_normalized_axis" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_rotate_normalized_axis" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_rotate_vector" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_rotate_vector" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_scalar_multiplication" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_scalar_multiplication" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_scalar_relational" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_scalar_relational" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_spline" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_spline" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_string_cast" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_string_cast" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_texture" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_texture" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_type_aligned" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_type_aligned" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_type_trait" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_type_trait" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_vec_swizzle" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_vec_swizzle" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_vector_angle" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_vector_angle" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_vector_query" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_vector_query" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-gtx_wrap" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_wrap" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-perf_matrix_div" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-perf_matrix_div" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-perf_matrix_inverse" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-perf_matrix_inverse" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-perf_matrix_mul" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-perf_matrix_mul" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-perf_matrix_mul_vector" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-perf_matrix_mul_vector" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-perf_matrix_transpose" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-perf_matrix_transpose" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
-    <configuration name="test-perf_vector_mul_matrix" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-perf_vector_mul_matrix" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="learningOpenGL" />
+    <configuration name="test-bug_ms_vec_static" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-bug_ms_vec_static" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-core_cpp_constexpr" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_cpp_constexpr" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-core_cpp_defaulted_ctor" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_cpp_defaulted_ctor" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-core_force_aligned_gentypes" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_force_aligned_gentypes" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-core_force_ctor_init" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_force_ctor_init" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-core_force_explicit_ctor" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_force_explicit_ctor" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-core_force_inline" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_force_inline" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-core_force_pure" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_force_pure" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-core_force_unrestricted_gentype" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_force_unrestricted_gentype" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-core_force_xyzw_only" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_force_xyzw_only" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-core_func_common" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_func_common" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-core_func_exponential" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_func_exponential" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-core_func_geometric" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_func_geometric" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-core_func_integer" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_func_integer" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-core_func_integer_bit_count" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_func_integer_bit_count" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-core_func_integer_find_lsb" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_func_integer_find_lsb" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-core_func_integer_find_msb" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_func_integer_find_msb" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-core_func_matrix" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_func_matrix" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-core_func_noise" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_func_noise" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-core_func_packing" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_func_packing" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-core_func_swizzle" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_func_swizzle" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-core_func_trigonometric" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_func_trigonometric" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-core_func_vector_relational" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_func_vector_relational" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-core_setup_force_cxx98" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_setup_force_cxx98" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-core_setup_force_size_t_length" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_setup_force_size_t_length" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-core_setup_message" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_setup_message" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-core_setup_platform_unknown" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_setup_platform_unknown" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-core_setup_precision" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_setup_precision" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-core_type_aligned" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_type_aligned" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-core_type_cast" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_type_cast" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-core_type_ctor" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_type_ctor" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-core_type_int" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_type_int" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-core_type_length" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_type_length" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-core_type_mat2x2" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_type_mat2x2" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-core_type_mat2x3" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_type_mat2x3" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-core_type_mat2x4" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_type_mat2x4" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-core_type_mat3x2" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_type_mat3x2" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-core_type_mat3x3" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_type_mat3x3" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-core_type_mat3x4" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_type_mat3x4" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-core_type_mat4x2" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_type_mat4x2" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-core_type_mat4x3" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_type_mat4x3" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-core_type_mat4x4" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_type_mat4x4" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-core_type_vec1" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_type_vec1" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-core_type_vec2" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_type_vec2" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-core_type_vec3" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_type_vec3" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-core_type_vec4" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-core_type_vec4" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-ext_matrix_relational" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-ext_matrix_relational" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-ext_matrix_transform" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-ext_matrix_transform" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-ext_quaternion_common" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-ext_quaternion_common" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-ext_quaternion_exponential" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-ext_quaternion_exponential" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-ext_quaternion_geometric" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-ext_quaternion_geometric" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-ext_quaternion_relational" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-ext_quaternion_relational" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-ext_quaternion_transform" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-ext_quaternion_transform" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-ext_quaternion_trigonometric" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-ext_quaternion_trigonometric" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-ext_quaternion_type" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-ext_quaternion_type" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-ext_scalar_common" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-ext_scalar_common" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-ext_scalar_constants" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-ext_scalar_constants" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-ext_scalar_float_sized" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-ext_scalar_float_sized" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-ext_scalar_int_sized" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-ext_scalar_int_sized" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-ext_scalar_relational" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-ext_scalar_relational" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-ext_scalar_uint_sized" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-ext_scalar_uint_sized" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-ext_vec1" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-ext_vec1" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-ext_vector_bool1" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-ext_vector_bool1" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-ext_vector_common" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-ext_vector_common" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-ext_vector_iec559" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-ext_vector_iec559" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-ext_vector_integer" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-ext_vector_integer" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-ext_vector_relational" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-ext_vector_relational" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtc_bitfield" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtc_bitfield" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtc_color_space" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtc_color_space" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtc_constants" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtc_constants" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtc_epsilon" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtc_epsilon" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtc_integer" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtc_integer" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtc_matrix_access" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtc_matrix_access" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtc_matrix_integer" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtc_matrix_integer" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtc_matrix_inverse" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtc_matrix_inverse" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtc_matrix_transform" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtc_matrix_transform" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtc_noise" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtc_noise" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtc_packing" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtc_packing" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtc_quaternion" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtc_quaternion" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtc_random" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtc_random" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtc_reciprocal" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtc_reciprocal" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtc_round" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtc_round" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtc_type_aligned" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtc_type_aligned" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtc_type_precision" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtc_type_precision" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtc_type_ptr" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtc_type_ptr" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtc_ulp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtc_ulp" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtc_vec1" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtc_vec1" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_associated_min_max" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_associated_min_max" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_closest_point" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_closest_point" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_color_encoding" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_color_encoding" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_color_space" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_color_space" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_color_space_YCoCg" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_color_space_YCoCg" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_common" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_common" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_compatibility" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_compatibility" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_component_wise" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_component_wise" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_dual_quaternion" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_dual_quaternion" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_easing" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_easing" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_euler_angle" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_euler_angle" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_extend" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_extend" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_extended_min_max" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_extended_min_max" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_exterior_product" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_exterior_product" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_fast_exponential" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_fast_exponential" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_fast_square_root" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_fast_square_root" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_fast_trigonometry" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_fast_trigonometry" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_functions" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_functions" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_gradient_paint" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_gradient_paint" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_handed_coordinate_space" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_handed_coordinate_space" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_integer" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_integer" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_intersect" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_intersect" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_io" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_io" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_load" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_load" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_log_base" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_log_base" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_matrix_cross_product" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_matrix_cross_product" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_matrix_decompose" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_matrix_decompose" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_matrix_factorisation" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_matrix_factorisation" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_matrix_interpolation" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_matrix_interpolation" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_matrix_major_storage" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_matrix_major_storage" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_matrix_operation" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_matrix_operation" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_matrix_query" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_matrix_query" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_matrix_transform_2d" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_matrix_transform_2d" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_norm" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_norm" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_normal" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_normal" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_normalize_dot" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_normalize_dot" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_number_precision" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_number_precision" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_optimum_pow" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_optimum_pow" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_orthonormalize" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_orthonormalize" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_perpendicular" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_perpendicular" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_polar_coordinates" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_polar_coordinates" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_projection" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_projection" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_quaternion" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_quaternion" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_range" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_range" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_rotate_normalized_axis" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_rotate_normalized_axis" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_rotate_vector" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_rotate_vector" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_scalar_multiplication" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_scalar_multiplication" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_scalar_relational" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_scalar_relational" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_spline" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_spline" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_string_cast" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_string_cast" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_texture" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_texture" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_type_aligned" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_type_aligned" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_type_trait" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_type_trait" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_vec_swizzle" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_vec_swizzle" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_vector_angle" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_vector_angle" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_vector_query" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_vector_query" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-gtx_wrap" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-gtx_wrap" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-perf_matrix_div" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-perf_matrix_div" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-perf_matrix_inverse" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-perf_matrix_inverse" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-perf_matrix_mul" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-perf_matrix_mul" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-perf_matrix_mul_vector" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-perf_matrix_mul_vector" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-perf_matrix_transpose" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-perf_matrix_transpose" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
+    <configuration name="test-perf_vector_mul_matrix" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="test-perf_vector_mul_matrix" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OpenglLearning" RUN_TARGET_NAME="openglLearning" />
     <configuration name="uninstall" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="uninstall" CONFIG_NAME="Debug" />
-    <configuration name="zlib" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="zlib" CONFIG_NAME="Debug" />
-    <configuration name="zlibstatic" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OpenglLearning" TARGET_NAME="zlibstatic" CONFIG_NAME="Debug" />
     <list>
       <item itemvalue="Application.Build All" />
       <item itemvalue="Application.glm_shared" />
@@ -621,12 +637,10 @@
       <item itemvalue="Application.test-perf_matrix_transpose" />
       <item itemvalue="Application.test-perf_vector_mul_matrix" />
       <item itemvalue="Application.openglLearning" />
-      <item itemvalue="Application.UpdateAssimpLibsDebugSymbolsAndDLLs" />
       <item itemvalue="Application.assimp" />
       <item itemvalue="Application.IrrXML" />
-      <item itemvalue="Application.zlib" />
-      <item itemvalue="Application.zlibstatic" />
       <item itemvalue="Application.assimp_cmd" />
+      <item itemvalue="Application.freetype" />
       <item itemvalue="Application.stb_image_lib" />
       <item itemvalue="Application.SDL2" />
       <item itemvalue="Application.SDL2-static" />
@@ -662,6 +676,7 @@
       <workItem from="1537250174894" duration="15312000" />
       <workItem from="1537337571466" duration="13098000" />
       <workItem from="1537426230382" duration="4047000" />
+      <workItem from="1537964150695" duration="3162000" />
     </task>
     <task id="LOCAL-00001" summary="added git ignore, and deleted cmake-build-debug">
       <created>1536129912036</created>
@@ -870,56 +885,46 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="254073000" />
+    <option name="totallyTimeSpent" value="274256000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1780822" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19739583" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" x="-1365" y="457" width="681" height="706" id="Messages" order="7" visible="true" weight="0.25802997" />
-      <window_info anchor="bottom" id="CMake" order="11" weight="0.24304068" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32976446" />
-      <window_info active="true" anchor="bottom" x="-1366" y="449" width="1366" height="715" id="Run" order="2" type="WINDOWED" visible="true" weight="0.19057816" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32879376" />
+      <window_info active="true" anchor="bottom" id="CMake" order="11" visible="true" weight="0.24319066" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5005208" side_tool="true" weight="0.28696498" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49947917" weight="0.28696498" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32976446" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39980546" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39940536" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19739583" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="CMake" order="11" weight="0.24319066" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39980546" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49947917" visible="true" weight="0.28696498" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5005208" side_tool="true" weight="0.28696498" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32782102" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.3258755" />
-      <window_info id="Favorites" order="2" side_tool="true" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21979167" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2889105" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32879376" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39980546" />
       <window_info anchor="bottom" id="Messages" order="7" visible="true" weight="0.32855093" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="CMake" order="11" weight="0.32684824" />
@@ -1001,7 +1006,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="47" />
+      <option name="time" value="50" />
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
@@ -1026,32 +1031,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/Includes/Texture.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="43" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/vector" />
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/_deps/sdl2_download-src/src/video/SDL_video.c">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/Includes/VertexBuffer.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="51" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/Includes/VertexArray.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/memory" />
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/_deps/sdl2_download-src/src/dynapi/SDL_dynapi_procs.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
@@ -1073,21 +1052,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/Includes/Shader.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="15" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-506" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/container.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/container.jpg" />
     <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/Includes/AssimpInterpreter.hpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -1127,9 +1097,7 @@
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/cubo.obj">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/cubo.obj" />
     <entry file="file://$PROJECT_DIR$/sudoCode">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -1137,23 +1105,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ballo2.mtl">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ballo.obj">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ballo2.mtl" />
+    <entry file="file://$PROJECT_DIR$/ballo.obj" />
     <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/Includes/Observable.hpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/Includes/Model.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="26" column="9" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -1166,18 +1123,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/ModelManagement/Models/ModelDispenser.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
+        <state relative-caret-position="270">
           <caret line="18" column="68" selection-start-line="18" selection-start-column="68" selection-end-line="18" selection-end-column="68" />
           <folding>
             <element signature="e#53#72#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/ModelManagement/Models/Model.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="47" column="12" selection-start-line="47" selection-start-column="12" selection-end-line="47" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -1188,20 +1138,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/Camera.cpp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/openGLErrorManagementFunctions.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/Shader.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1768">
-          <caret line="107" column="4" selection-start-line="107" selection-start-column="4" selection-end-line="107" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -1226,13 +1166,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/ModelManagement/AssimpInterperater/AssimpInterpreter.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1588">
-          <caret line="49" column="48" selection-start-line="49" selection-start-column="48" selection-end-line="49" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/ElementBuffer.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
@@ -1247,34 +1180,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1393">
-          <caret line="107" selection-start-line="107" selection-end-line="107" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/Includes/ModelMesh.hpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
-          <folding>
-            <element signature="e#129#154#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/ModelManagement/Models/ModelMesh.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        <state relative-caret-position="300">
+          <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
           <folding>
             <element signature="e#53#71#0" expanded="true" />
           </folding>
@@ -1285,28 +1201,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="347">
           <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
-          <folding>
-            <element signature="e#126#142#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/Lights/Light.cpp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/Lights/Light.hpp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/Texture.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <element signature="e#53#75#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/Lights/Light.cpp" />
+    <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/Lights/Light.hpp" />
     <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/Includes/Window.hpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="214">
@@ -1314,22 +1213,101 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
+    <entry file="file://$PROJECT_DIR$/propCrateStyledSmallDamaged.obj">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/Includes/Texture.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="31" column="36" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
+        <state relative-caret-position="315">
+          <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/Shader.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="107" column="1" selection-start-line="107" selection-start-column="1" selection-end-line="107" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/Includes/Shader.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/Renderer.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="86" selection-start-line="86" selection-end-line="86" />
+        <state relative-caret-position="840">
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
           <folding>
             <element signature="e#53#75#0" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/ModelManagement/Models/Model.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/Includes/TextDisplaySystem.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/TextDisplaySystem/TextDisplaySystem.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1800">
+          <caret line="120" column="17" selection-start-line="120" selection-start-column="17" selection-end-line="120" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/ModelManagement/AssimpInterperater/AssimpInterpreter.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="149" column="43" selection-start-line="149" selection-start-column="43" selection-end-line="149" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/Texture.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="14" column="54" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="54" />
+          <folding>
+            <element signature="e#53#75#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/Includes/VertexArray.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="490">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1288">
+          <caret line="225" column="8" selection-start-line="225" selection-start-column="8" selection-end-line="225" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/Camera.cpp">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/OpenGLClasses/Window.cpp">
       <provider selected="true" editor-type-id="text-editor">
@@ -1338,6 +1316,27 @@
           <folding>
             <element signature="e#53#69#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/Includes/TextModel.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/Includes/Model.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OpenglGraphicsLib/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="112" column="29" selection-start-line="112" selection-start-column="29" selection-end-line="112" selection-end-column="29" />
         </state>
       </provider>
     </entry>

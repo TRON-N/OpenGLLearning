@@ -5,7 +5,6 @@
 #include <ft2build.h>
 #include FT_FREETYPE_H
 #include <glad/glad.h>
-#include <openGLFunctionCallErrorManagementWrapper.hpp>
 #include <iostream>
 #include "TextDisplaySystem.hpp"
 #include "freeTypeErrorWrapper.hpp"
@@ -150,5 +149,9 @@ void TextDisplaySystem::deleteTextModelMesh(const std::string &text) {
 	for (auto mesh: textMeshListIter->second)
 		delete mesh;
 	this->m_textMeshList.erase(textMeshListIter);
+}
+
+bool TextDisplaySystem::isTextModelMeshCreated(const std::string &text) {
+	return this->m_textMeshList.find(text) != this->m_textMeshList.end();
 }
 
