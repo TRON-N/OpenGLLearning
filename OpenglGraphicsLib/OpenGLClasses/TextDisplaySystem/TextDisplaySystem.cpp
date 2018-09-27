@@ -6,6 +6,7 @@
 #include FT_FREETYPE_H
 #include <glad/glad.h>
 #include <iostream>
+#include <GenericProgException.hpp>
 #include "TextDisplaySystem.hpp"
 #include "freeTypeErrorWrapper.hpp"
 
@@ -118,7 +119,8 @@ void TextDisplaySystem::populateGlyphList(std::string fontFile, int fontSize) {
 	FREE_TYPE_ERROR_WRAPPER(FT_Init_FreeType(&freeTypeLib));
 
 	FT_Face face;
-	FREE_TYPE_ERROR_WRAPPER(FT_New_Face(freeTypeLib, fontFile.c_str(), 0, &face));
+	if (FT_New_Face(freeTypeLib, fontFile.c_str(), 0, &face) != 0)
+		throw GenericProgException("Error: Could not open font file");
 	FREE_TYPE_ERROR_WRAPPER(FT_Set_Pixel_Sizes(face, 0, fontSize));
 
 	for (int character = 0; character < 128; character++) {

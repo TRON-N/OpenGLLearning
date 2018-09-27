@@ -20,7 +20,7 @@ AssimpInterpreter::AssimpInterpreter(std::string fileName, std::string folderPat
 	{
 		std::string errorStr = "Exception: ASSIMP: ";
 		errorStr.append(this->m_assimpImporter.GetErrorString());
-		throw GenericProgException(errorStr.c_str());
+		throw GenericProgException(errorStr);
 	}
 	this->m_scene = scene;
 	this->m_folderPath = folderPath;
@@ -128,12 +128,11 @@ Texture *AssimpInterpreter::getTextureFromFile(std::string fileName) {
 
 	std::string fullFilePath = this->m_folderPath + "/" + fileName;
 	unsigned char *data = stbi_load(fullFilePath.c_str(), &width, &height, &numberOfComponents, 0);
-	Texture *newTexture = nullptr;
 
-	std::cout << "Trying to load this texture: " << fullFilePath << std::endl;
-
-	if (data != nullptr) {
-
+	if (!data) {
+		std::string errorStr = "Texture at " + fullFilePath + " could not be loaded.";
+		throw GenericProgException(errorStr);
+	} else {
 		GLenum format = GL_RGB;
 		switch (numberOfComponents) {
 			case 1:
@@ -147,14 +146,11 @@ Texture *AssimpInterpreter::getTextureFromFile(std::string fileName) {
 			default:
 				std::cout << "The system does not know how to interpret the file's colour format" << std::endl;
 		}
-		newTexture = new Texture(data, format, width, height);
+		Texture *newTexture = new Texture(data, format, width, height);
+		stbi_image_free(data);
+		return newTexture;
 	}
-	stbi_image_free(data);
-	if (newTexture == nullptr) {
-		std::string errorStr = "Texture at " + fullFilePath + " could not be loaded.\n";
-		throw GenericProgException(errorStr.c_str());
-	}
-	return newTexture;
+	return nullptr;
 }
 
 AssimpInterpreter::AssimpInterpreter() {

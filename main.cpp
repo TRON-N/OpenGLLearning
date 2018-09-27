@@ -109,7 +109,10 @@ int main(int argc, char *argv[]) {
 		explodeAnimation.addKeyFrame(explodeKeyFrame2);
 		explodeAnimation.addKeyFrame(explodeKeyFrame3);
 
-		Model *explodeMod = modelDispenser.getModel("explosion.obj", "../3dModelsAndTextures");
+		Model *explodeMod = nullptr;
+
+		explodeMod = modelDispenser.getModel("explosion.obj", "../3dModelsAndTextures");
+
 		explodeMod->addAnimation(explodeAnimation, "explode");
 		explodeMod->translate(glm::vec3(0.0f, 1.0f, 10.0f));
 		testNotification explodeNotifier;
@@ -129,6 +132,7 @@ int main(int argc, char *argv[]) {
 									{cameraTrans.x + (40 - camera.getWidthAndHeight().x),
 									 cameraTrans.y, cameraTrans.z});
 		camera.translate(cameraTrans);
+
 
 		TextDisplaySystem textDisplaySystem("../Xcelsion.ttf", 48);
 

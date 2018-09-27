@@ -8,20 +8,9 @@
 #include <exception>
 #include <string>
 
-class GenericProgException : public std::exception {
+class GenericProgException : public std::runtime_error {
 public:
-	explicit GenericProgException(const char *message);
-
-	GenericProgException() = default;
-
-	GenericProgException(const GenericProgException &obj) = default;
-
-	GenericProgException &operator=(const GenericProgException &obj) = default;
-
-	const char *what() const noexcept override;
-
-private:
-	const char *_message;
+	explicit GenericProgException(const std::string &message);
 };
 
 
